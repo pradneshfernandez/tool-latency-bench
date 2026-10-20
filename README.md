@@ -180,6 +180,30 @@ are very welcome.
    and post them. A run folder holds `results.csv`, `runtime.json`, `run.log`, the request parts
    and `analysis.md`; API keys are never written to it.
 
+### Claude Code prompt
+
+To run a full campaign with [Claude Code](https://claude.com/claude-code), paste this prompt
+(fill in the placeholders). `CLAUDE.md` holds the standing rules it follows.
+
+```
+Run the tool latency benchmarks for model <model> on service <service>, with
+reasoning_effort <lowest setting the model accepts>, session label <label>.
+
+1. Check that the API key for <service> is set in .env (do not print it).
+2. Smoke run exp1_tool_count with --blocks 2. Confirm no errors, input_tokens grows
+   with n_tools, and cached_tokens is 0 or empty. If first tokens take more than a few
+   seconds or there are 429/503 errors, stop and tell me. Delete the smoke run folder.
+3. Run exp1_tool_count, then exp2_complexity, 30 blocks each, one after the other
+   (never in parallel), in the background.
+4. Run analyze on both run folders, then compare for both benchmarks.
+5. Report the comparison tables, the charts (comparison.png), every warning (uneven
+   errors, few clusters), and the detectable effect sizes. Do not change the request
+   parts, pools or tool stats.
+```
+
+Repeat with a different session label (e.g. `morning`, `afternoon`, `night`) at other times
+of day.
+
 Note: `cached_tokens` is only filled in when the provider reports it (Gemini's endpoint does
 not), so the prompt-cache check is only possible on providers that report it.
 
