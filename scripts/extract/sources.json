@@ -1,0 +1,44 @@
+{
+  "tau-bench": {
+    "repo": "https://github.com/sierra-research/tau-bench",
+    "commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "sparse": ["/tau_bench/**/*.py", "/tau_bench/envs/*/*.md"],
+    "venv": "main"
+  },
+  "tau2-bench": {
+    "repo": "https://github.com/sierra-research/tau2-bench",
+    "commit": "989d3285ae669e49503324bdb9981bf14fccedeb",
+    "sparse": ["/src/tau2/**/*.py"],
+    "venv": "main"
+  },
+  "aiewf-eval": {
+    "repo": "https://github.com/kwindla/aiewf-eval",
+    "commit": "ff1e9fabc0f0d2ca1fd7e0f55d20d435ee6d38d2",
+    "sparse": ["/*.py", "/benchmarks/**/*.py"],
+    "venv": "main"
+  },
+  "eva": {
+    "repo": "https://github.com/ServiceNow/eva",
+    "commit": "2918ca6ef5cd1726143e0c6da785058a4420303a",
+    "sparse": ["/src/eva/models/*.py", "/configs/agents/*_agent.yaml"],
+    "venv": "main"
+  },
+  "pipecat": {
+    "repo": "https://github.com/pipecat-ai/pipecat",
+    "commit": "5558d26dca636e09b768cfb7f70b87e259f7c188",
+    "sparse": ["/examples/**/*.py", "/src/**/*.py"],
+    "venv": "main"
+  },
+  "pipecat-flows": {
+    "repo": "https://github.com/pipecat-ai/pipecat-flows",
+    "commit": "96223f4e9ea6f84651e379978be6560cf3ae50c8",
+    "sparse": ["/examples/**/*.py", "/src/**/*.py"],
+    "venv": "flows"
+  },
+  "livekit": {
+    "repo": "https://github.com/livekit/agents",
+    "commit": "5b4988824d8d766491242dc3a331a687cfb277a6",
+    "sparse": ["/examples/**/*.py", "/livekit-agents/**/*.py"],
+    "venv": "main"
+  }
+}

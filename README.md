@@ -25,6 +25,17 @@ schema, i.e. what is sent to the LLM in the `tools` field), one JSON file per to
 extracted with each project's own schema code, with wording kept exactly as in the source.
 Each file records the source repo, commit and file path it came from.
 
+The extraction code is in `scripts/extract/` (one `extract_<source>.py` per source). To rebuild
+the pool from fresh clones at the pinned commits (needs `git` and `uv`):
+
+```
+python scripts/extract/rebuild.py --check                  # rebuild in a temp dir, diff against the pool
+python scripts/extract/rebuild.py --out /tmp/tools_pool_v0 # or write a fresh copy
+```
+
+`sources.json` pins the full commit SHAs and the files fetched from each repo;
+`requirements-*.txt` pin the package versions, since the Pydantic version affects generated schemas.
+
 | Source | Repository | Commit | License | Tools |
 |---|---|---|---|---|
 | τ-bench | [sierra-research/tau-bench](https://github.com/sierra-research/tau-bench) | `59a200c` | MIT, © 2024 Sierra | 30 |
