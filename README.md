@@ -17,6 +17,8 @@ latency-oriented evals to measure this. This benchmark is an attempt to do that.
   Tool-definition formats and the function-calling flow are based on its examples and adapters.
 - [pipecat-ai/stt-benchmark](https://github.com/pipecat-ai/stt-benchmark).
   Methodology conventions (tail latency reporting, contributor workflow) follow this benchmark.
+- [kwindla/aiewf-eval](https://github.com/kwindla/aiewf-eval), MIT.
+  Project layout, CLI and the TTFAT (time to first answer token) definition follow this benchmark.
 
 ## Tool definition pool
 
@@ -104,6 +106,34 @@ Framework commits come from `scripts/extract/sources.json`; package versions (li
 provider SDKs) are pinned in `scripts/as_sent/requirements-*.txt`. See
 [docs/as_sent.md](docs/as_sent.md) for how the capture works, what each framework sends to each
 provider (with the code that does it), and the caveats.
+
+## Latency experiments
+
+Requests are sent directly to OpenAI-compatible endpoints (no framework in the loop).
+
+```bash
+uv sync
+uv run tool-latency-bench tool-stats       # tokens (tiktoken o200k_base) + group per tool -> data/tool_stats.csv
+uv run tool-latency-bench build-pools      # data/pools/: exp1, exp2_simple, exp2_medium, exp2_budget
+uv run tool-latency-bench list-benchmarks
+uv run tool-latency-bench show-request exp1_tool_count          # one assembled request, nothing sent
+uv run tool-latency-bench run exp1_tool_count --model <model> --service groq --session morning
+uv run tool-latency-bench analyze runs/exp1_tool_count/<timestamp>_<model>_morning
+uv run tool-latency-bench compare exp1_tool_count               # all sessions side by side
+```
+
+- Benchmarks: `benchmarks/exp1_tool_count/` (0/10/30/60 tools) and `benchmarks/exp2_complexity/`
+  (0 tools vs 20 simple / 20 medium / 10+10 mixed at the same total tokens).
+- Services (`--service`): `openai`, `google`, `groq`, `cerebras`, each an OpenAI-compatible
+  base URL plus an API key read from the environment or `.env`; and `fake`, a local streaming
+  server with simulated delay for dry runs without a key.
+- Requests are built from `benchmarks/_shared/request_parts/` (system prompt, history, user
+  messages, settings); a benchmark can override any of these files in its own `request_parts/`.
+  A random nonce is prepended to the system prompt at send time.
+- Each run writes `runs/<benchmark>/<timestamp>_<model>_<session>/` with `results.csv`,
+  `runtime.json`, `run.log`, the `request_parts/` it used, and `analysis.md` after `analyze`.
+- `actionable_ms`: tool call complete if the model calls a tool, else first text token.
+  `ttfat_ms`: time to first answer token, i.e. first text or tool-call output.
 
 ## License
 

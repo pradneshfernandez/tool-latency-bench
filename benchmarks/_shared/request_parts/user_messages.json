@@ -1,0 +1,7 @@
+[
+ {"id": "order_status", "text": "Hi, I placed an order last week and it still hasn't arrived. Can you check where it is?"},
+ {"id": "return_item", "text": "I'd like to return a jacket I bought, it doesn't fit."},
+ {"id": "update_address", "text": "Can you change the shipping address on my account? I just moved."},
+ {"id": "billing_charge", "text": "I think I was charged twice for the same purchase."},
+ {"id": "store_hours", "text": "What time do you close today?"}
+]

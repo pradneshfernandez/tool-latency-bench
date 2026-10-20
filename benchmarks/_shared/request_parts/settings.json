@@ -1,0 +1,8 @@
+{
+ "temperature": 0,
+ "tool_choice": "auto",
+ "parallel_tool_calls": false,
+ "max_tokens": 100,
+ "stream": true,
+ "stream_options": {"include_usage": true}
+}
