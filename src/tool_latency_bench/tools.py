@@ -1,6 +1,7 @@
 """Tool loading, token counting and grouping (Step 1), pools and the Experiment 2 budget (Step 2)."""
 
 import csv
+import functools
 import json
 import math
 import random
@@ -142,8 +143,37 @@ def write_pools():
 
 # ---- Experiment 2 budget --------------------------------------------------
 
+@functools.cache
+def _names() -> dict[str, str]:
+    with open(STATS_CSV) as f:
+        return {r["tool_id"]: r["name"] for r in csv.DictReader(f)}
+
+
+def tool_name(tool_id: str) -> str:
+    return _names()[tool_id]
+
+
+def unique_names(ids) -> bool:
+    """APIs such as Gemini reject a request with two tools of the same name."""
+    names = [tool_name(i) for i in ids]
+    return len(names) == len(set(names))
+
+
+def sample_unique(rng, pool, k) -> list[str]:
+    """k tools in random order with no repeated name: shuffle, keep first of each name."""
+    seen, out = set(), []
+    for i in rng.sample(pool, len(pool)):
+        if tool_name(i) not in seen:
+            seen.add(tool_name(i))
+            out.append(i)
+            if len(out) == k:
+                return out
+    raise RuntimeError(f"pool has fewer than {k} distinct tool names")
+
+
 def within_budget(ids, tokens, budget) -> bool:
-    return abs(sum(tokens[i] for i in ids) - budget) <= EXP2_TOLERANCE * budget
+    return (unique_names(ids)
+            and abs(sum(tokens[i] for i in ids) - budget) <= EXP2_TOLERANCE * budget)
 
 
 def draw_within_budget(rng, tokens, budget, groups):

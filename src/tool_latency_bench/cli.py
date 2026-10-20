@@ -30,7 +30,7 @@ load_dotenv(ROOT / ".env")
 
 SERVICE_ALIASES = {
     "openai": ("https://api.openai.com/v1", "OPENAI_API_KEY"),
-    "google": ("https://generativelanguage.googleapis.com/v1beta/openai", "GOOGLE_API_KEY"),
+    "google": ("https://generativelanguage.googleapis.com/v1beta/openai", "GEMINI_API_KEY"),
     "groq": ("https://api.groq.com/openai/v1", "GROQ_API_KEY"),
     "cerebras": ("https://api.cerebras.ai/v1", "CEREBRAS_API_KEY"),
     "fake": (None, None),  # local fake server, started in-process
@@ -97,7 +97,9 @@ def list_benchmarks():
 @click.option("--session", required=True, help="Session label, e.g. morning")
 @click.option("--blocks", type=int, default=None, help="Number of blocks (default: benchmark's)")
 @click.option("--pause", type=float, default=1.0, show_default=True, help="Seconds between requests")
-def run(benchmark_name, model, service, session, blocks, pause):
+@click.option("--reasoning-effort", default=None,
+              help="Sent as reasoning_effort; use the lowest the model accepts (e.g. none, minimal)")
+def run(benchmark_name, model, service, session, blocks, pause, reasoning_effort):
     """Run a benchmark."""
     cfg = load_benchmark(benchmark_name)
     base_url, key_env = SERVICE_ALIASES[service]
@@ -114,7 +116,8 @@ def run(benchmark_name, model, service, session, blocks, pause):
     blocks = blocks or cfg.default_blocks
     logger.info(f"{cfg.name}: {blocks} blocks, {model} via {service} ({base_url})")
     logger.info(f"run dir: {run_dir.relative_to(ROOT)}")
-    rt = runner.run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir)
+    rt = runner.run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir,
+                    reasoning_effort)
     logger.info(f"done: {rt['n_requests']} requests, {rt['n_errors']} errors")
     logger.info(f"analyze with: uv run tool-latency-bench analyze {run_dir.relative_to(ROOT)}")
 

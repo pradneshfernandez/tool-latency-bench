@@ -117,7 +117,8 @@ uv run tool-latency-bench tool-stats       # tokens (tiktoken o200k_base) + grou
 uv run tool-latency-bench build-pools      # data/pools/: exp1, exp2_simple, exp2_medium, exp2_budget
 uv run tool-latency-bench list-benchmarks
 uv run tool-latency-bench show-request exp1_tool_count          # one assembled request, nothing sent
-uv run tool-latency-bench run exp1_tool_count --model <model> --service groq --session morning
+uv run tool-latency-bench run exp1_tool_count --model <model> --service groq --session morning \
+    --reasoning-effort <lowest the model accepts>
 uv run tool-latency-bench analyze runs/exp1_tool_count/<timestamp>_<model>_morning
 uv run tool-latency-bench compare exp1_tool_count               # all sessions side by side
 ```
@@ -134,6 +135,35 @@ uv run tool-latency-bench compare exp1_tool_count               # all sessions s
   `runtime.json`, `run.log`, the `request_parts/` it used, and `analysis.md` after `analyze`.
 - `actionable_ms`: tool call complete if the model calls a tool, else first text token.
   `ttfat_ms`: time to first answer token, i.e. first text or tool-call output.
+- `--reasoning-effort` is sent as `reasoning_effort`; use the lowest value the model accepts
+  (e.g. `minimal` for `gemini-3.5-flash-lite`, `none` for `gemini-3.8-flash`) and it is recorded
+  in `runtime.json`. Tool sets never contain two tools with the same name (some APIs reject that).
+
+### Status
+
+Both benchmarks have been run end to end against the `fake` service, and a 1-block smoke run
+against Gemini's free tier completed without errors. No full real-provider sessions have been
+run yet: free-tier Gemini latency (8-34 s per request in testing) is dominated by queueing, so
+it cannot measure tool overhead. Results from contributors with paid or fast-provider access
+are very welcome.
+
+### Contributing results
+
+1. Put your key in `.env` (`OPENAI_API_KEY`, `GEMINI_API_KEY`, `GROQ_API_KEY` or
+   `CEREBRAS_API_KEY`) and run `uv sync`.
+2. Smoke run first and check `results.csv` has no errors and `input_tokens` grows with
+   `n_tools`:
+   `uv run tool-latency-bench run exp1_tool_count --model <model> --service <service> --session smoke --blocks 2 --reasoning-effort <lowest>`
+   Then delete the smoke run folder.
+3. Run both benchmarks (default 30 blocks each). Ideally run each at three different times of
+   day with session labels such as `morning`, `afternoon`, `night`.
+4. Run `analyze` on each run folder.
+5. Share the run folders: open a PR adding them under `results/<service>/<model>/`, or zip them
+   and post them. A run folder holds `results.csv`, `runtime.json`, `run.log`, the request parts
+   and `analysis.md`; API keys are never written to it.
+
+Note: `cached_tokens` is only filled in when the provider reports it (Gemini's endpoint does
+not), so the prompt-cache check is only possible on providers that report it.
 
 ## License
 

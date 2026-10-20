@@ -109,9 +109,12 @@ def create_run_directory(benchmark_name: str, model: str, session: str) -> Path:
     return run_dir
 
 
-def run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir) -> dict:
+def run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir,
+        reasoning_effort=None) -> dict:
     paths = part_paths(cfg.name)
     parts = load_parts(paths)
+    if reasoning_effort:
+        parts["settings"]["reasoning_effort"] = reasoning_effort
     (run_dir / "request_parts").mkdir()
     for name, src in paths.items():
         shutil.copy(src, run_dir / "request_parts" / name)
@@ -127,6 +130,7 @@ def run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir)
     runtime = {
         "benchmark": cfg.name, "model": model, "service": service, "base_url": base_url,
         "session": session, "blocks": blocks, "pause_s": pause, "seed": seed,
+        "reasoning_effort": reasoning_effort,
         "started": datetime.now().astimezone().isoformat(timespec="seconds"),
         "request_parts": {k: str(v.relative_to(ROOT)) for k, v in paths.items()},
         "benchmark_info": cfg.info(),
