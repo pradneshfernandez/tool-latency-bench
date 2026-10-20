@@ -1,0 +1,27 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/calculate_quote.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "calculate_quote",
+    "description": "Calculate initial insurance quote.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "description": "The customer's age."
+        },
+        "marital_status": {
+          "type": "string",
+          "description": "The customer's marital status. Must be one of \"single\", \"married\"."
+        }
+      },
+      "required": [
+        "age",
+        "marital_status"
+      ]
+    }
+  }
+}

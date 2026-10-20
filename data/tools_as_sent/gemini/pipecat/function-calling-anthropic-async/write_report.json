@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/function-calling-anthropic-async/write_report.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Write a long research report on a topic.",
+        "name": "write_report",
+        "parameters": {
+          "properties": {
+            "topic": {
+              "description": "What the report should cover.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "topic"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

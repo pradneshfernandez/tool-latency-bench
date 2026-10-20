@@ -1,0 +1,31 @@
+{
+  "tool_id": "pipecat/function-calling-anthropic-video/fetch_user_image.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Fetch the user image and push it to the LLM.\n\nWhen called, this function pushes a UserImageRequestFrame upstream to the\ntransport. As a result, the transport will request the user image and push a\nUserImageRawFrame downstream which will be added to the context by the LLM\nassistant aggregator. The result_callback will be invoked once the image is\nretrieved and processed.",
+        "name": "fetch_user_image",
+        "parameters": {
+          "properties": {
+            "user_id": {
+              "description": "The ID of the user to grab the image from.",
+              "type": "STRING"
+            },
+            "question": {
+              "description": "The question that the user is asking about the image.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "user_id",
+            "question"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

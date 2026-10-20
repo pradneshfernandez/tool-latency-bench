@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/proceed_to_topic.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Use after the guest has introduced themselves.",
+        "name": "proceed_to_topic",
+        "parameters": {
+          "properties": {
+            "guest_summary": {
+              "description": "A quick summary of who the guest is (name, role, area of expertise, etc.).",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "guest_summary"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

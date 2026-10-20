@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_date_of_birth.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "collect_date_of_birth",
+      "strict": true,
+      "description": "Collect the user's date of birth (and time of birth if they know it).",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

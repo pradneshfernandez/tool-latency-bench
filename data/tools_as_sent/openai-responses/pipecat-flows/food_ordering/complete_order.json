@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/food_ordering/complete_order.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "complete_order",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "User confirms the order is correct."
+  }
+}

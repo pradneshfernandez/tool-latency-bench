@@ -1,0 +1,27 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_credit_card_accounts_by_user.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_credit_card_accounts_by_user",
+      "description": "Get all credit card accounts for a user.\n\nReturns information about each credit card account including card type,\ndate opened, current balance, and reward points.",
+      "parameters": {
+        "properties": {
+          "user_id": {
+            "description": "The ID of the user to look up credit card accounts for",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

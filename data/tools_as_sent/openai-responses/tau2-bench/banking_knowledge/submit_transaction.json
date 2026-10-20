@@ -1,0 +1,50 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/submit_transaction.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "submit_transaction",
+    "parameters": {
+      "properties": {
+        "user_id": {
+          "description": "Your user ID",
+          "title": "User Id",
+          "type": "string"
+        },
+        "credit_card_type": {
+          "description": "Type of credit card used (e.g., \"Bronze Rewards Card\", \"Gold Rewards Card\")",
+          "title": "Credit Card Type",
+          "type": "string"
+        },
+        "merchant_name": {
+          "description": "Name of the merchant where the purchase was made",
+          "title": "Merchant Name",
+          "type": "string"
+        },
+        "amount": {
+          "description": "Transaction amount in USD (e.g., 127.43)",
+          "title": "Amount",
+          "type": "number"
+        },
+        "category": {
+          "description": "Transaction category (e.g., \"Groceries\", \"Dining\", \"Travel\", \"Software\", \"Entertainment\", \"Utilities\", \"Shopping\")",
+          "title": "Category",
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_id",
+        "credit_card_type",
+        "merchant_name",
+        "amount",
+        "category"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Submit a credit card transaction."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat-flows/warm_transfer/connect_human_agent_and_customer.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Connect the human agent to the customer.",
+        "name": "connect_human_agent_and_customer",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

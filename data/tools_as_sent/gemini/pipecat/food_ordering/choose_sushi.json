@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat/food_ordering/choose_sushi.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "User wants to order sushi. Let's get that order started.",
+        "name": "choose_sushi",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

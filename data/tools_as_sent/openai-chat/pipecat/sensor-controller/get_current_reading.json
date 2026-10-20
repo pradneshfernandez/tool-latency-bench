@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/sensor-controller/get_current_reading.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_current_reading",
+      "description": "Read the sensor's current temperature in degrees Celsius.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

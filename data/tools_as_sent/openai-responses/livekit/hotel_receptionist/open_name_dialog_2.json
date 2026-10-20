@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/open_name_dialog_2.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "open_name_dialog",
+    "description": "Open the name dialog. It collects the guest's first and last name (read back and confirmed) from the caller.",
+    "parameters": {
+      "properties": {},
+      "title": "OpenNameDialogArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

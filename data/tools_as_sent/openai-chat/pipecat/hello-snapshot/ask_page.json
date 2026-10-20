@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/hello-snapshot/ask_page.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "ask_page",
+      "description": "Ask about the page the user is looking at.\n\nCall it for any question that could be about the page; nothing else\ncan see it. Returns the answer.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "The user's question, as they asked it."
+          }
+        },
+        "required": [
+          "question"
+        ]
+      }
+    }
+  }
+}

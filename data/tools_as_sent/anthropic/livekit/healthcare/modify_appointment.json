@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/healthcare/modify_appointment.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "modify_appointment",
+    "description": "Call if the user requests to reschedule or cancel an existing appointment. Do not ask for any information in advance.",
+    "input_schema": {
+      "properties": {
+        "function": {
+          "description": "Available functions to modify an existing appointment",
+          "enum": [
+            "reschedule",
+            "cancel"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "function"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

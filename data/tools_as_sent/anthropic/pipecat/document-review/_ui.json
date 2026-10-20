@@ -1,0 +1,28 @@
+{
+  "tool_id": "pipecat/document-review/_ui.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "_ui",
+    "description": "Send a job to the UI worker and hand its answer to the voice LLM.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "object"
+        },
+        "timeout": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "payload"
+      ]
+    }
+  }
+}

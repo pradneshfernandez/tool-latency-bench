@@ -1,0 +1,23 @@
+{
+  "tool_id": "livekit/query_engine/query_info.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "query_info",
+    "description": "Get more information about a specific topic",
+    "input_schema": {
+      "properties": {
+        "query": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

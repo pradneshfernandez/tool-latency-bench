@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/start_interview.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "start_interview",
+    "description": "Use this when the guest has shared a clear topic they want to explore.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string",
+          "description": "The topic the guest wants to discuss."
+        }
+      },
+      "required": [
+        "topic"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/backend/read_file.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "read_file",
+      "description": "Read a file from the codebase.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "The file's path, as search_codebase reports it."
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_referrals_by_user.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_referrals_by_user",
+        "description": "Get all referrals made by a user.",
+        "parameters": {
+          "properties": {
+            "user_id": {
+              "description": "The ID of the user (referrer) to look up referrals for",
+              "title": "User Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "user_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

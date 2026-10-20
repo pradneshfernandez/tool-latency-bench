@@ -1,0 +1,17 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/request_human_agent_transfer.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "request_human_agent_transfer",
+    "parameters": {
+      "properties": {},
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Request to be transferred to a human agent for assistance.\n\nUse this when you want to speak with a real human agent instead of\nthe automated system. Each request will be logged and processed."
+  }
+}

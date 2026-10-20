@@ -1,0 +1,59 @@
+{
+  "tool_id": "livekit/hotel_receptionist/book_tour.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Book a sightseeing tour through the desk. The catalog (times, prices, what's included) is in lookup_policy topic \"tours\" - look it up first and narrow with the caller (group or private, half or full day, date, party size) before booking. The options are for the CALLER to pick from, never pick for them. Once they pick and agree, THIS CALL is the booking - saying \"I'll get that set up\" books nothing; nothing exists until this returns a reference.\n",
+        "name": "book_tour",
+        "parameters_json_schema": {
+          "properties": {
+            "tour": {
+              "description": "The tour the caller picked.",
+              "enum": [
+                "half_day_city",
+                "full_day_city",
+                "private_city"
+              ],
+              "title": "Tour",
+              "type": "string"
+            },
+            "on_date": {
+              "description": "Tour date in ISO YYYY-MM-DD format.",
+              "format": "date",
+              "title": "On Date",
+              "type": "string"
+            },
+            "party_size": {
+              "description": "How many people are going.",
+              "minimum": 1,
+              "title": "Party Size",
+              "type": "integer"
+            },
+            "guest_name": {
+              "description": "The caller's full name.",
+              "title": "Guest Name",
+              "type": "string"
+            },
+            "guest_phone": {
+              "description": "The caller's phone number, in case the operator needs to reach them.",
+              "title": "Guest Phone",
+              "type": "string"
+            }
+          },
+          "required": [
+            "tour",
+            "on_date",
+            "party_size",
+            "guest_name",
+            "guest_phone"
+          ],
+          "title": "BookTourArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

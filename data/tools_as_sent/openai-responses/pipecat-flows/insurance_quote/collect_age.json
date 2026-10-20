@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/collect_age.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "collect_age",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "description": "The customer's age."
+        }
+      },
+      "required": [
+        "age"
+      ]
+    },
+    "strict": null,
+    "description": "Record customer's age."
+  }
+}

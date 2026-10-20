@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/survey/record_work_style.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "record_work_style",
+    "description": "Call to record a summary of the candidate's work style.\n",
+    "parameters": {
+      "properties": {
+        "work_style": {
+          "description": "The candidate's work style",
+          "enum": [
+            "independent",
+            "team_player"
+          ],
+          "title": "Work Style",
+          "type": "string"
+        }
+      },
+      "required": [
+        "work_style"
+      ],
+      "title": "RecordWorkStyleArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

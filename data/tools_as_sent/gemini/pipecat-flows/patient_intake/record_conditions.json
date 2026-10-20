@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_conditions.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the user's medical conditions. Once confirmed, the next step is to collect visit reasons.",
+        "name": "record_conditions",
+        "parameters": {
+          "properties": {
+            "conditions": {
+              "description": "List of condition objects, each with \"name\" (str, the user's medical condition).",
+              "items": {
+                "type": "OBJECT"
+              },
+              "type": "ARRAY"
+            }
+          },
+          "required": [
+            "conditions"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

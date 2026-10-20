@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat/realtime-openai-live-client-delegation-speaking-policy/find_alternative_flights.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "find_alternative_flights",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string",
+          "description": "Departure airport code, e.g. \"SFO\"."
+        },
+        "destination": {
+          "type": "string",
+          "description": "Arrival airport code, e.g. \"JFK\"."
+        }
+      },
+      "required": [
+        "origin",
+        "destination"
+      ]
+    },
+    "strict": null,
+    "description": "Find later flights on a route today."
+  }
+}

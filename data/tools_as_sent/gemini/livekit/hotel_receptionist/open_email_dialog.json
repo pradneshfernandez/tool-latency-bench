@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/open_email_dialog.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Open the email dialog. It collects the guest's email address (read back and confirmed) from the caller.",
+        "name": "open_email_dialog"
+      }
+    ]
+  }
+}

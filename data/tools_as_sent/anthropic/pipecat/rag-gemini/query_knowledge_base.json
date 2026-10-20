@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/rag-gemini/query_knowledge_base.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "query_knowledge_base",
+    "description": "Query the knowledge base for the answer to the question.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "description": "The question to query the knowledge base with."
+        }
+      },
+      "required": [
+        "question"
+      ]
+    }
+  }
+}

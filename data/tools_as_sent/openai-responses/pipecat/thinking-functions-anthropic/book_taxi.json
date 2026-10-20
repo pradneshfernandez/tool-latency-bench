@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/thinking-functions-anthropic/book_taxi.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "book_taxi",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "time": {
+          "type": "string",
+          "description": "The time to book the taxi for, e.g. \"15:00\"."
+        }
+      },
+      "required": [
+        "time"
+      ]
+    },
+    "strict": null,
+    "description": "Book a taxi for a given time. Returns status (e.g., \"done\")."
+  }
+}

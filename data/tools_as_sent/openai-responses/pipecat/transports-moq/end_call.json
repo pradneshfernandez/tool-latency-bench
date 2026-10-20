@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat/transports-moq/end_call.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "end_call",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Gracefully wind the conversation down and shut the pipeline.\n\nThe result callback returns first so the LLM can produce its farewell\nturn; ``EndWorkerFrame`` (pushed downstream) then flushes queued\nframes — including the final TTS utterance — before terminating the\nworker."
+  }
+}

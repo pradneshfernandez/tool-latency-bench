@@ -1,0 +1,40 @@
+{
+  "tool_id": "livekit/basic_agent/lookup_weather.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Called when the user asks for weather related information.\nEnsure the user's location (city or region) is provided.\nWhen given a location, please estimate the latitude and longitude of the location and\ndo not ask the user for them.",
+        "name": "lookup_weather",
+        "parameters_json_schema": {
+          "properties": {
+            "location": {
+              "description": "The location they are asking for",
+              "title": "Location",
+              "type": "string"
+            },
+            "latitude": {
+              "description": "The latitude of the location, do not ask user for it",
+              "title": "Latitude",
+              "type": "string"
+            },
+            "longitude": {
+              "description": "The longitude of the location, do not ask user for it",
+              "title": "Longitude",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location",
+            "latitude",
+            "longitude"
+          ],
+          "title": "LookupWeatherArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

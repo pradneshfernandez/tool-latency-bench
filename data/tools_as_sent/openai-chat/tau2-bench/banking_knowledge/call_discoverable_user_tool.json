@@ -1,0 +1,33 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/call_discoverable_user_tool.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "call_discoverable_user_tool",
+      "description": "Call a tool that was given to you by the agent.\n\nUse this when the agent has instructed you to perform an action using\na discoverable tool. The agent will have told you the tool name and arguments.\n\nThis simulates you performing the action in the real world (e.g., opening\na webpage, navigating to a section, clicking a button).",
+      "parameters": {
+        "properties": {
+          "discoverable_tool_name": {
+            "description": "The name of the discoverable tool to call (e.g., \"open_webpage\")",
+            "title": "Discoverable Tool Name",
+            "type": "string"
+          },
+          "arguments": {
+            "default": "{}",
+            "description": "JSON string of arguments for the tool (e.g., '{\"url\": \"https://example.com\"}')",
+            "title": "Arguments",
+            "type": "string"
+          }
+        },
+        "required": [
+          "discoverable_tool_name"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

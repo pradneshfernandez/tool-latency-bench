@@ -1,0 +1,27 @@
+{
+  "tool_id": "tau2-bench/retail/get_user_details.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_user_details",
+      "description": "Get the details of a user, including their orders.",
+      "parameters": {
+        "properties": {
+          "user_id": {
+            "description": "The user id, such as 'sara_doe_496'.",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "tool_id": "livekit/hotel_receptionist/transfer_call.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "transfer_call",
+      "strict": true,
+      "description": "Transfer the caller to a hotel DEPARTMENT - the restaurant, the duty manager, or housekeeping. NOT a guest's room (never connect a caller to a guest). Before calling this you must have told the caller you're putting them on hold to connect them to that department AND gotten their okay; only then transfer. Pass a one-line summary of what the caller needs so the department is briefed.\n",
+      "parameters": {
+        "properties": {
+          "destination": {
+            "description": "The department to transfer to.",
+            "enum": [
+              "restaurant",
+              "duty_manager",
+              "housekeeping"
+            ],
+            "type": "string"
+          },
+          "summary": {
+            "description": "A one-line summary of what the caller needs.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "destination",
+          "summary"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

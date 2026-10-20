@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_by_card.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "lookup_by_card",
+    "description": "Look up a booking by last name + last 4 digits of the card on file.\n",
+    "input_schema": {
+      "properties": {
+        "last_name": {
+          "description": "Caller's last name.",
+          "type": "string"
+        },
+        "card_last4": {
+          "description": "Last 4 digits of the credit card on file.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "last_name",
+        "card_last4"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

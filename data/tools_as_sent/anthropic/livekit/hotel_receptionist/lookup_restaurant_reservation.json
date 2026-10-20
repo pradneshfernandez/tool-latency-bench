@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_restaurant_reservation.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "lookup_restaurant_reservation",
+    "description": "Read-only lookup of a confirmed restaurant reservation. Use this when the caller wants\nto check or recall their reservation details (date, time, party size, notes) without\nchanging or cancelling it - and before a modification that keeps some details \"the\nsame\", so you know the current values being kept.",
+    "input_schema": {
+      "properties": {
+        "last_name": {
+          "description": "caller's last name.",
+          "type": "string"
+        },
+        "confirmation_code": {
+          "description": "confirmation code like 'RES-X9Y2'.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "last_name",
+        "confirmation_code"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

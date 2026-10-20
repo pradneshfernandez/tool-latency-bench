@@ -1,0 +1,33 @@
+{
+  "tool_id": "livekit/frontdesk/list_available_slots.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "list_available_slots",
+      "strict": true,
+      "description": "Return a plain-text list of available slots, one per line.\n\n<slot_id> – <Weekday>, <Month> <Day>, <Year> at <HH:MM> <TZ> (<relative time>)\n\nYou must infer the appropriate ``range`` implicitly from the\nconversational context and **must not** prompt the user to pick a value\nexplicitly.",
+      "parameters": {
+        "properties": {
+          "range": {
+            "description": "Determines how far ahead to search for free time slots.",
+            "enum": [
+              "+2week",
+              "+1month",
+              "+3month",
+              "default"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "range"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

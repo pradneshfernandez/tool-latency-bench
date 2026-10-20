@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/client_delegation/lookup_weather.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_weather",
+      "strict": true,
+      "description": "Look up the current weather for a location.\n",
+      "parameters": {
+        "properties": {
+          "location": {
+            "description": "The city or region to look up.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "location"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

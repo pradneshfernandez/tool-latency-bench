@@ -1,0 +1,27 @@
+{
+  "tool_id": "pipecat/patient_intake/record_allergies.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "record_allergies",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "allergies": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "List of allergy objects, each with \"name\" (str, what the user is allergic to)."
+        }
+      },
+      "required": [
+        "allergies"
+      ]
+    },
+    "strict": null,
+    "description": "Record the user's allergies. Once confirmed, then next step is to collect medical conditions."
+  }
+}

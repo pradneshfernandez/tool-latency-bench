@@ -1,0 +1,36 @@
+{
+  "tool_id": "livekit/hotel_receptionist/set_party.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the date + party size. The return lists the open time slots - offer them to the caller and let them pick; don't choose a slot yourself.\n",
+        "name": "set_party",
+        "parameters_json_schema": {
+          "properties": {
+            "on_date": {
+              "description": "Reservation date in ISO YYYY-MM-DD format (e.g. \"2026-01-20\").",
+              "format": "date",
+              "title": "On Date",
+              "type": "string"
+            },
+            "party_size": {
+              "description": "Number of guests, exactly as the caller stated it - never shrink it to fit; if it's too big to seat, that's handled below.",
+              "minimum": 1,
+              "title": "Party Size",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "on_date",
+            "party_size"
+          ],
+          "title": "SetPartyArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

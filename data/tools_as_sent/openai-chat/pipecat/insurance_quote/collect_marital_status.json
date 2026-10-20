@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/insurance_quote/collect_marital_status.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "collect_marital_status",
+      "description": "Record marital status after customer provides it.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "marital_status": {
+            "description": "The customer's marital status. Must be one of \"single\", \"married\"."
+          }
+        },
+        "required": [
+          "marital_status"
+        ]
+      }
+    }
+  }
+}

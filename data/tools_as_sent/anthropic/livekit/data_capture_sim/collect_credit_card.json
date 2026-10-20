@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_credit_card.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "collect_credit_card",
+    "description": "Collect the user's credit card details (number, expiration, security code, cardholder).",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

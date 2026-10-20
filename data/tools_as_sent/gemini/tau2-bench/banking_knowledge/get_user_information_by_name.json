@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_user_information_by_name.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_user_information_by_name",
+        "description": "Get the information (date of birth, email, phone number, address) for a user by their name. Case Sensitive.",
+        "parameters": {
+          "properties": {
+            "customer_name": {
+              "description": "The name of the user",
+              "title": "Customer Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "customer_name"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

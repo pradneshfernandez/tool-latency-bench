@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat/warm_transfer/connect_human_agent_and_customer.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "connect_human_agent_and_customer",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Connect the human agent to the customer."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/multi_worker_handoff/collect_party_size.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the number of people in the party.",
+        "name": "collect_party_size",
+        "parameters": {
+          "properties": {
+            "size": {
+              "description": "Number of people in the party. Must be between 1 and 12.",
+              "type": "INTEGER"
+            }
+          },
+          "required": [
+            "size"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/start_booking_modification.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Start the booking-modification flow for an existing reservation. Verifies the caller, then hands off to a focused task that lets them change the stay dates, room type, room view, extras, and party size on the booking - this is the path for a guest unhappy that their room's view or type doesn't match what they booked (it moves them to a matching room). Identity fields (name, email, phone) are NOT modifiable through this flow - record_followup with kind=\"identity_change\" covers those, and a new card goes through start_card_update. NOT for cancellations: if the caller wants to cancel - even after asking for a change first - call cancel_room_booking directly instead.",
+        "name": "start_booking_modification"
+      }
+    ]
+  }
+}

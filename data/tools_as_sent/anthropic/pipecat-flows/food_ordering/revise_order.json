@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/food_ordering/revise_order.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "revise_order",
+    "description": "User wants to make changes to their order.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

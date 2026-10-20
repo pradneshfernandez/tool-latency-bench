@@ -1,0 +1,63 @@
+{
+  "tool_id": "livekit/hotel_receptionist/choose_room_2.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "choose_room",
+      "strict": true,
+      "description": "Update the chosen room type, extras, smoking preference, and view on the booking being modified.\n\nPass the FULL new extras list (e.g. caller asks to add breakfast on a booking that already has valet -> pass [\"breakfast\", \"valet\"]). To clear all extras, pass an empty list.\n\nA stated view moves the guest to a room with that view (this is how you resolve \"I booked a garden view but my room has none\"). The view is a property of specific rooms, NOT a separate type - if the requested view isn't available for the chosen type, this errors with where that view IS available, so you can offer the right type. Omit view entirely unless the caller asks for one.",
+      "parameters": {
+        "properties": {
+          "room_type": {
+            "description": "Room type for the booking (king / queen_2beds / suite / penthouse).",
+            "enum": [
+              "king",
+              "queen_2beds",
+              "suite",
+              "penthouse"
+            ],
+            "type": "string"
+          },
+          "extras": {
+            "description": "Full new list of extras after the caller's change.",
+            "items": {
+              "enum": [
+                "breakfast",
+                "valet",
+                "late_checkout",
+                "pets"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "smoking_room": {
+            "description": "True if the caller wants a smoking-permitted room.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "view": {
+            "description": "The view the caller asked for (city / garden / ocean), ONLY if they stated one - omit entirely otherwise.",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "room_type",
+          "extras",
+          "smoking_room",
+          "view"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

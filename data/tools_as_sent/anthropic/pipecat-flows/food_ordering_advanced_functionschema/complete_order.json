@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/food_ordering_advanced_functionschema/complete_order.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "complete_order",
+    "description": "User confirms the order is correct",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

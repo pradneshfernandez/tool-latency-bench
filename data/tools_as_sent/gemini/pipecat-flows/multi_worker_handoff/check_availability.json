@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/multi_worker_handoff/check_availability.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Check availability for the requested time.",
+        "name": "check_availability",
+        "parameters": {
+          "properties": {
+            "time": {
+              "description": "Reservation time (e.g., '6:00 PM').",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "time"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_group_inquiry.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_group_inquiry",
+      "strict": true,
+      "description": "Open a room-block inquiry for a group of 15 or more guests (tours, teams, conferences). This records the inquiry for the group desk - it does NOT confirm or hold rooms, and you cannot confirm a group on this call no matter how hard the caller pushes; a new sponsor needs credit approval first. Call this the MOMENT you have all the arguments - if the caller asks more questions while you're collecting, record the inquiry first and answer after; an unrecorded inquiry is lost when the call ends. For the terms to quote (group rate, tour-leader comp, cancellation), call lookup_policy with topic \"group_bookings\" first. Under 15 guests, use the normal booking flow instead.\n",
+      "parameters": {
+        "properties": {
+          "company": {
+            "description": "The sponsoring company or organization (ask who the group is with).",
+            "type": "string"
+          },
+          "contact_name": {
+            "description": "Full name of the group's contact person.",
+            "type": "string"
+          },
+          "contact_phone": {
+            "description": "The contact's callback number, as the caller gave it.",
+            "type": "string"
+          },
+          "party_size": {
+            "description": "Total number of guests in the group (15 or more).",
+            "minimum": 15,
+            "type": "integer"
+          },
+          "share_type": {
+            "description": "The predominant room-share arrangement the caller described - \"mostly twin-share\" records as twin; use mixed only if no single arrangement dominates.",
+            "enum": [
+              "twin",
+              "double",
+              "single",
+              "mixed"
+            ],
+            "type": "string"
+          },
+          "check_in": {
+            "description": "Group arrival date in ISO YYYY-MM-DD format.",
+            "format": "date",
+            "type": "string"
+          },
+          "nights": {
+            "description": "Number of nights the group stays.",
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "company",
+          "contact_name",
+          "contact_phone",
+          "party_size",
+          "share_type",
+          "check_in",
+          "nights"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

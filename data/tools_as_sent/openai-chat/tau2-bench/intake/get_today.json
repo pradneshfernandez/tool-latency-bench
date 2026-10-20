@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/intake/get_today.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_today",
+      "description": "Get today's date.",
+      "parameters": {
+        "properties": {},
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

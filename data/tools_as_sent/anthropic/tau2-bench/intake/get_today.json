@@ -1,0 +1,14 @@
+{
+  "tool_id": "tau2-bench/intake/get_today.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_today",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "description": "Get today's date."
+  }
+}

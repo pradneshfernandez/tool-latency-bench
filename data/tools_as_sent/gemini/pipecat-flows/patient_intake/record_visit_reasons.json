@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_visit_reasons.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the reasons for their visit. Once confirmed, the next step is to verify all information.",
+        "name": "record_visit_reasons",
+        "parameters": {
+          "properties": {
+            "visit_reasons": {
+              "description": "List of visit reason objects, each with \"name\" (str, the user's reason for visiting).",
+              "items": {
+                "type": "OBJECT"
+              },
+              "type": "ARRAY"
+            }
+          },
+          "required": [
+            "visit_reasons"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

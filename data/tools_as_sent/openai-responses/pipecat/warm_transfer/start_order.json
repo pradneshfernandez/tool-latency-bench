@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat/warm_transfer/start_order.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "start_order",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Start placing an order."
+  }
+}

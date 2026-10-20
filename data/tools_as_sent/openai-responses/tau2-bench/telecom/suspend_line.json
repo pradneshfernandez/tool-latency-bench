@@ -1,0 +1,38 @@
+{
+  "tool_id": "tau2-bench/telecom/suspend_line.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "suspend_line",
+    "parameters": {
+      "properties": {
+        "customer_id": {
+          "description": "ID of the customer who owns the line.",
+          "title": "Customer Id",
+          "type": "string"
+        },
+        "line_id": {
+          "description": "ID of the line to suspend.",
+          "title": "Line Id",
+          "type": "string"
+        },
+        "reason": {
+          "description": "Reason for suspension.",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_id",
+        "line_id",
+        "reason"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Suspends a specific line (max 6 months).\n\nChecks: Line status must be Active.\nLogic: Sets line status to Suspended, records suspension_start_date."
+  }
+}

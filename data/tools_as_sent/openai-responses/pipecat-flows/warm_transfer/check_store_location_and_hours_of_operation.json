@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/warm_transfer/check_store_location_and_hours_of_operation.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "check_store_location_and_hours_of_operation",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Check store location and hours of operation."
+  }
+}

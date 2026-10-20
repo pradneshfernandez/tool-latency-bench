@@ -1,0 +1,35 @@
+{
+  "tool_id": "pipecat-flows/food_ordering_advanced_functionschema/select_sushi_order.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "select_sushi_order",
+    "description": "Record the sushi order details",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Number of rolls to order"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "california",
+            "spicy tuna",
+            "rainbow",
+            "dragon"
+          ],
+          "description": "Type of sushi roll"
+        }
+      },
+      "required": [
+        "count",
+        "type"
+      ]
+    }
+  }
+}

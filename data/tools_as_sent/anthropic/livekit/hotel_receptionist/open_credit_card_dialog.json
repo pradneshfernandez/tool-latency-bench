@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/open_credit_card_dialog.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "open_credit_card_dialog",
+    "description": "Open the credit-card dialog. It collects the card number, expiry, security code, and cardholder name from the caller in one focused step.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

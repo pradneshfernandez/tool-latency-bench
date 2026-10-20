@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/basic_dtmf_agent/ask_for_phone_number.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "ask_for_phone_number",
+    "description": "Ask user to provide a phone number.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

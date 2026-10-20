@@ -1,0 +1,33 @@
+{
+  "tool_id": "livekit/healthcare/record_health_insurance.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_health_insurance",
+      "strict": true,
+      "description": "Record the user's health insurance.\n",
+      "parameters": {
+        "properties": {
+          "insurance": {
+            "description": "The user's health insurance",
+            "enum": [
+              "Anthem",
+              "Aetna",
+              "EmblemHealth",
+              "HealthFirst"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "insurance"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

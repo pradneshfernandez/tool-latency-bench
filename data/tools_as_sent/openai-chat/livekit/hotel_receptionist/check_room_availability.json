@@ -1,0 +1,63 @@
+{
+  "tool_id": "livekit/hotel_receptionist/check_room_availability.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "check_room_availability",
+      "strict": true,
+      "description": "Check what's available for a date range, with prices and views. One tool for every \"what do you have?\" / \"how much?\" / \"any king available?\" / \"any smoking rooms?\" question. Read-only browsing: it never books anything - when the caller wants to actually book, call start_room_booking instead. Surface the results progressively (types first, details after they narrow), don't recite the whole list.\n",
+      "parameters": {
+        "properties": {
+          "check_in": {
+            "description": "Check-in date in ISO YYYY-MM-DD format (e.g. \"2026-01-20\").",
+            "format": "date",
+            "type": "string"
+          },
+          "check_out": {
+            "description": "Check-out date in ISO YYYY-MM-DD format.",
+            "format": "date",
+            "type": "string"
+          },
+          "guests": {
+            "description": "Number of guests in the room (must be >= 1; ask the caller if not specified).",
+            "maximum": 6,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "smoking": {
+            "description": "The caller's stated smoking preference, or \"no_preference\" if they haven't said.",
+            "enum": [
+              "smoking",
+              "non_smoking",
+              "no_preference"
+            ],
+            "type": "string"
+          },
+          "room_type": {
+            "description": "The room type the caller picked, or \"any\" to list everything.",
+            "enum": [
+              "king",
+              "queen_2beds",
+              "suite",
+              "penthouse",
+              "any"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "check_in",
+          "check_out",
+          "guests",
+          "smoking",
+          "room_type"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

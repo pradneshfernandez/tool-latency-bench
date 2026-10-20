@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/restaurant_reservation/collect_party_size.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "collect_party_size",
+    "description": "Record the number of people in the party.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "integer",
+          "description": "Number of people in the party. Must be between 1 and 12."
+        }
+      },
+      "required": [
+        "size"
+      ]
+    }
+  }
+}

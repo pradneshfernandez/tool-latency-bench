@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/gpt_live_agent/schedule_delivery.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "schedule_delivery",
+      "strict": true,
+      "description": "Book a delivery day for an order.\n",
+      "parameters": {
+        "properties": {
+          "order_id": {
+            "description": "The order reference, such as A1042.",
+            "type": "string"
+          },
+          "day": {
+            "description": "The requested day, such as Tuesday.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "order_id",
+          "day"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

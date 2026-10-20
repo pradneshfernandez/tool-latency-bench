@@ -1,0 +1,34 @@
+{
+  "tool_id": "tau2-bench/telecom/get_bills_for_customer.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_bills_for_customer",
+        "description": "Retrieves a list of the customer's bills, most recent first.",
+        "parameters": {
+          "properties": {
+            "customer_id": {
+              "description": "ID of the customer.",
+              "title": "Customer Id",
+              "type": "string"
+            },
+            "limit": {
+              "default": 12,
+              "description": "Maximum number of bills to return.",
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "customer_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

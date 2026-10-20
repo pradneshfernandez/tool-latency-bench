@@ -1,0 +1,45 @@
+{
+  "tool_id": "livekit/hotel_receptionist/schedule_wakeup_call.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "schedule_wakeup_call",
+    "description": "Schedule a wake-up call to a guest's room. This actually sets the call - never log a wake-up request as a followup note instead. Collect the room, the name, and the exact date and time from the caller, read them back, and call this once they've agreed. No booking verification needed.\n",
+    "parameters": {
+      "properties": {
+        "room": {
+          "description": "The room number as the caller gave it (e.g. \"304\").",
+          "title": "Room",
+          "type": "string"
+        },
+        "guest_name": {
+          "description": "The guest's name.",
+          "title": "Guest Name",
+          "type": "string"
+        },
+        "call_date": {
+          "description": "The date of the wake-up call in ISO YYYY-MM-DD format (\"tomorrow morning\" = tomorrow's date).",
+          "format": "date",
+          "title": "Call Date",
+          "type": "string"
+        },
+        "call_time": {
+          "description": "The wake-up time in 24-hour HH:MM format (4:45 a.m. = \"04:45\").",
+          "format": "time",
+          "title": "Call Time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "room",
+        "guest_name",
+        "call_date",
+        "call_time"
+      ],
+      "title": "ScheduleWakeupCallArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/warm_transfer/connect_human_agent_and_customer.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "connect_human_agent_and_customer",
+    "description": "Connect the human agent to the customer.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

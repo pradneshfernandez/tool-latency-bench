@@ -1,0 +1,17 @@
+{
+  "tool_id": "tau2-bench/retail/list_all_product_types.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "list_all_product_types",
+    "parameters": {
+      "properties": {},
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "List the name and product id of all product types.\n\nEach product type has a variety of different items with unique item ids and options.\nThere are only 50 product types in the store."
+  }
+}

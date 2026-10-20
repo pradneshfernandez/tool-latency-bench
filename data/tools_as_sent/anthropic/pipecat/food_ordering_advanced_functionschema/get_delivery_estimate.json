@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat/food_ordering_advanced_functionschema/get_delivery_estimate.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "get_delivery_estimate",
+    "description": "Get a delivery estimate for the current order",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

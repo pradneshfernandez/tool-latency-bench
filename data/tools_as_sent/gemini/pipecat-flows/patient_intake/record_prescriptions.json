@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_prescriptions.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the user's prescriptions. Once confirmed, the next step is to collect allergy information.",
+        "name": "record_prescriptions",
+        "parameters": {
+          "properties": {
+            "prescriptions": {
+              "description": "List of prescription objects, each with \"medication\" (str, the medication's name) and \"dosage\" (str, the prescription's dosage).",
+              "items": {
+                "type": "OBJECT"
+              },
+              "type": "ARRAY"
+            }
+          },
+          "required": [
+            "prescriptions"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

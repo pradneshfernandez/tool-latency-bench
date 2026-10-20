@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/survey/end_screening.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "end_screening",
+      "strict": true,
+      "description": "Call when the interview/screening is concluded to hang up.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

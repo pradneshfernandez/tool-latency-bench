@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/intake/end_call.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "end_call",
+        "description": "Hang up and end the call. Call this exactly once, as your last action:\n\nafter submitting the collected fields and thanking the person, or when\nthe call cannot proceed. Ending the call is final — nothing can be\nsubmitted after it.",
+        "parameters": {
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

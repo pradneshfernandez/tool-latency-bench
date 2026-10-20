@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/frontdesk/schedule_appointment.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "schedule_appointment",
+      "strict": true,
+      "description": "Schedule an appointment at the given slot.\n",
+      "parameters": {
+        "properties": {
+          "slot_id": {
+            "description": "The identifier for the selected time slot (as shown in the list of available slots).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "slot_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

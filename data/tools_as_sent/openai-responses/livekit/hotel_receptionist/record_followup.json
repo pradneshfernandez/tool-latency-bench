@@ -1,0 +1,54 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_followup.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "record_followup",
+    "description": "Capture something for a human to follow up on - sales/group leads, identity-field change requests (email/phone/name), callback requests, verification-failed callers, in-house early-checkout requests, and any other request you can't handle on this line. ALWAYS use this instead of saying \"someone will follow up\" with no record; otherwise the request vanishes.\n",
+    "parameters": {
+      "properties": {
+        "kind": {
+          "description": "One of housekeeping, sales_lead, identity_change, callback, verification_help, early_checkout, abandoned_booking, lost_and_found, other.",
+          "enum": [
+            "housekeeping",
+            "sales_lead",
+            "identity_change",
+            "callback",
+            "verification_help",
+            "early_checkout",
+            "abandoned_booking",
+            "lost_and_found",
+            "other"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "caller_name": {
+          "description": "Caller's name (ask if you don't already have it).",
+          "title": "Caller Name",
+          "type": "string"
+        },
+        "caller_phone": {
+          "description": "Caller's callback number - for an in-house guest, the room number works.",
+          "title": "Caller Phone",
+          "type": "string"
+        },
+        "summary": {
+          "description": "One sentence describing what they want, with enough detail for a human to act on it.",
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "caller_name",
+        "caller_phone",
+        "summary"
+      ],
+      "title": "RecordFollowupArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

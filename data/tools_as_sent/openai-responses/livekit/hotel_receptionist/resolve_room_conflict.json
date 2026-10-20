@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/resolve_room_conflict.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "resolve_room_conflict",
+    "description": "Fix a double-booked / no-room situation on the caller's verified booking - run this when lookup_booking warned the room is double-booked. It applies the house procedure in fixed order: move the guest to a free room of the same or better category (an upgrade is free), and only if nothing in the house fits, arrange the walk (partner hotel tonight on us, covered taxi, their room back from the return date). Returns the concrete facts; deliver them following the guest_walks policy (own the overbooking, explain plainly why it happened, \"at no extra cost to you\"). Full procedure: lookup_policy topic \"guest_walks\".",
+    "parameters": {
+      "properties": {},
+      "title": "ResolveRoomConflictArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/list_discoverable_user_tools.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "list_discoverable_user_tools",
+    "parameters": {
+      "properties": {},
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "List all tools that have been given to you by the agent.\n\nUse this to see what actions the agent has instructed you to perform."
+  }
+}

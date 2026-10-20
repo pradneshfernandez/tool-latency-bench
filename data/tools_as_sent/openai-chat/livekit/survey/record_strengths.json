@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/survey/record_strengths.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_strengths",
+      "strict": true,
+      "description": "Call to record a summary of the candidate's strengths.\n",
+      "parameters": {
+        "properties": {
+          "strengths_summary": {
+            "description": "A summary of the candidate's strengths",
+            "type": "string"
+          }
+        },
+        "required": [
+          "strengths_summary"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

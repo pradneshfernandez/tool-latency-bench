@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/wrap_up.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "wrap_up",
+    "description": "Use this when you've gathered substantial insights and are ready to wrap up.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

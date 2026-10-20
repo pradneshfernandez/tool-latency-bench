@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/healthcare/confirm_visit_reason.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "confirm_visit_reason",
+      "strict": true,
+      "description": "Call to record the user's reason for their appointment.\n",
+      "parameters": {
+        "properties": {
+          "visit_reason": {
+            "description": "The user's reason for visiting a doctor",
+            "type": "string"
+          }
+        },
+        "required": [
+          "visit_reason"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

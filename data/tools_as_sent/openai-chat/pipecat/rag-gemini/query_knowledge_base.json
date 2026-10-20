@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/rag-gemini/query_knowledge_base.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "query_knowledge_base",
+      "description": "Query the knowledge base for the answer to the question.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "The question to query the knowledge base with."
+          }
+        },
+        "required": [
+          "question"
+        ]
+      }
+    }
+  }
+}

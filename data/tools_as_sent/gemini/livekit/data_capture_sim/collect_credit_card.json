@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_credit_card.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Collect the user's credit card details (number, expiration, security code, cardholder).",
+        "name": "collect_credit_card"
+      }
+    ]
+  }
+}

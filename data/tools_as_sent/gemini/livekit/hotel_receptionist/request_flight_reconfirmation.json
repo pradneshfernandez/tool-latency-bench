@@ -1,0 +1,59 @@
+{
+  "tool_id": "livekit/hotel_receptionist/request_flight_reconfirmation.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Log a flight-reconfirmation request for an in-house guest: the concierge calls the carrier and rings the guest's room with the result. Collect ALL the flight details first and read the booking reference back before calling - a wrong reference makes the whole request useless.\n",
+        "name": "request_flight_reconfirmation",
+        "parameters_json_schema": {
+          "properties": {
+            "room": {
+              "description": "The guest's room number.",
+              "title": "Room",
+              "type": "string"
+            },
+            "airline": {
+              "description": "The carrier name (e.g. \"Iberia\").",
+              "title": "Airline",
+              "type": "string"
+            },
+            "flight_number": {
+              "description": "Airline code and number as given (e.g. \"IB 6174\").",
+              "title": "Flight Number",
+              "type": "string"
+            },
+            "flight_date": {
+              "description": "Flight date in ISO YYYY-MM-DD format. When the caller says a weekday (\"Thursday\"), resolve it against today and say the concrete date back (\"Thursday - that's June eleventh?\") BEFORE calling; a one-day slip sends the whole request to the wrong flight.",
+              "format": "date",
+              "title": "Flight Date",
+              "type": "string"
+            },
+            "booking_reference": {
+              "description": "The airline booking reference, letters and digits only.",
+              "title": "Booking Reference",
+              "type": "string"
+            },
+            "seat_check": {
+              "description": "True if the guest also wants their seat assignment checked - it's handled in the same carrier call.",
+              "title": "Seat Check",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "room",
+            "airline",
+            "flight_number",
+            "flight_date",
+            "booking_reference",
+            "seat_check"
+          ],
+          "title": "RequestFlightReconfirmationArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

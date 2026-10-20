@@ -1,0 +1,39 @@
+{
+  "tool_id": "livekit/hotel_receptionist/set_extras.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "set_extras",
+    "description": "Record the caller's answer on each extra, after you've offered them.\n\nEvery extra takes an explicit true or false, so pass false for the ones the caller turned down - all four false is a real answer and settles the question. Don't call this to skip the offer.\n\nThe stay's total is computed here, because every extra moves it. This return is where the number for the read-back comes from.",
+    "input_schema": {
+      "properties": {
+        "breakfast": {
+          "description": "True if the caller wants breakfast added.",
+          "type": "boolean"
+        },
+        "valet": {
+          "description": "True if the caller wants valet parking.",
+          "type": "boolean"
+        },
+        "late_checkout": {
+          "description": "True if the caller wants a late checkout.",
+          "type": "boolean"
+        },
+        "pets": {
+          "description": "True if the caller is bringing a pet.",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "breakfast",
+        "valet",
+        "late_checkout",
+        "pets"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

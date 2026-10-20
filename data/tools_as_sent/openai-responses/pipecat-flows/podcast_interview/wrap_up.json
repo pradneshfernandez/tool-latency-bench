@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/wrap_up.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "wrap_up",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Use this when you've gathered substantial insights and are ready to wrap up."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/client_delegation/lookup_weather.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Look up the current weather for a location.\n",
+        "name": "lookup_weather",
+        "parameters_json_schema": {
+          "properties": {
+            "location": {
+              "description": "The city or region to look up.",
+              "title": "Location",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "title": "LookupWeatherArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

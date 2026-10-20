@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/survey/disqualify.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call if the candidate refuses to cooperate, provides an unsatisfactory or inappropriate answer, or do not meet the prerequisites for the position.\nThis function will terminate the interview, record their disqualification, and hang up.",
+        "name": "disqualify",
+        "parameters_json_schema": {
+          "properties": {
+            "disqualification_reason": {
+              "description": "The justification for ending the interview (ex. Refuses to answer question)",
+              "title": "Disqualification Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "disqualification_reason"
+          ],
+          "title": "DisqualifyArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

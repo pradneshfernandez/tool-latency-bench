@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/multi_worker_handoff/transfer_to_router.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "transfer_to_router",
+      "description": "Hand the conversation back to the general assistant.\n\nCall this when the user no longer wants to make a reservation, or asks\na general question unrelated to booking a table.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Why control is being handed back (e.g. 'user changed\ntheir mind', 'user asked about the menu')."
+          }
+        },
+        "required": [
+          "reason"
+        ]
+      }
+    }
+  }
+}

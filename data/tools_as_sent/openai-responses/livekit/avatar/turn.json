@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/avatar/turn.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "turn",
+    "description": "Turn side to side. Only call when they explicitly ask you to turn.",
+    "parameters": {
+      "properties": {},
+      "title": "TurnArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

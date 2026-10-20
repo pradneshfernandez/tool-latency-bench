@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/backend/read_doc.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "read_doc",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "doc_id": {
+          "type": "string",
+          "description": "The doc's id, as search_docs reports it."
+        }
+      },
+      "required": [
+        "doc_id"
+      ]
+    },
+    "strict": null,
+    "description": "Read one of the team's internal docs."
+  }
+}

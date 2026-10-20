@@ -1,0 +1,32 @@
+{
+  "tool_id": "tau2-bench/telecom/get_bills_for_customer.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "get_bills_for_customer",
+    "parameters": {
+      "properties": {
+        "customer_id": {
+          "description": "ID of the customer.",
+          "title": "Customer Id",
+          "type": "string"
+        },
+        "limit": {
+          "default": 12,
+          "description": "Maximum number of bills to return.",
+          "title": "Limit",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "customer_id"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Retrieves a list of the customer's bills, most recent first."
+  }
+}

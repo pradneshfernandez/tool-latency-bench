@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/otel_trace/lookup_weather.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Called when the user asks for weather related information.\n",
+        "name": "lookup_weather",
+        "parameters_json_schema": {
+          "properties": {
+            "location": {
+              "description": "The location they are asking for",
+              "title": "Location",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "title": "LookupWeatherArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

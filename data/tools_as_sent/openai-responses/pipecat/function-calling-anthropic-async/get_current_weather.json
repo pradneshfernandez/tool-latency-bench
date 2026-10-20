@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/function-calling-anthropic-async/get_current_weather.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "get_current_weather",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "The city and state, e.g. \"San Francisco, CA\"."
+        }
+      },
+      "required": [
+        "location"
+      ]
+    },
+    "strict": null,
+    "description": "Get the current weather."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/context-summarization-manual-openai/summarize_conversation.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "summarize_conversation",
+      "description": "Summarize and compress the conversation history. Call this when the user asks you to summarize the conversation or when you want to free up context space.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

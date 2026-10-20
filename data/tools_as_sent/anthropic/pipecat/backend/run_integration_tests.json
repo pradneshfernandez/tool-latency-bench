@@ -1,0 +1,27 @@
+{
+  "tool_id": "pipecat/backend/run_integration_tests.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "run_integration_tests",
+    "description": "Run the integration test suite, or one of its files, against a live stack. Takes a while.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "An integration test file to run alone; the whole suite when omitted."
+        }
+      },
+      "required": []
+    }
+  }
+}

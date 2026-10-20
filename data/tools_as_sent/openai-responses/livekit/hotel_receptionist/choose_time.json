@@ -1,0 +1,39 @@
+{
+  "tool_id": "livekit/hotel_receptionist/choose_time.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "choose_time",
+    "description": "Record the chosen time slot and any special request.\n",
+    "parameters": {
+      "properties": {
+        "at_time": {
+          "description": "The slot the CALLER picked, from the open times set_party returned.",
+          "format": "time",
+          "title": "At Time",
+          "type": "string"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Optional special request (allergy, anniversary...), or null.",
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "at_time"
+      ],
+      "title": "ChooseTimeArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

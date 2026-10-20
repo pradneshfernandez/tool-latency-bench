@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/healthcare/handle_billing.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "handle_billing",
+    "description": "Call for any billing inquiries, like if the user wants to check their outstanding balance or if they want to pay a bill.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

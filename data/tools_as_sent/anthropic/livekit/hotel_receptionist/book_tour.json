@@ -1,0 +1,51 @@
+{
+  "tool_id": "livekit/hotel_receptionist/book_tour.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "book_tour",
+    "description": "Book a sightseeing tour through the desk. The catalog (times, prices, what's included) is in lookup_policy topic \"tours\" - look it up first and narrow with the caller (group or private, half or full day, date, party size) before booking. The options are for the CALLER to pick from, never pick for them. Once they pick and agree, THIS CALL is the booking - saying \"I'll get that set up\" books nothing; nothing exists until this returns a reference.\n",
+    "input_schema": {
+      "properties": {
+        "tour": {
+          "description": "The tour the caller picked.",
+          "enum": [
+            "half_day_city",
+            "full_day_city",
+            "private_city"
+          ],
+          "type": "string"
+        },
+        "on_date": {
+          "description": "Tour date in ISO YYYY-MM-DD format.",
+          "format": "date",
+          "type": "string"
+        },
+        "party_size": {
+          "description": "How many people are going.",
+          "minimum": 1,
+          "type": "integer"
+        },
+        "guest_name": {
+          "description": "The caller's full name.",
+          "type": "string"
+        },
+        "guest_phone": {
+          "description": "The caller's phone number, in case the operator needs to reach them.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tour",
+        "on_date",
+        "party_size",
+        "guest_name",
+        "guest_phone"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

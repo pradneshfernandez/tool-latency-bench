@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/hotel_receptionist/set_do_not_disturb.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Place a Do-Not-Disturb hold on an in-house guest's room when they ask not to be disturbed / to hold their calls and messages. It's a standing hold (until lifted), not a one-off like a single message or a wake-up call. Take the room number. Always tell the guest that a genuine emergency or hotel safety matter still overrides DND.\n",
+        "name": "set_do_not_disturb",
+        "parameters_json_schema": {
+          "properties": {
+            "room": {
+              "description": "The guest's room number.",
+              "title": "Room",
+              "type": "string"
+            }
+          },
+          "required": [
+            "room"
+          ],
+          "title": "SetDoNotDisturbArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

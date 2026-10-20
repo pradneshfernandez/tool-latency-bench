@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/avatar/dance.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "dance",
+    "description": "Dance for the user. Only call when they explicitly ask you to dance.",
+    "parameters": {
+      "properties": {},
+      "title": "DanceArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

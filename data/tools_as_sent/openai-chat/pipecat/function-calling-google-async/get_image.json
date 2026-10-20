@@ -1,0 +1,30 @@
+{
+  "tool_id": "pipecat/function-calling-google-async/get_image.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_image",
+      "description": "Fetch the user image and push it to the LLM.\n\nWhen called, this function pushes a UserImageRequestFrame upstream to the\ntransport. As a result, the transport will request the user image and push a\nUserImageRawFrame downstream which will be added to the context by the LLM\nassistant aggregator. The result_callback will be invoked once the image is\nretrieved and processed.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "description": "The ID of the user to grab the image from."
+          },
+          "question": {
+            "type": "string",
+            "description": "The question that the user is asking about the image."
+          }
+        },
+        "required": [
+          "user_id",
+          "question"
+        ]
+      }
+    }
+  }
+}

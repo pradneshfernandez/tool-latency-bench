@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/verify_birthday.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "verify_birthday",
+    "description": "Verify the user has provided their correct birthday. Once confirmed, the next step is to record the user's prescriptions.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "type": "string",
+          "description": "The user's birthdate (convert to YYYY-MM-DD format)."
+        }
+      },
+      "required": [
+        "birthday"
+      ]
+    }
+  }
+}

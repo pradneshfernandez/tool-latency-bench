@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat-flows/llm_switching/summarize_conversation.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Summarize the conversation so far.",
+        "name": "summarize_conversation",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

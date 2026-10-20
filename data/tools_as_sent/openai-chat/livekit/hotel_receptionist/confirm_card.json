@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/hotel_receptionist/confirm_card.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "confirm_card",
+      "strict": true,
+      "description": "Finalize the card capture. Call only after the caller has agreed to the read-back of the last four digits and expiration.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

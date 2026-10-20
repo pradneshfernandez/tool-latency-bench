@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat/backend/apply_patch.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "apply_patch",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The file to change."
+        },
+        "content": {
+          "type": "string",
+          "description": "The file's new content, in full."
+        }
+      },
+      "required": [
+        "path",
+        "content"
+      ]
+    },
+    "strict": null,
+    "description": "Replace a file's content in the codebase."
+  }
+}

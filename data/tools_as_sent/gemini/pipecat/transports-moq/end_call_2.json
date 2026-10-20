@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat/transports-moq/end_call_2.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Gracefully end the call. Use this when the user says goodbye, indicates they're finished, or otherwise wants to hang up. Deliver a short farewell in the same turn — the pipeline waits for that utterance to finish playing before it shuts down.",
+        "name": "end_call",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

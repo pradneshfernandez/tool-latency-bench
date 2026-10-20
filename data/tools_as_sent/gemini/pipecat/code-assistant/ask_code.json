@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/code-assistant/ask_code.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Ask a question about the codebase. A Claude Code worker will\nexplore the project by reading files, searching code, and running\ncommands. It remembers previous questions for follow-ups.",
+        "name": "ask_code",
+        "parameters": {
+          "properties": {
+            "question": {
+              "description": "The question about code, files, structure,\ndependencies, or anything in the project.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "question"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

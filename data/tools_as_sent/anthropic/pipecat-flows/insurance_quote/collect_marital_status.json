@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/collect_marital_status.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "collect_marital_status",
+    "description": "Record marital status after customer provides it.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "marital_status": {
+          "type": "string",
+          "description": "The customer's marital status. Must be one of \"single\", \"married\"."
+        }
+      },
+      "required": [
+        "marital_status"
+      ]
+    }
+  }
+}

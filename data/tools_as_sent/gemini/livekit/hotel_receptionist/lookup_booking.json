@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_booking.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Read-only lookup of a confirmed room booking. Use this when the caller wants to\ncheck or recall their booking details (dates, room type, what they're paying, who\nit's under, check-in time) without changing anything. Verifies the caller first.",
+        "name": "lookup_booking"
+      }
+    ]
+  }
+}

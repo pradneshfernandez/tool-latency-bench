@@ -1,0 +1,42 @@
+{
+  "tool_id": "livekit/hotel_receptionist/dispatch_emergency.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "dispatch_emergency",
+      "strict": true,
+      "description": "EMERGENCY ONLY - a real, in-progress danger. Use it the MOMENT you have the room number and what's happening: no verification, no other questions first. It alerts the duty manager and sends hotel staff/security to the room - that dispatch is the PRIMARY action and shows the hotel owns it; outside help (911 / fire brigade / police) is a secondary direction you give the caller, never a substitute for sending the hotel's own people. Classify the kind:\n- \"medical\" - someone hurt, collapsed, unresponsive, not breathing, a health crisis.\n  - \"fire\" - fire, smoke, or a fire alarm going off.\n  - \"security\" - a safety/security threat: an intruder or someone forcing a door, assault or violence, a theft.\nNOT for nuisances - a noisy neighbour with nobody in danger is record_followup (kind=\"other\"), not this.",
+      "parameters": {
+        "properties": {
+          "room": {
+            "description": "The room number (e.g. \"206\"). Get this first if you don't have it.",
+            "type": "string"
+          },
+          "kind": {
+            "description": "medical, fire, or security - classify what's happening.",
+            "enum": [
+              "medical",
+              "fire",
+              "security"
+            ],
+            "type": "string"
+          },
+          "situation": {
+            "description": "One short sentence: what's happening to whom.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "room",
+          "kind",
+          "situation"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/persistent-context-anthropic/save_conversation.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "save_conversation",
+      "description": "Save the current conversation. Use this function to persist the current conversation to external storage.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

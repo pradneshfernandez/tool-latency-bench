@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat/sensor-controller/get_current_reading.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "get_current_reading",
+    "description": "Read the sensor's current temperature in degrees Celsius.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

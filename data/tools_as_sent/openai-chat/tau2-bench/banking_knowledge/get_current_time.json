@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_current_time.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_current_time",
+      "description": "Get the current time. Use this to get the current timestamp for logging verification records.",
+      "parameters": {
+        "properties": {},
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

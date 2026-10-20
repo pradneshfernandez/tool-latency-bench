@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/azure_realtime_agent/lookup_weather.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_weather",
+      "strict": true,
+      "description": "Called when the user asks for weather related information.\n",
+      "parameters": {
+        "properties": {
+          "location": {
+            "description": "The city or region to look up the weather for",
+            "type": "string"
+          }
+        },
+        "required": [
+          "location"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

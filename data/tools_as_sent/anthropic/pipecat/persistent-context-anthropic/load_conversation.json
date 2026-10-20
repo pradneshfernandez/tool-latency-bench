@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/persistent-context-anthropic/load_conversation.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "load_conversation",
+    "description": "Load a conversation history. Use this function to load a conversation history into the current session.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "The filename of the conversation history to load."
+        }
+      },
+      "required": [
+        "filename"
+      ]
+    }
+  }
+}

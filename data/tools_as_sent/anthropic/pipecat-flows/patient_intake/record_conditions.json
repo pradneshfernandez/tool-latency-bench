@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_conditions.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "record_conditions",
+    "description": "Record the user's medical conditions. Once confirmed, the next step is to collect visit reasons.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "List of condition objects, each with \"name\" (str, the user's medical condition)."
+        }
+      },
+      "required": [
+        "conditions"
+      ]
+    }
+  }
+}

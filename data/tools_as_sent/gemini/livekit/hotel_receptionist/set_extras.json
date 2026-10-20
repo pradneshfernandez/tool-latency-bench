@@ -1,0 +1,46 @@
+{
+  "tool_id": "livekit/hotel_receptionist/set_extras.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the caller's answer on each extra, after you've offered them.\n\nEvery extra takes an explicit true or false, so pass false for the ones the caller turned down - all four false is a real answer and settles the question. Don't call this to skip the offer.\n\nThe stay's total is computed here, because every extra moves it. This return is where the number for the read-back comes from.",
+        "name": "set_extras",
+        "parameters_json_schema": {
+          "properties": {
+            "breakfast": {
+              "description": "True if the caller wants breakfast added.",
+              "title": "Breakfast",
+              "type": "boolean"
+            },
+            "valet": {
+              "description": "True if the caller wants valet parking.",
+              "title": "Valet",
+              "type": "boolean"
+            },
+            "late_checkout": {
+              "description": "True if the caller wants a late checkout.",
+              "title": "Late Checkout",
+              "type": "boolean"
+            },
+            "pets": {
+              "description": "True if the caller is bringing a pet.",
+              "title": "Pets",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "breakfast",
+            "valet",
+            "late_checkout",
+            "pets"
+          ],
+          "title": "SetExtrasArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_card_number.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the card number, only once the caller has given the entire number.\n",
+        "name": "record_card_number",
+        "parameters_json_schema": {
+          "properties": {
+            "card_number": {
+              "description": "All the digits, no spaces or dashes.",
+              "title": "Card Number",
+              "type": "string"
+            }
+          },
+          "required": [
+            "card_number"
+          ],
+          "title": "RecordCardNumberArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

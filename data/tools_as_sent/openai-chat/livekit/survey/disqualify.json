@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/survey/disqualify.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "disqualify",
+      "strict": true,
+      "description": "Call if the candidate refuses to cooperate, provides an unsatisfactory or inappropriate answer, or do not meet the prerequisites for the position.\nThis function will terminate the interview, record their disqualification, and hang up.",
+      "parameters": {
+        "properties": {
+          "disqualification_reason": {
+            "description": "The justification for ending the interview (ex. Refuses to answer question)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "disqualification_reason"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

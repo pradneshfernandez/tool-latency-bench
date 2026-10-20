@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/backend/read_doc.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Read one of the team's internal docs.",
+        "name": "read_doc",
+        "parameters": {
+          "properties": {
+            "doc_id": {
+              "description": "The doc's id, as search_docs reports it.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "doc_id"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

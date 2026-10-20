@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/verify_birthday.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Verify the user has provided their correct birthday. Once confirmed, the next step is to record the user's prescriptions.",
+        "name": "verify_birthday",
+        "parameters": {
+          "properties": {
+            "birthday": {
+              "description": "The user's birthdate (convert to YYYY-MM-DD format).",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "birthday"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

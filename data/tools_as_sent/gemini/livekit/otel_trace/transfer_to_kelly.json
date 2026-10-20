@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/otel_trace/transfer_to_kelly.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Transfer the call to Kelly.",
+        "name": "transfer_to_kelly"
+      }
+    ]
+  }
+}

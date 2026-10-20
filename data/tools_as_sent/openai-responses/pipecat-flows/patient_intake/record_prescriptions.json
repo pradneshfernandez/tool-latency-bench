@@ -1,0 +1,27 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_prescriptions.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "record_prescriptions",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prescriptions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "List of prescription objects, each with \"medication\" (str, the medication's name) and \"dosage\" (str, the prescription's dosage)."
+        }
+      },
+      "required": [
+        "prescriptions"
+      ]
+    },
+    "strict": null,
+    "description": "Record the user's prescriptions. Once confirmed, the next step is to collect allergy information."
+  }
+}

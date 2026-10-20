@@ -1,0 +1,34 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_expiration.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the card's expiration date.\n",
+        "name": "record_expiration",
+        "parameters_json_schema": {
+          "properties": {
+            "month": {
+              "description": "Expiration month as a number, e.g. 4 for April.",
+              "title": "Month",
+              "type": "integer"
+            },
+            "year": {
+              "description": "Expiration year, last two digits, e.g. 28 for 2028.",
+              "title": "Year",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "month",
+            "year"
+          ],
+          "title": "RecordExpirationArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "tool_id": "livekit/hotel_receptionist/set_stay.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "set_stay",
+    "description": "Record the stay dates + party size. The return lists each available room type with rate and view - that is reference material for answering \"how much?\" / \"what's the cheapest?\" and for OFFERING the choice to the caller. Never act on it by picking a type yourself; the next step after this tool is a question, not another tool call.\n",
+    "parameters": {
+      "properties": {
+        "check_in": {
+          "description": "Check-in date in ISO YYYY-MM-DD format (e.g. \"2026-01-20\").",
+          "format": "date",
+          "title": "Check In",
+          "type": "string"
+        },
+        "check_out": {
+          "description": "Check-out date in ISO YYYY-MM-DD format.",
+          "format": "date",
+          "title": "Check Out",
+          "type": "string"
+        },
+        "guests": {
+          "description": "Number of guests (must be >= 1; ask the caller if not specified).",
+          "maximum": 6,
+          "minimum": 1,
+          "title": "Guests",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "check_in",
+        "check_out",
+        "guests"
+      ],
+      "title": "SetStayArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

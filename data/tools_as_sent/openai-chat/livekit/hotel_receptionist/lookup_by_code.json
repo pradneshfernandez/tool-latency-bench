@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_by_code.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_by_code",
+      "strict": true,
+      "description": "Look up a booking by last name + confirmation code.\n",
+      "parameters": {
+        "properties": {
+          "last_name": {
+            "description": "Caller's last name.",
+            "type": "string"
+          },
+          "code": {
+            "description": "Confirmation code, e.g. 'HTL-7A3K'.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "last_name",
+          "code"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

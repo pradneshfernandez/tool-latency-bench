@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/realtime-openai-live-client-delegation-speaking-policy/rebook_flight.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "rebook_flight",
+    "description": "Move the booking onto another flight.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "flight_number": {
+          "type": "string",
+          "description": "The flight to move the booking to, e.g. \"UA716\"."
+        }
+      },
+      "required": [
+        "flight_number"
+      ]
+    }
+  }
+}

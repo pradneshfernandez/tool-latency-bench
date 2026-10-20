@@ -1,0 +1,32 @@
+{
+  "tool_id": "tau2-bench/airline/get_flight_status.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "get_flight_status",
+    "parameters": {
+      "properties": {
+        "flight_number": {
+          "description": "The flight number.",
+          "title": "Flight Number",
+          "type": "string"
+        },
+        "date": {
+          "description": "The date of the flight.",
+          "title": "Date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "flight_number",
+        "date"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Get the status of a flight."
+  }
+}

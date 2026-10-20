@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/hotel_receptionist/give_up.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "give_up",
+    "description": "Caller wants to abandon the reservation.\n",
+    "input_schema": {
+      "properties": {
+        "reason": {
+          "description": "short explanation.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

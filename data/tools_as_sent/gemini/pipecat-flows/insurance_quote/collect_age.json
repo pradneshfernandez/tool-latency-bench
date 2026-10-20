@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/collect_age.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record customer's age.",
+        "name": "collect_age",
+        "parameters": {
+          "properties": {
+            "age": {
+              "description": "The customer's age.",
+              "type": "INTEGER"
+            }
+          },
+          "required": [
+            "age"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

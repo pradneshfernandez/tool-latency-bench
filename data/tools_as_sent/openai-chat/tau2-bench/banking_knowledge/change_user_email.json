@@ -1,0 +1,33 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/change_user_email.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "change_user_email",
+      "description": "Change the email address for a user.",
+      "parameters": {
+        "properties": {
+          "user_id": {
+            "description": "The ID of the user whose email should be changed",
+            "title": "User Id",
+            "type": "string"
+          },
+          "new_email": {
+            "description": "The new email address to set for the user",
+            "title": "New Email",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "new_email"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

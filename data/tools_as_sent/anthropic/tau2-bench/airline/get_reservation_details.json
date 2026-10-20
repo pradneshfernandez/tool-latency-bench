@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/airline/get_reservation_details.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_reservation_details",
+    "input_schema": {
+      "properties": {
+        "reservation_id": {
+          "description": "The reservation ID, such as '8JX2WO'.",
+          "title": "Reservation Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reservation_id"
+      ],
+      "type": "object"
+    },
+    "description": "Get the details of a reservation."
+  }
+}

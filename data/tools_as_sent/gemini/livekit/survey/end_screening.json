@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/survey/end_screening.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call when the interview/screening is concluded to hang up.",
+        "name": "end_screening"
+      }
+    ]
+  }
+}

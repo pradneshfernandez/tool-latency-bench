@@ -1,0 +1,34 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/submit_referral.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "submit_referral",
+        "description": "Submit a referral request to refer someone to open an account.",
+        "parameters": {
+          "properties": {
+            "user_id": {
+              "description": "Your user ID (the referrer)",
+              "title": "User Id",
+              "type": "string"
+            },
+            "account_type": {
+              "description": "The type of account you are referring someone to open",
+              "title": "Account Type",
+              "type": "string"
+            }
+          },
+          "required": [
+            "user_id",
+            "account_type"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

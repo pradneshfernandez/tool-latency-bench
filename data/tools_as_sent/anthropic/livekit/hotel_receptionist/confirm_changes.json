@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/confirm_changes.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "confirm_changes",
+    "description": "Write the pending changes back to the booking. Call this once the\ncaller has nothing more to change.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

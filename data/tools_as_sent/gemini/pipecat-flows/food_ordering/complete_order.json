@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat-flows/food_ordering/complete_order.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "User confirms the order is correct.",
+        "name": "complete_order",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

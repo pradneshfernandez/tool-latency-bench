@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/list_discoverable_user_tools.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "list_discoverable_user_tools",
+      "description": "List all tools that have been given to you by the agent.\n\nUse this to see what actions the agent has instructed you to perform.",
+      "parameters": {
+        "properties": {},
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

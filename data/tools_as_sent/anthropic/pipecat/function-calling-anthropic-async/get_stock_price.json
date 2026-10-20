@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/function-calling-anthropic-async/get_stock_price.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "get_stock_price",
+    "description": "Get the current share price for a stock.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "The ticker symbol, e.g. \"NVDA\"."
+        }
+      },
+      "required": [
+        "symbol"
+      ]
+    }
+  }
+}

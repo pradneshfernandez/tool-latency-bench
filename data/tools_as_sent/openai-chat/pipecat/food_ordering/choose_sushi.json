@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/food_ordering/choose_sushi.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "choose_sushi",
+      "description": "User wants to order sushi. Let's get that order started.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

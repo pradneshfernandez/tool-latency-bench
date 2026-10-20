@@ -1,0 +1,33 @@
+{
+  "tool_id": "pipecat/realtime-ultravox-async-tool/get_current_weather.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "get_current_weather",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "The city and state, e.g. San Francisco, CA"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "celsius",
+            "fahrenheit"
+          ],
+          "description": "The temperature unit to use. Infer this from the users location."
+        }
+      },
+      "required": [
+        "location",
+        "format"
+      ]
+    },
+    "strict": null,
+    "description": "Get the current weather"
+  }
+}

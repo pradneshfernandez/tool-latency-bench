@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/food_ordering/revise_order.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "revise_order",
+      "description": "User wants to make changes to their order.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

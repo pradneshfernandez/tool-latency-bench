@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat-flows/multi_worker_handoff/collect_party_size.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "collect_party_size",
+      "description": "Record the number of people in the party.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "integer",
+            "description": "Number of people in the party. Must be between 1 and 12."
+          }
+        },
+        "required": [
+          "size"
+        ]
+      }
+    }
+  }
+}

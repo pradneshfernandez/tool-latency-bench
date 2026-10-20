@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/airline/get_user_details.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_user_details",
+        "description": "Get the details of a user, including their reservations.",
+        "parameters": {
+          "properties": {
+            "user_id": {
+              "description": "The user ID, such as 'sara_doe_496'.",
+              "title": "User Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "user_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

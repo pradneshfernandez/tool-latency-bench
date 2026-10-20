@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/openclaw-agent/send_to_agent.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "send_to_agent",
+    "description": "Send the user's request to the agent, or add to what it is doing.\n\nUse this both to start new work and to pass along a follow-up, correction,\nor change of mind while the agent is already working. Forward what the user\nsaid; the agent decides whether that starts a task or redirects the running\none. The result arrives later and you will be asked to speak it.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "user_input": {
+          "type": "string",
+          "description": "What the user wants done or wants to add, keeping the\ndetails that matter."
+        }
+      },
+      "required": [
+        "user_input"
+      ]
+    }
+  }
+}

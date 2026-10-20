@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/start_room_booking.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Start the room-booking flow. Call it the MOMENT the caller wants to book - never pre-collect name, email, phone, or card yourself first; the flow gathers everything. Its return is the FINAL result of the booking (\"You're booked\", code, total): relay that to the caller and move on - there is nothing further to confirm or call afterwards.",
+        "name": "start_room_booking"
+      }
+    ]
+  }
+}

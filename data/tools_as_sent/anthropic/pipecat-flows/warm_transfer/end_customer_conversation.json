@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/warm_transfer/end_customer_conversation.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "end_customer_conversation",
+    "description": "End the conversation.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

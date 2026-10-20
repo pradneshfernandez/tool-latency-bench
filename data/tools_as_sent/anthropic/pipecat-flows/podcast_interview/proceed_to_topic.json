@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/proceed_to_topic.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "proceed_to_topic",
+    "description": "Use after the guest has introduced themselves.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "guest_summary": {
+          "type": "string",
+          "description": "A quick summary of who the guest is (name, role, area of expertise, etc.)."
+        }
+      },
+      "required": [
+        "guest_summary"
+      ]
+    }
+  }
+}

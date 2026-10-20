@@ -1,0 +1,14 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/request_human_agent_transfer.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "request_human_agent_transfer",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "description": "Request to be transferred to a human agent for assistance.\n\nUse this when you want to speak with a real human agent instead of\nthe automated system. Each request will be logged and processed."
+  }
+}

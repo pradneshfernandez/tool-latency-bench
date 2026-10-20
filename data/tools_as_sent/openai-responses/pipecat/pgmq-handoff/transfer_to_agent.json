@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat/pgmq-handoff/transfer_to_agent.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "transfer_to_agent",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "agent": {
+          "type": "string",
+          "description": "The agent to transfer to (e.g. 'greeter', 'support')."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Why the user is being transferred."
+        }
+      },
+      "required": [
+        "agent",
+        "reason"
+      ]
+    },
+    "strict": null,
+    "description": "Transfer the user to another agent."
+  }
+}

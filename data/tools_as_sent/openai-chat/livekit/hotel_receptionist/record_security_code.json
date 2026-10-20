@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_security_code.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_security_code",
+      "strict": true,
+      "description": "Record the card's security code.\n",
+      "parameters": {
+        "properties": {
+          "security_code": {
+            "description": "The 3 or 4 digit code, leading zeros included.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "security_code"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

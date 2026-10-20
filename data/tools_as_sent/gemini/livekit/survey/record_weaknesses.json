@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/survey/record_weaknesses.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call to record a summary of the candidate's weaknesses.\n",
+        "name": "record_weaknesses",
+        "parameters_json_schema": {
+          "properties": {
+            "weaknesses_summary": {
+              "description": "A summary of the candidate's weaknesses",
+              "title": "Weaknesses Summary",
+              "type": "string"
+            }
+          },
+          "required": [
+            "weaknesses_summary"
+          ],
+          "title": "RecordWeaknessesArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

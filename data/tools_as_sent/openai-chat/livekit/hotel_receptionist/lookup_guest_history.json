@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_guest_history.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_guest_history",
+      "strict": true,
+      "description": "Look up a returning guest's remembered preferences from past stays (floor/room preferences, bedding, known sensitivities). Use it when a caller presents as a repeat/returning guest (\"booking another stay\", \"I've stayed before\") or you otherwise recognize them, so you can proactively offer to set up what they've liked before. Returns their on-file preferences, or says there's no history. Only ever surface preferences this returns - never invent or assume preferences not on file - and only for the guest themselves.\n",
+      "parameters": {
+        "properties": {
+          "last_name": {
+            "description": "The returning guest's last name.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "last_name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

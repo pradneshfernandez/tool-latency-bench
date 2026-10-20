@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_invoice.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "lookup_invoice",
+    "description": "Verify the caller, fetch their invoice, and read it back.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

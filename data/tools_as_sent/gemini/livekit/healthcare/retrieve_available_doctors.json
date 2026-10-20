@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/healthcare/retrieve_available_doctors.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call if the user inquires about the available doctors in the network",
+        "name": "retrieve_available_doctors"
+      }
+    ]
+  }
+}

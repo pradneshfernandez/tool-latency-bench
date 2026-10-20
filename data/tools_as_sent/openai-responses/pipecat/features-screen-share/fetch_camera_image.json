@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat/features-screen-share/fetch_camera_image.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "fetch_camera_image",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The ID of the user to grab the image from."
+        },
+        "question": {
+          "type": "string",
+          "description": "The question that the user is asking about the image."
+        }
+      },
+      "required": [
+        "user_id",
+        "question"
+      ]
+    },
+    "strict": null,
+    "description": "Get an image from the user's camera to answer a question about it."
+  }
+}

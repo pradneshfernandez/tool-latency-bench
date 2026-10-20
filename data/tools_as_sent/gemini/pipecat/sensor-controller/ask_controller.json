@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/sensor-controller/ask_controller.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Ask the temperature sensor controller anything about the sensor.\n\nForward the user's request verbatim and speak back the answer.",
+        "name": "ask_controller",
+        "parameters": {
+          "properties": {
+            "question": {
+              "description": "The user's question or instruction to forward to the controller.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "question"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

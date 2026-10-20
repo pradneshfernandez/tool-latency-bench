@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/turn-management-filter-incomplete-turns-function-calling/get_current_weather.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "get_current_weather",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "The city and state or country, e.g. \"Paris, France\"."
+        }
+      },
+      "required": [
+        "location"
+      ]
+    },
+    "strict": null,
+    "description": "Return the current weather for a location.\n\nA stub that always reports the same conditions — replace with a real\nweather API in production."
+  }
+}

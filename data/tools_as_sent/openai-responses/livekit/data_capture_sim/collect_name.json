@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_name.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "collect_name",
+    "description": "Collect the user's first and last name.",
+    "parameters": {
+      "properties": {},
+      "title": "CollectNameArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

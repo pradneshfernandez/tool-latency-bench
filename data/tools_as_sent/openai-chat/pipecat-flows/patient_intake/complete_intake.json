@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/complete_intake.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "complete_intake",
+      "description": "Complete the intake process.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

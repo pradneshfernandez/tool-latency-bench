@@ -1,0 +1,46 @@
+{
+  "tool_id": "livekit/hotel_receptionist/book_airport_car.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "book_airport_car",
+      "strict": true,
+      "description": "Book the hotel car to the airport for an in-house guest: flat eighty-five dollars to SFO, seats up to four with luggage, charged to the room. (Taxis are hailed at the door, metered roughly fifty-five to seventy dollars, and can't be reserved ahead - cost comparison in lookup_policy topic \"location_and_transport\".) Sanity-check the pickup time against the flight when you know it - about three hours before departure is right for international.\n",
+      "parameters": {
+        "properties": {
+          "room": {
+            "description": "The guest's room number.",
+            "type": "string"
+          },
+          "pickup_date": {
+            "description": "Pickup date in ISO YYYY-MM-DD format. Resolve a weekday against today and confirm the concrete date with the caller before booking.",
+            "format": "date",
+            "type": "string"
+          },
+          "pickup_time": {
+            "description": "Pickup time in 24-hour HH:MM format (2:30 p.m. = \"14:30\").",
+            "format": "time",
+            "type": "string"
+          },
+          "passengers": {
+            "description": "How many people are riding - ASK the caller; never assume one.",
+            "maximum": 4,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "room",
+          "pickup_date",
+          "pickup_time",
+          "passengers"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/food_ordering_advanced_functionschema/choose_sushi.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "choose_sushi",
+    "description": "User wants to order sushi. Let's get that order started.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_expiration.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_expiration",
+      "strict": true,
+      "description": "Record the card's expiration date.\n",
+      "parameters": {
+        "properties": {
+          "month": {
+            "description": "Expiration month as a number, e.g. 4 for April.",
+            "type": "integer"
+          },
+          "year": {
+            "description": "Expiration year, last two digits, e.g. 28 for 2028.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "month",
+          "year"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

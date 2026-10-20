@@ -1,0 +1,30 @@
+{
+  "tool_id": "pipecat/document-review/_ui.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "_ui",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "object"
+        },
+        "timeout": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "payload"
+      ]
+    },
+    "strict": null,
+    "description": "Send a job to the UI worker and hand its answer to the voice LLM."
+  }
+}

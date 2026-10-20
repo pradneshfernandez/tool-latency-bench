@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/hotel_receptionist/give_up_4.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "give_up",
+      "strict": true,
+      "description": "End the verification step: after repeated failures, OR the moment the caller pivots to something verification isn't needed for (a new booking, a general question, giving up on the lookup). The right tools for their request become available again once this returns.\n",
+      "parameters": {
+        "properties": {
+          "reason": {
+            "description": "short explanation (e.g. \"no booking found - caller wants a new booking instead\")",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

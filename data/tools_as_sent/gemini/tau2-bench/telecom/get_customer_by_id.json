@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/telecom/get_customer_by_id.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_customer_by_id",
+        "description": "Retrieves a customer directly by their unique ID.",
+        "parameters": {
+          "properties": {
+            "customer_id": {
+              "description": "The unique identifier of the customer.",
+              "title": "Customer Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "customer_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

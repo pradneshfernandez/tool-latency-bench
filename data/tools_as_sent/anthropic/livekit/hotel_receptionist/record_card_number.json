@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_card_number.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_card_number",
+    "description": "Record the card number, only once the caller has given the entire number.\n",
+    "input_schema": {
+      "properties": {
+        "card_number": {
+          "description": "All the digits, no spaces or dashes.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "card_number"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

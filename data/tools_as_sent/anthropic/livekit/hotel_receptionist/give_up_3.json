@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/hotel_receptionist/give_up_3.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "give_up",
+    "description": "End the modification flow, leaving the booking unchanged: the caller no longer wants changes, OR they need something this flow can't do (cancellation, manager callback, followup, anything else). The right tools for their request become available once this returns.\n",
+    "input_schema": {
+      "properties": {
+        "reason": {
+          "description": "short explanation (e.g. \"guest wants a manager callback instead\").",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

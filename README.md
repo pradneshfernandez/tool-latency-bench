@@ -55,6 +55,30 @@ the same tools, so exact duplicates (same name, description and parameters) were
 keeping the first copy by file path: 280 extracted, 105 kept. Other sources keep every tool.
 
 
+## As-sent definitions
+
+Frameworks rewrite tool definitions before sending them, differently per provider, so
+`data/tools_as_sent/<provider>/<tool_id>` stores each tool exactly as it appears in the request
+body (`payload`), for `openai-chat`, `openai-responses`, `anthropic` and `gemini`. Covered: the
+τ²-bench (via litellm), Pipecat, Pipecat Flows and LiveKit tools. Examples of what changes:
+
+- LiveKit's default OpenAI and Anthropic paths use strict mode: every `title` is removed,
+  `additionalProperties: false` is added and all properties become required.
+- τ²-bench (litellm) keeps nested `title` fields for every provider except the top-level one for
+  Anthropic; for Gemini it inlines `$defs`/`$ref`.
+- For Gemini, the google-genai SDK used by Pipecat uppercases types and camelCases keys.
+
+These files are derived from `data/tools_pool_v0/` by capturing each framework's real request at a
+local HTTP server (no provider is contacted). Never edit them by hand; rerun the harness:
+
+```
+python scripts/as_sent/build.py --check   # rebuild in a temp dir, diff against data/tools_as_sent
+python scripts/as_sent/report.py          # per framework x provider: what changes vs the pool
+```
+
+Framework commits come from `scripts/extract/sources.json`; package versions (litellm, pipecat-ai,
+provider SDKs) are pinned in `scripts/as_sent/requirements-*.txt`.
+
 ## License
 
 MIT, see [LICENSE](LICENSE). The tool definitions in `data/tools_pool_v0/` keep their original

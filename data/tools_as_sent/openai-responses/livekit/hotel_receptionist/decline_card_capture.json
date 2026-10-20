@@ -1,0 +1,25 @@
+{
+  "tool_id": "livekit/hotel_receptionist/decline_card_capture.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "decline_card_capture",
+    "description": "The caller explicitly refuses to provide their card.\n",
+    "parameters": {
+      "properties": {
+        "reason": {
+          "description": "A short explanation of why the caller declined.",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "title": "DeclineCardCaptureArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

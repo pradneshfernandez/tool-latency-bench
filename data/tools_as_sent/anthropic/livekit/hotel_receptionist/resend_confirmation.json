@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/hotel_receptionist/resend_confirmation.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "resend_confirmation",
+    "description": "Re-send a document for an existing booking to the email already on file for it - the booking confirmation, or an itemized folio of the stay. Verifies the caller first (this hits their account). It only ever goes to the address on record; there is no way to send it to a different address the caller reads out - if they want it somewhere else, their contact email on the booking has to be updated first (record_followup, kind=\"identity_change\"). This actually sends - only tell the caller it's on its way after this returns.\n",
+    "input_schema": {
+      "properties": {
+        "kind": {
+          "description": "Which document to re-send.",
+          "enum": [
+            "booking_confirmation",
+            "folio"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

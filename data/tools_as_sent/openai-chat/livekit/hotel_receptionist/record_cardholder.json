@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_cardholder.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_cardholder",
+      "strict": true,
+      "description": "Record the name as it appears on the card.\n",
+      "parameters": {
+        "properties": {
+          "first_name": {
+            "description": "Cardholder's first name, exactly as given.",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "Cardholder's last name, exactly as given.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "first_name",
+          "last_name"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

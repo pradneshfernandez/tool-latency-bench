@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/features-user-email-gathering/store_user_emails.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "store_user_emails",
+    "description": "Store user emails when confirmed.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "emails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of user emails."
+        }
+      },
+      "required": [
+        "emails"
+      ]
+    }
+  }
+}

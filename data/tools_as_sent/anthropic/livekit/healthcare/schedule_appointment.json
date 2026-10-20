@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/healthcare/schedule_appointment.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "schedule_appointment",
+    "description": "Call to schedule an appointment for the user. Do not ask for any information in advance.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

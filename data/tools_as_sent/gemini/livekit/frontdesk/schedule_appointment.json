@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/frontdesk/schedule_appointment.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Schedule an appointment at the given slot.\n",
+        "name": "schedule_appointment",
+        "parameters_json_schema": {
+          "properties": {
+            "slot_id": {
+              "description": "The identifier for the selected time slot (as shown in the list of available slots).",
+              "title": "Slot Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "slot_id"
+          ],
+          "title": "ScheduleAppointmentArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

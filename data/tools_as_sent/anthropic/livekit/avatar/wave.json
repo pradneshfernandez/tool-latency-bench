@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/avatar/wave.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "wave",
+    "description": "Wave to the user. Only call when they explicitly ask you to wave.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

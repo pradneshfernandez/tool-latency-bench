@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_phone_number.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "collect_phone_number",
+    "description": "Collect the user's phone number.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/request_human_agent_transfer.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "request_human_agent_transfer",
+        "description": "Request to be transferred to a human agent for assistance.\n\nUse this when you want to speak with a real human agent instead of\nthe automated system. Each request will be logged and processed.",
+        "parameters": {
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_credit_card.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "collect_credit_card",
+      "strict": true,
+      "description": "Collect the user's credit card details (number, expiration, security code, cardholder).",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

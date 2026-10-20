@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/backend/search_docs.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Search the team's internal docs. Takes a few seconds.",
+        "name": "search_docs",
+        "parameters": {
+          "properties": {
+            "query": {
+              "description": "What to look for.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

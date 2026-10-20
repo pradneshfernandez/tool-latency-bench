@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/healthcare/retrieve_available_doctors.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "retrieve_available_doctors",
+    "description": "Call if the user inquires about the available doctors in the network",
+    "parameters": {
+      "properties": {},
+      "title": "RetrieveAvailableDoctorsArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/collect_marital_status.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "collect_marital_status",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "marital_status": {
+          "type": "string",
+          "description": "The customer's marital status. Must be one of \"single\", \"married\"."
+        }
+      },
+      "required": [
+        "marital_status"
+      ]
+    },
+    "strict": null,
+    "description": "Record marital status after customer provides it."
+  }
+}

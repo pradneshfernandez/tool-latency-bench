@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_invoice.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "lookup_invoice",
+    "description": "Verify the caller, fetch their invoice, and read it back.",
+    "parameters": {
+      "properties": {},
+      "title": "LookupInvoiceArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

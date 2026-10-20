@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_phone_number.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "collect_phone_number",
+    "description": "Collect the user's phone number.",
+    "parameters": {
+      "properties": {},
+      "title": "CollectPhoneNumberArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

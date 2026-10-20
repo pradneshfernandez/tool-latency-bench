@@ -1,0 +1,33 @@
+{
+  "tool_id": "tau2-bench/airline/send_certificate.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "send_certificate",
+      "description": "Send a certificate to a user. Be careful!",
+      "parameters": {
+        "properties": {
+          "user_id": {
+            "description": "The ID of the user to book the reservation, such as 'sara_doe_496'.",
+            "title": "User Id",
+            "type": "string"
+          },
+          "amount": {
+            "description": "The amount of the certificate to send.",
+            "title": "Amount",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user_id",
+          "amount"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

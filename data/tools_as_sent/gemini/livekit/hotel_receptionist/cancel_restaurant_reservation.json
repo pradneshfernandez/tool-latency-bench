@@ -1,0 +1,34 @@
+{
+  "tool_id": "livekit/hotel_receptionist/cancel_restaurant_reservation.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Cancel a restaurant reservation. Restaurants verify with last name + confirmation code (no card, no email — the code is what we print when the table is booked).\n",
+        "name": "cancel_restaurant_reservation",
+        "parameters_json_schema": {
+          "properties": {
+            "last_name": {
+              "description": "caller's last name.",
+              "title": "Last Name",
+              "type": "string"
+            },
+            "confirmation_code": {
+              "description": "confirmation code like 'RES-X9Y2'.",
+              "title": "Confirmation Code",
+              "type": "string"
+            }
+          },
+          "required": [
+            "last_name",
+            "confirmation_code"
+          ],
+          "title": "CancelRestaurantReservationArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

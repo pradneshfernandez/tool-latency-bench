@@ -1,0 +1,93 @@
+{
+  "tool_id": "pipecat/shopping-list/update_list.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "update_list",
+      "description": "Change the shopping list, or point at items on it.\n\nOne call covers everything the user asked for in a turn. Name each item\nas the thing itself, never as a pronoun: \"add that\" after you suggested\njamón ibérico is add=[\"jamón ibérico\"], and \"check off the last one\"\nafter you listed milk, eggs and bread is check=[\"bread\"]. Highlight the\nitems you are talking about when you answer a question about the list,\nsuch as the drinks or what is left. The answer says what was done and\nwhich items were not found on the list.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "add": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Items to add, named as they should appear on the list."
+          },
+          "check": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Items to check off, as on the list or as the user said them."
+          },
+          "uncheck": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Items to put back on the list."
+          },
+          "remove": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Items to remove."
+          },
+          "highlight": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Items to flash on screen, to show what you are talking about."
+          },
+          "clear_checked": {
+            "type": "boolean",
+            "description": "Remove every item that is checked off."
+          }
+        },
+        "required": []
+      }
+    }
+  }
+}

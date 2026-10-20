@@ -1,0 +1,14 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/list_discoverable_agent_tools.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "list_discoverable_agent_tools",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "description": "List all agent discoverable tools that you have called.\n\nUse this to see what specialized tools you have used."
+  }
+}

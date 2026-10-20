@@ -1,0 +1,50 @@
+{
+  "tool_id": "livekit/hotel_receptionist/choose_room.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "choose_room",
+    "description": "Record the room type and view the caller picked from the options set_stay returned.\n\nCall ONLY after the caller has named a room type (a stated view narrows WHICH room of that type they get - it doesn't pick the type). If the caller asks for a view, pass it here; if that view isn't available for the type, this errors with where the view IS available - relay that and let them choose. Never guess a type from a preference.\n\nThis does NOT produce a total - extras are still open, and each one moves it. The return lists the extras to offer; call set_extras once the caller has answered.",
+    "parameters": {
+      "properties": {
+        "room_type": {
+          "description": "The room type exactly as the caller chose it.",
+          "enum": [
+            "king",
+            "queen_2beds",
+            "suite",
+            "penthouse"
+          ],
+          "title": "Room Type",
+          "type": "string"
+        },
+        "smoking_room": {
+          "default": false,
+          "description": "True if the caller wants a smoking-permitted room.",
+          "title": "Smoking Room",
+          "type": "boolean"
+        },
+        "view": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The view the caller asked for (city / garden / ocean), ONLY if they stated one - omit entirely otherwise.",
+          "title": "View"
+        }
+      },
+      "required": [
+        "room_type"
+      ],
+      "title": "ChooseRoomArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

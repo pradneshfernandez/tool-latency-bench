@@ -1,0 +1,30 @@
+{
+  "tool_id": "livekit/healthcare/record_health_insurance.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_health_insurance",
+    "description": "Record the user's health insurance.\n",
+    "input_schema": {
+      "properties": {
+        "insurance": {
+          "description": "The user's health insurance",
+          "enum": [
+            "Anthem",
+            "Aetna",
+            "EmblemHealth",
+            "HealthFirst"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "insurance"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

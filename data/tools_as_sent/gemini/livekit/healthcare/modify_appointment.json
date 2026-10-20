@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/healthcare/modify_appointment.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call if the user requests to reschedule or cancel an existing appointment. Do not ask for any information in advance.",
+        "name": "modify_appointment",
+        "parameters_json_schema": {
+          "properties": {
+            "function": {
+              "description": "Available functions to modify an existing appointment",
+              "enum": [
+                "reschedule",
+                "cancel"
+              ],
+              "title": "Function",
+              "type": "string"
+            }
+          },
+          "required": [
+            "function"
+          ],
+          "title": "ModifyAppointmentArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

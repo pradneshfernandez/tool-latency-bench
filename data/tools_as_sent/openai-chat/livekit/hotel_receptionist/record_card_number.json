@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_card_number.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_card_number",
+      "strict": true,
+      "description": "Record the card number, only once the caller has given the entire number.\n",
+      "parameters": {
+        "properties": {
+          "card_number": {
+            "description": "All the digits, no spaces or dashes.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "card_number"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

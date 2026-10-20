@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/otel_trace/transfer_to_kelly.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "transfer_to_kelly",
+    "description": "Transfer the call to Kelly.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

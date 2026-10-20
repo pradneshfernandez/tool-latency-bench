@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/function-calling-openai-responses-async-stream/track_current_location.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "track_current_location",
+      "description": "Track the device's current GPS location during a road trip, reporting position updates as the vehicle moves through cities until it reaches the final destination.\n\nSimulates a GPS tracker reporting position during a road trip:\n\nStep 1 – San Francisco (trip start)     (update)\nStep 2 – Los Angeles   (passing through) (update)\nStep 3 – San Diego     (destination)     (final result)",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

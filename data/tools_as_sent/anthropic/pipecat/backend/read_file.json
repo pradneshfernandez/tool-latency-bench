@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/backend/read_file.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "read_file",
+    "description": "Read a file from the codebase.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The file's path, as search_codebase reports it."
+        }
+      },
+      "required": [
+        "path"
+      ]
+    }
+  }
+}

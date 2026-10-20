@@ -1,0 +1,30 @@
+{
+  "tool_id": "pipecat/restaurant_reservation/check_availability.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "check_availability",
+      "description": "Check availability for requested time.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "description": "Requested reservation time in \"HH:MM AM/PM\" format. Must be between 5 PM and 10 PM."
+          },
+          "party_size": {
+            "type": "integer",
+            "description": "Number of people in the party."
+          }
+        },
+        "required": [
+          "time",
+          "party_size"
+        ]
+      }
+    }
+  }
+}

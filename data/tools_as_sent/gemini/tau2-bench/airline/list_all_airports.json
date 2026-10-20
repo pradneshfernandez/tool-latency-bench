@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/airline/list_all_airports.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "list_all_airports",
+        "description": "Returns a list of all available airports.",
+        "parameters": {
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

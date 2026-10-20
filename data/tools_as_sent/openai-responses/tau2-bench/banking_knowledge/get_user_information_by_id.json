@@ -1,0 +1,26 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_user_information_by_id.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "get_user_information_by_id",
+    "parameters": {
+      "properties": {
+        "user_id": {
+          "description": "The ID of the user",
+          "title": "User Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_id"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Get the information (date of birth, email, phone number, address) for a user by their user id."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/confirm_card.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Finalize the card capture. Call only after the caller has agreed to the read-back of the last four digits and expiration.",
+        "name": "confirm_card"
+      }
+    ]
+  }
+}

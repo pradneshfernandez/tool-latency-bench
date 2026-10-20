@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/features-switch-voices/switch_voice.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "switch_voice",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "voice": {
+          "type": "string",
+          "description": "The voice the user wants you to use."
+        }
+      },
+      "required": [
+        "voice"
+      ]
+    },
+    "strict": null,
+    "description": "Switch your voice only when the user asks you to."
+  }
+}

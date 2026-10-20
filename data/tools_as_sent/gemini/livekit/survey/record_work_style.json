@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/survey/record_work_style.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call to record a summary of the candidate's work style.\n",
+        "name": "record_work_style",
+        "parameters_json_schema": {
+          "properties": {
+            "work_style": {
+              "description": "The candidate's work style",
+              "enum": [
+                "independent",
+                "team_player"
+              ],
+              "title": "Work Style",
+              "type": "string"
+            }
+          },
+          "required": [
+            "work_style"
+          ],
+          "title": "RecordWorkStyleArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

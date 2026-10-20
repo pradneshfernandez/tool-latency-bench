@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/airline/cancel_reservation.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "cancel_reservation",
+        "description": "Cancel the whole reservation.",
+        "parameters": {
+          "properties": {
+            "reservation_id": {
+              "description": "The reservation ID, such as 'ZFA04Y'.",
+              "title": "Reservation Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "reservation_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/hotel_receptionist/flag_late_arrival.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Flag a confirmed booking with an expected late-arrival note (\"checking in around 1 AM\", \"redeye lands at 11 PM\"). Verifies the caller first. The note goes onto the booking so the front desk holds the room and doesn't no-show it.\n",
+        "name": "flag_late_arrival",
+        "parameters_json_schema": {
+          "properties": {
+            "note": {
+              "description": "A short, concrete description of when the caller expects to arrive (e.g. \"around 1 AM\" or \"after midnight, redeye flight\").",
+              "title": "Note",
+              "type": "string"
+            }
+          },
+          "required": [
+            "note"
+          ],
+          "title": "FlagLateArrivalArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

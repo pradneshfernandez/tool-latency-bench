@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/survey/record_experience.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_experience",
+    "description": "Call to record the work experience the candidate has and a description of each role with a clear timeline.\n",
+    "input_schema": {
+      "properties": {
+        "years_of_experience": {
+          "description": "The years of experience the candidate has",
+          "type": "integer"
+        },
+        "experience_description": {
+          "description": "A description of each role they previously held. Take note of the corresponding companies as well.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "years_of_experience",
+        "experience_description"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

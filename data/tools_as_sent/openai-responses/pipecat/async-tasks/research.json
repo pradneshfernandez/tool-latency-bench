@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/async-tasks/research.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "research",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The topic to research, such as \"Mariana Trench\"."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "strict": null,
+    "description": "Research a topic across three sources and return their summaries.\n\nTakes a few seconds. The user sees each source's progress on their\nscreen while it runs."
+  }
+}

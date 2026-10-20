@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/retail/find_user_id_by_email.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "find_user_id_by_email",
+    "input_schema": {
+      "properties": {
+        "email": {
+          "description": "The email of the user, such as 'something@example.com'.",
+          "title": "Email",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "type": "object"
+    },
+    "description": "Find user id by email. If the user is not found, the function will return an error message."
+  }
+}

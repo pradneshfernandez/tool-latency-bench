@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/telecom/get_details_by_id.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_details_by_id",
+    "input_schema": {
+      "properties": {
+        "id": {
+          "description": "The ID of the object to retrieve.",
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "type": "object"
+    },
+    "description": "Retrieves the details for a given ID.\n\nThe ID must be a valid ID for a Customer, Line, Device, Bill, or Plan."
+  }
+}

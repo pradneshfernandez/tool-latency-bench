@@ -1,0 +1,34 @@
+{
+  "tool_id": "tau2-bench/intake/log_capture.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "log_capture",
+        "description": "Silently log a value you just heard for one of the callback order's\n\nmissing fields. Log each provided value before submission. If you\nread a value back, log it first. Call this again with the corrected\nvalue whenever the person corrects it. Logging is a private worksheet\nnote: it is not a submission, does not fill the field, and the person\nnever hears about it.",
+        "parameters": {
+          "properties": {
+            "field_name": {
+              "description": "The missing field the value is for, exactly as named\nin the callback order.",
+              "title": "Field Name",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value as you captured it, in the field's expected\nwritten form.",
+              "title": "Value",
+              "type": "string"
+            }
+          },
+          "required": [
+            "field_name",
+            "value"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

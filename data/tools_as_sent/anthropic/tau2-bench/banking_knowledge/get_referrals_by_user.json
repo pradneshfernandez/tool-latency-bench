@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_referrals_by_user.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_referrals_by_user",
+    "input_schema": {
+      "properties": {
+        "user_id": {
+          "description": "The ID of the user (referrer) to look up referrals for",
+          "title": "User Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_id"
+      ],
+      "type": "object"
+    },
+    "description": "Get all referrals made by a user."
+  }
+}

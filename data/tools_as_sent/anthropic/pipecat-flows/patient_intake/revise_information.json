@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/revise_information.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "revise_information",
+    "description": "Return to prescriptions to revise information.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

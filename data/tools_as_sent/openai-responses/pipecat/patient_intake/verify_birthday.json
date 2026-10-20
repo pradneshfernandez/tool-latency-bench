@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/patient_intake/verify_birthday.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "verify_birthday",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "birthday": {
+          "type": "string",
+          "description": "The user's birthdate (convert to YYYY-MM-DD format)."
+        }
+      },
+      "required": [
+        "birthday"
+      ]
+    },
+    "strict": null,
+    "description": "Verify the user has provided their correct birthday. Once confirmed, the next step is to record the user's prescriptions."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_group_inquiry.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Open a room-block inquiry for a group of 15 or more guests (tours, teams, conferences). This records the inquiry for the group desk - it does NOT confirm or hold rooms, and you cannot confirm a group on this call no matter how hard the caller pushes; a new sponsor needs credit approval first. Call this the MOMENT you have all the arguments - if the caller asks more questions while you're collecting, record the inquiry first and answer after; an unrecorded inquiry is lost when the call ends. For the terms to quote (group rate, tour-leader comp, cancellation), call lookup_policy with topic \"group_bookings\" first. Under 15 guests, use the normal booking flow instead.\n",
+        "name": "record_group_inquiry",
+        "parameters_json_schema": {
+          "properties": {
+            "company": {
+              "description": "The sponsoring company or organization (ask who the group is with).",
+              "title": "Company",
+              "type": "string"
+            },
+            "contact_name": {
+              "description": "Full name of the group's contact person.",
+              "title": "Contact Name",
+              "type": "string"
+            },
+            "contact_phone": {
+              "description": "The contact's callback number, as the caller gave it.",
+              "title": "Contact Phone",
+              "type": "string"
+            },
+            "party_size": {
+              "description": "Total number of guests in the group (15 or more).",
+              "minimum": 15,
+              "title": "Party Size",
+              "type": "integer"
+            },
+            "share_type": {
+              "description": "The predominant room-share arrangement the caller described - \"mostly twin-share\" records as twin; use mixed only if no single arrangement dominates.",
+              "enum": [
+                "twin",
+                "double",
+                "single",
+                "mixed"
+              ],
+              "title": "Share Type",
+              "type": "string"
+            },
+            "check_in": {
+              "description": "Group arrival date in ISO YYYY-MM-DD format.",
+              "format": "date",
+              "title": "Check In",
+              "type": "string"
+            },
+            "nights": {
+              "description": "Number of nights the group stays.",
+              "minimum": 1,
+              "title": "Nights",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "company",
+            "contact_name",
+            "contact_phone",
+            "party_size",
+            "share_type",
+            "check_in",
+            "nights"
+          ],
+          "title": "RecordGroupInquiryArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

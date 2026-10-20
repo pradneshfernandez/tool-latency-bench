@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/complete_intake.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "complete_intake",
+    "description": "Complete the intake process.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

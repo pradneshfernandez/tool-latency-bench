@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/warm_transfer/check_store_location_and_hours_of_operation.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "check_store_location_and_hours_of_operation",
+    "description": "Check store location and hours of operation.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/query_engine/query_info.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "query_info",
+    "description": "Get more information about a specific topic",
+    "parameters": {
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "title": "QueryInfoArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

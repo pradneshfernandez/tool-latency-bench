@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/hotel_receptionist/decline_card_capture.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "The caller explicitly refuses to provide their card.\n",
+        "name": "decline_card_capture",
+        "parameters_json_schema": {
+          "properties": {
+            "reason": {
+              "description": "A short explanation of why the caller declined.",
+              "title": "Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "reason"
+          ],
+          "title": "DeclineCardCaptureArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

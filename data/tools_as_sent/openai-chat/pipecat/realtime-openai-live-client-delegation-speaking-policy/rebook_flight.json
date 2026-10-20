@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/realtime-openai-live-client-delegation-speaking-policy/rebook_flight.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "rebook_flight",
+      "description": "Move the booking onto another flight.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "flight_number": {
+            "type": "string",
+            "description": "The flight to move the booking to, e.g. \"UA716\"."
+          }
+        },
+        "required": [
+          "flight_number"
+        ]
+      }
+    }
+  }
+}

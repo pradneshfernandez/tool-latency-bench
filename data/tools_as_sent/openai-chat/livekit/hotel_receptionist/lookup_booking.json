@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_booking.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_booking",
+      "strict": true,
+      "description": "Read-only lookup of a confirmed room booking. Use this when the caller wants to\ncheck or recall their booking details (dates, room type, what they're paying, who\nit's under, check-in time) without changing anything. Verifies the caller first.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/food_ordering/select_sushi_order.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "select_sushi_order",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "Number of sushi rolls to order. Must be between 1 and 10."
+        },
+        "roll_type": {
+          "type": "string",
+          "description": "Type of sushi roll. Must be one of \"california\", \"spicy tuna\", \"rainbow\", or \"dragon\"."
+        }
+      },
+      "required": [
+        "count",
+        "roll_type"
+      ]
+    },
+    "strict": null,
+    "description": "Record the sushi order details."
+  }
+}

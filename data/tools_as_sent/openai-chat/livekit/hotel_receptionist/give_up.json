@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/hotel_receptionist/give_up.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "give_up",
+      "strict": true,
+      "description": "Caller wants to abandon the reservation.\n",
+      "parameters": {
+        "properties": {
+          "reason": {
+            "description": "short explanation.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

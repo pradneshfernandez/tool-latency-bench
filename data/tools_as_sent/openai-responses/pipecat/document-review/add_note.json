@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/document-review/add_note.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "add_note",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "The note, as it should read."
+        }
+      },
+      "required": [
+        "text"
+      ]
+    },
+    "strict": null,
+    "description": "Add a note to the notes panel, attached to the paragraph the user selected."
+  }
+}

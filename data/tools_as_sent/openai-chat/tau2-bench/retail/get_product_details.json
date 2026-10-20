@@ -1,0 +1,27 @@
+{
+  "tool_id": "tau2-bench/retail/get_product_details.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_product_details",
+      "description": "Get the inventory details of a product.",
+      "parameters": {
+        "properties": {
+          "product_id": {
+            "description": "The product id, such as '6086499569'. Be careful the product id is different from the item id.",
+            "title": "Product Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "product_id"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

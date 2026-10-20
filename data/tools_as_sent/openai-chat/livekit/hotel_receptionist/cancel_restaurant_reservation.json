@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/hotel_receptionist/cancel_restaurant_reservation.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "cancel_restaurant_reservation",
+      "strict": true,
+      "description": "Cancel a restaurant reservation. Restaurants verify with last name + confirmation code (no card, no email — the code is what we print when the table is booked).\n",
+      "parameters": {
+        "properties": {
+          "last_name": {
+            "description": "caller's last name.",
+            "type": "string"
+          },
+          "confirmation_code": {
+            "description": "confirmation code like 'RES-X9Y2'.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "last_name",
+          "confirmation_code"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

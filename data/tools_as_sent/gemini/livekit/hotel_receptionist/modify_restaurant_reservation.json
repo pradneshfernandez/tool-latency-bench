@@ -1,0 +1,62 @@
+{
+  "tool_id": "livekit/hotel_receptionist/modify_restaurant_reservation.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Move an existing confirmed restaurant reservation to a new date/time (and\noptionally a new party size), keeping the same confirmation code. Restaurants\nverify with last name + confirmation code (no card, no email). Read the new\ndetails back to the caller before calling this, and relay the party size from\nthis tool's return when confirming - it's how a wrong count gets caught.",
+        "name": "modify_restaurant_reservation",
+        "parameters_json_schema": {
+          "properties": {
+            "last_name": {
+              "description": "caller's last name.",
+              "title": "Last Name",
+              "type": "string"
+            },
+            "confirmation_code": {
+              "description": "confirmation code like 'RES-X9Y2'.",
+              "title": "Confirmation Code",
+              "type": "string"
+            },
+            "new_date": {
+              "description": "the new date, in ISO YYYY-MM-DD format (e.g. \"2026-01-20\").",
+              "format": "date",
+              "title": "New Date",
+              "type": "string"
+            },
+            "new_time": {
+              "description": "the new time, in 24-hour HH:MM format (e.g. \"18:00\").",
+              "title": "New Time",
+              "type": "string"
+            },
+            "new_party_size": {
+              "anyOf": [
+                {
+                  "maximum": 6,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "new number of guests, ONLY when the caller states the new number. \"Keep it the same\" means OMIT this parameter - the reservation keeps its current size when omitted. Never fill it with a number the caller didn't say.",
+              "title": "New Party Size"
+            }
+          },
+          "required": [
+            "last_name",
+            "confirmation_code",
+            "new_date",
+            "new_time"
+          ],
+          "title": "ModifyRestaurantReservationArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

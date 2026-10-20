@@ -1,0 +1,29 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/call_discoverable_agent_tool.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "call_discoverable_agent_tool",
+    "input_schema": {
+      "properties": {
+        "agent_tool_name": {
+          "description": "The name of the agent discoverable tool to call",
+          "title": "Agent Tool Name",
+          "type": "string"
+        },
+        "arguments": {
+          "default": "{}",
+          "description": "JSON string of arguments for the tool (e.g., '{\"user_id\": \"abc123\"}')",
+          "title": "Arguments",
+          "type": "string"
+        }
+      },
+      "required": [
+        "agent_tool_name"
+      ],
+      "type": "object"
+    },
+    "description": "Call an agent discoverable tool that you have previously unlocked.\n\nUse this after unlocking a tool with `unlock_discoverable_agent_tool`. The knowledge base\nwill tell you which tool to use and what arguments to provide."
+  }
+}

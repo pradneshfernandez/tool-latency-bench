@@ -1,0 +1,17 @@
+{
+  "tool_id": "tau2-bench/intake/get_today.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "get_today",
+    "parameters": {
+      "properties": {},
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Get today's date."
+  }
+}

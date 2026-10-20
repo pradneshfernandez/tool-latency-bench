@@ -1,0 +1,30 @@
+{
+  "tool_id": "pipecat/food_ordering/select_sushi_order.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "select_sushi_order",
+      "description": "Record the sushi order details.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of sushi rolls to order. Must be between 1 and 10."
+          },
+          "roll_type": {
+            "type": "string",
+            "description": "Type of sushi roll. Must be one of \"california\", \"spicy tuna\", \"rainbow\", or \"dragon\"."
+          }
+        },
+        "required": [
+          "count",
+          "roll_type"
+        ]
+      }
+    }
+  }
+}

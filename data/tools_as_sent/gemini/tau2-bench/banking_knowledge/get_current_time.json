@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_current_time.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_current_time",
+        "description": "Get the current time. Use this to get the current timestamp for logging verification records.",
+        "parameters": {
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

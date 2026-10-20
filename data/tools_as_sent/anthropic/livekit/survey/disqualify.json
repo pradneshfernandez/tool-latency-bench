@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/survey/disqualify.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "disqualify",
+    "description": "Call if the candidate refuses to cooperate, provides an unsatisfactory or inappropriate answer, or do not meet the prerequisites for the position.\nThis function will terminate the interview, record their disqualification, and hang up.",
+    "input_schema": {
+      "properties": {
+        "disqualification_reason": {
+          "description": "The justification for ending the interview (ex. Refuses to answer question)",
+          "type": "string"
+        }
+      },
+      "required": [
+        "disqualification_reason"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

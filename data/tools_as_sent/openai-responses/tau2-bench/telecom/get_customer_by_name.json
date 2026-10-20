@@ -1,0 +1,32 @@
+{
+  "tool_id": "tau2-bench/telecom/get_customer_by_name.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "get_customer_by_name",
+    "parameters": {
+      "properties": {
+        "full_name": {
+          "description": "The full name of the customer.",
+          "title": "Full Name",
+          "type": "string"
+        },
+        "dob": {
+          "description": "Date of birth for verification, in the format YYYY-MM-DD.",
+          "title": "Dob",
+          "type": "string"
+        }
+      },
+      "required": [
+        "full_name",
+        "dob"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Searches for customers by name and DOB. May return multiple matches if names are similar,\n\nDOB helps disambiguate."
+  }
+}

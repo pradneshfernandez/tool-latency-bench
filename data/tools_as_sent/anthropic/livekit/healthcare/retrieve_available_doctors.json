@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/healthcare/retrieve_available_doctors.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "retrieve_available_doctors",
+    "description": "Call if the user inquires about the available doctors in the network",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

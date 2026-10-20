@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/function-calling-anthropic-async/write_report.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "write_report",
+      "description": "Write a long research report on a topic.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string",
+            "description": "What the report should cover."
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      }
+    }
+  }
+}

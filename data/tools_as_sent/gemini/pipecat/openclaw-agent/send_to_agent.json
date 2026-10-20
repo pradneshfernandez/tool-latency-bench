@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/openclaw-agent/send_to_agent.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Send the user's request to the agent, or add to what it is doing.\n\nUse this both to start new work and to pass along a follow-up, correction,\nor change of mind while the agent is already working. Forward what the user\nsaid; the agent decides whether that starts a task or redirects the running\none. The result arrives later and you will be asked to speak it.",
+        "name": "send_to_agent",
+        "parameters": {
+          "properties": {
+            "user_input": {
+              "description": "What the user wants done or wants to add, keeping the\ndetails that matter.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "user_input"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

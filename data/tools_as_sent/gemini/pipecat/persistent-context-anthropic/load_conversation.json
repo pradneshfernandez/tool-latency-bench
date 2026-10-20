@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/persistent-context-anthropic/load_conversation.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Load a conversation history. Use this function to load a conversation history into the current session.",
+        "name": "load_conversation",
+        "parameters": {
+          "properties": {
+            "filename": {
+              "description": "The filename of the conversation history to load.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "filename"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

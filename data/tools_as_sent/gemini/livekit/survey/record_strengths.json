@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/survey/record_strengths.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call to record a summary of the candidate's strengths.\n",
+        "name": "record_strengths",
+        "parameters_json_schema": {
+          "properties": {
+            "strengths_summary": {
+              "description": "A summary of the candidate's strengths",
+              "title": "Strengths Summary",
+              "type": "string"
+            }
+          },
+          "required": [
+            "strengths_summary"
+          ],
+          "title": "RecordStrengthsArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

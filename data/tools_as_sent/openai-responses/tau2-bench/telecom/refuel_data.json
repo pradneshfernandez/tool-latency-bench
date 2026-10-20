@@ -1,0 +1,38 @@
+{
+  "tool_id": "tau2-bench/telecom/refuel_data.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "refuel_data",
+    "parameters": {
+      "properties": {
+        "customer_id": {
+          "description": "ID of the customer who owns the line.",
+          "title": "Customer Id",
+          "type": "string"
+        },
+        "line_id": {
+          "description": "ID of the line to refuel data for.",
+          "title": "Line Id",
+          "type": "string"
+        },
+        "gb_amount": {
+          "description": "Amount of data to add in gigabytes.",
+          "title": "Gb Amount",
+          "type": "number"
+        }
+      },
+      "required": [
+        "customer_id",
+        "line_id",
+        "gb_amount"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Refuels data for a specific line, adding to the customer's bill.\n\nChecks: Line status must be Active, Customer owns the line.\nLogic: Adds data to the line and charges customer based on the plan's refueling rate."
+  }
+}

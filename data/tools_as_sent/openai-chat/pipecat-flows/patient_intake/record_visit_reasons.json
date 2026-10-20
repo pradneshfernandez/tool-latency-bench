@@ -1,0 +1,28 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_visit_reasons.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_visit_reasons",
+      "description": "Record the reasons for their visit. Once confirmed, the next step is to verify all information.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "visit_reasons": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "description": "List of visit reason objects, each with \"name\" (str, the user's reason for visiting)."
+          }
+        },
+        "required": [
+          "visit_reasons"
+        ]
+      }
+    }
+  }
+}

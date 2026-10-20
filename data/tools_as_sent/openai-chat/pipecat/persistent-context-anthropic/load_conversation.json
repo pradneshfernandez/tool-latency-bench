@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/persistent-context-anthropic/load_conversation.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "load_conversation",
+      "description": "Load a conversation history. Use this function to load a conversation history into the current session.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "description": "The filename of the conversation history to load."
+          }
+        },
+        "required": [
+          "filename"
+        ]
+      }
+    }
+  }
+}

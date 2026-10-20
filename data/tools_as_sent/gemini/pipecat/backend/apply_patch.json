@@ -1,0 +1,31 @@
+{
+  "tool_id": "pipecat/backend/apply_patch.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Replace a file's content in the codebase.",
+        "name": "apply_patch",
+        "parameters": {
+          "properties": {
+            "path": {
+              "description": "The file to change.",
+              "type": "STRING"
+            },
+            "content": {
+              "description": "The file's new content, in full.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/ivr_navigator_agent/record_task_result_and_hang_up.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_task_result_and_hang_up",
+      "strict": true,
+      "description": "Record the IVR navigation task results and hang up the call/session.\n\nONLY call this tool once you have completed the task and the IVR has processed the result.\n\nDO not call this tool under any other circumstances, assume IVR system is always working correctly.",
+      "parameters": {
+        "properties": {
+          "content": {
+            "description": "The information gathered from completing a task, short validation, or any IVR interaction observation.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

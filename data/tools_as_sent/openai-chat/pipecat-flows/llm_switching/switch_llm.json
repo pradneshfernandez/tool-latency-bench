@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat-flows/llm_switching/switch_llm.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "switch_llm",
+      "description": "Switch the current LLM service.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "llm": {
+            "type": "string",
+            "description": "The name of the LLM service to switch to. Must be one of \"OpenAI\", \"Google\", \"Anthropic\", or \"AWS\"."
+          }
+        },
+        "required": [
+          "llm"
+        ]
+      }
+    }
+  }
+}

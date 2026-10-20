@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/confirm_information.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "confirm_information",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Proceed with confirmed information."
+  }
+}

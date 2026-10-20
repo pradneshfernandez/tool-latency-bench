@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/calculate_quote.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "calculate_quote",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "description": "The customer's age."
+        },
+        "marital_status": {
+          "type": "string",
+          "description": "The customer's marital status. Must be one of \"single\", \"married\"."
+        }
+      },
+      "required": [
+        "age",
+        "marital_status"
+      ]
+    },
+    "strict": null,
+    "description": "Calculate initial insurance quote."
+  }
+}

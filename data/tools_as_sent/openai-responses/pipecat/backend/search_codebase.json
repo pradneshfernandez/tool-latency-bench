@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/backend/search_codebase.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "search_codebase",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "What to look for: a symbol, a file name, or a description."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "strict": null,
+    "description": "Search the codebase for files relevant to a query."
+  }
+}

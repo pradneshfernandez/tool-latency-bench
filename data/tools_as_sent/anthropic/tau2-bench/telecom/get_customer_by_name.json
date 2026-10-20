@@ -1,0 +1,29 @@
+{
+  "tool_id": "tau2-bench/telecom/get_customer_by_name.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_customer_by_name",
+    "input_schema": {
+      "properties": {
+        "full_name": {
+          "description": "The full name of the customer.",
+          "title": "Full Name",
+          "type": "string"
+        },
+        "dob": {
+          "description": "Date of birth for verification, in the format YYYY-MM-DD.",
+          "title": "Dob",
+          "type": "string"
+        }
+      },
+      "required": [
+        "full_name",
+        "dob"
+      ],
+      "type": "object"
+    },
+    "description": "Searches for customers by name and DOB. May return multiple matches if names are similar,\n\nDOB helps disambiguate."
+  }
+}

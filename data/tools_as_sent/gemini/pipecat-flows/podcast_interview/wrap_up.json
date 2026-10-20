@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/wrap_up.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Use this when you've gathered substantial insights and are ready to wrap up.",
+        "name": "wrap_up",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

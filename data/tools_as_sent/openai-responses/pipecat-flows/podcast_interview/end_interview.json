@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/end_interview.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "end_interview",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Use this after the guest has shared their final thoughts."
+  }
+}

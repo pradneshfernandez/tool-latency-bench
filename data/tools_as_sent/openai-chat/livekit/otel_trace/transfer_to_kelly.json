@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/otel_trace/transfer_to_kelly.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "transfer_to_kelly",
+      "strict": true,
+      "description": "Transfer the call to Kelly.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

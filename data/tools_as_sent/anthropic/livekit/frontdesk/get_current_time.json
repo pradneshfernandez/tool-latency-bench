@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/frontdesk/get_current_time.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_current_time",
+    "description": "Get the current date and time.\n\nCall this whenever you need to reason about dates — to interpret relative\nrequests like \"next Tuesday\", or to check whether a date the caller\nmentions has already passed.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

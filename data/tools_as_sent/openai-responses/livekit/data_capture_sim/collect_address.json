@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_address.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "collect_address",
+    "description": "Collect the user's mailing address.",
+    "parameters": {
+      "properties": {},
+      "title": "CollectAddressArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

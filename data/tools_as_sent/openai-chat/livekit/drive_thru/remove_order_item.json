@@ -1,0 +1,30 @@
+{
+  "tool_id": "livekit/drive_thru/remove_order_item.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "remove_order_item",
+      "strict": true,
+      "description": "Removes one or more items from the user's order using their `order_id`s.\n\nUseful when the user asks to cancel or delete existing items (e.g., “Remove the cheeseburger”).\n\nIf the `order_id`s are unknown, call `list_order_items` first to retrieve them.",
+      "parameters": {
+        "properties": {
+          "order_id": {
+            "description": "A list of internal `order_id`s of the items to remove. Use `list_order_items` to look it up if needed.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "order_id"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

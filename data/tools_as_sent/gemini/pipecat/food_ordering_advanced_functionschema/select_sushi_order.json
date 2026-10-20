@@ -1,0 +1,39 @@
+{
+  "tool_id": "pipecat/food_ordering_advanced_functionschema/select_sushi_order.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the sushi order details",
+        "name": "select_sushi_order",
+        "parameters": {
+          "properties": {
+            "count": {
+              "description": "Number of rolls to order",
+              "maximum": 10.0,
+              "minimum": 1.0,
+              "type": "INTEGER"
+            },
+            "type": {
+              "description": "Type of sushi roll",
+              "enum": [
+                "california",
+                "spicy tuna",
+                "rainbow",
+                "dragon"
+              ],
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "count",
+            "type"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

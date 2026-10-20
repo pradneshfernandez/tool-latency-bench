@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/features-switch-languages/switch_language.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Switch to another language when the user asks you to.",
+        "name": "switch_language",
+        "parameters": {
+          "properties": {
+            "language": {
+              "description": "The language the user wants you to speak.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "language"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

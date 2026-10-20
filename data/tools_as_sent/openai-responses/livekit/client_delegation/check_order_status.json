@@ -1,0 +1,25 @@
+{
+  "tool_id": "livekit/client_delegation/check_order_status.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "check_order_status",
+    "description": "Check the delivery status of an order.\n",
+    "parameters": {
+      "properties": {
+        "order_id": {
+          "description": "The order reference, such as A1042.",
+          "title": "Order Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id"
+      ],
+      "title": "CheckOrderStatusArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/confirm_reservation.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "confirm_reservation",
+    "description": "Finalize once the date, party, time, and the caller's details are all captured: book\nthe table.",
+    "parameters": {
+      "properties": {},
+      "title": "ConfirmReservationArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "tool_id": "pipecat-flows/llm_switching/get_current_weather.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Get the current weather.",
+        "name": "get_current_weather",
+        "parameters": {
+          "properties": {
+            "location": {
+              "description": "The city and state, e.g. \"San Francisco, CA\".",
+              "type": "STRING"
+            },
+            "format": {
+              "description": "The temperature unit to use. Must be either \"celsius\" or \"fahrenheit\". Infer this from the user's location.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "location",
+            "format"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

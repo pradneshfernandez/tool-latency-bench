@@ -1,0 +1,42 @@
+{
+  "tool_id": "pipecat-flows/food_ordering_advanced_functionschema/select_pizza_order.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the pizza order details",
+        "name": "select_pizza_order",
+        "parameters": {
+          "properties": {
+            "size": {
+              "description": "Size of the pizza",
+              "enum": [
+                "small",
+                "medium",
+                "large"
+              ],
+              "type": "STRING"
+            },
+            "type": {
+              "description": "Type of pizza",
+              "enum": [
+                "pepperoni",
+                "cheese",
+                "supreme",
+                "vegetarian"
+              ],
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "size",
+            "type"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

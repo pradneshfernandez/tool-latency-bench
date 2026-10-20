@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/azure_realtime_agent/lookup_weather.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "lookup_weather",
+    "description": "Called when the user asks for weather related information.\n",
+    "input_schema": {
+      "properties": {
+        "location": {
+          "description": "The city or region to look up the weather for",
+          "type": "string"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

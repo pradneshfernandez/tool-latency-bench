@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_security_code.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the card's security code.\n",
+        "name": "record_security_code",
+        "parameters_json_schema": {
+          "properties": {
+            "security_code": {
+              "description": "The 3 or 4 digit code, leading zeros included.",
+              "title": "Security Code",
+              "type": "string"
+            }
+          },
+          "required": [
+            "security_code"
+          ],
+          "title": "RecordSecurityCodeArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

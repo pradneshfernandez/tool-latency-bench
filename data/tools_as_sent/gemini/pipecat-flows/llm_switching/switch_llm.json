@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/llm_switching/switch_llm.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Switch the current LLM service.",
+        "name": "switch_llm",
+        "parameters": {
+          "properties": {
+            "llm": {
+              "description": "The name of the LLM service to switch to. Must be one of \"OpenAI\", \"Google\", \"Anthropic\", or \"AWS\".",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "llm"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

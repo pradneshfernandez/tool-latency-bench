@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/insurance_quote/collect_age.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "collect_age",
+    "description": "Record customer's age.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "description": "The customer's age."
+        }
+      },
+      "required": [
+        "age"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/reinstate_booking.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Bring back a room booking the caller previously CANCELLED and now wants reactivated. Verifies the caller first - this is the one flow that verifies against a cancelled booking - then checks the booking's original room is still free for its dates and flips it back to confirmed. If the room's been taken since the cancellation, say so honestly and offer to look at other rooms/dates; never silently rebook a different room and call it reinstated. Not for editing a confirmed booking (start_booking_modification) or making a brand-new one (start_room_booking).",
+        "name": "reinstate_booking"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/survey/end_screening.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "end_screening",
+    "description": "Call when the interview/screening is concluded to hang up.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat/food_ordering/choose_pizza.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "choose_pizza",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "User wants to order pizza. Let's get that order started."
+  }
+}

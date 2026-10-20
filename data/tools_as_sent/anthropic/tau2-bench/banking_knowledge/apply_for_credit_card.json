@@ -1,0 +1,41 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/apply_for_credit_card.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "apply_for_credit_card",
+    "input_schema": {
+      "properties": {
+        "card_type": {
+          "description": "Type of credit card",
+          "title": "Card Type",
+          "type": "string"
+        },
+        "customer_name": {
+          "description": "Full legal name",
+          "title": "Customer Name",
+          "type": "string"
+        },
+        "annual_income": {
+          "description": "Annual income in USD",
+          "title": "Annual Income",
+          "type": "number"
+        },
+        "rho_bank_subscription": {
+          "default": false,
+          "description": "Whether user has Rho-Bank+ subscription",
+          "title": "Rho Bank Subscription",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "card_type",
+        "customer_name",
+        "annual_income"
+      ],
+      "type": "object"
+    },
+    "description": "Apply for a credit card."
+  }
+}

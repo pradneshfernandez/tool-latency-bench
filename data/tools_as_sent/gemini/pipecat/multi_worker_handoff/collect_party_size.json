@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/multi_worker_handoff/collect_party_size.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the party size and advance the reservation to choosing a time.\n\nCall this whenever the user gives a party size. Always call it to move\nforward — do not skip it just because a size already appears earlier in\nthe conversation.",
+        "name": "collect_party_size",
+        "parameters": {
+          "properties": {
+            "size": {
+              "description": "Number of people in the party. Must be between 1 and 12.",
+              "type": "INTEGER"
+            }
+          },
+          "required": [
+            "size"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

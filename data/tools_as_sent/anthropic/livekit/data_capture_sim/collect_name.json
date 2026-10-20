@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_name.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "collect_name",
+    "description": "Collect the user's first and last name.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

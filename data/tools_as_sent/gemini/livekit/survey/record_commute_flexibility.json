@@ -1,0 +1,40 @@
+{
+  "tool_id": "livekit/survey/record_commute_flexibility.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call to record the candidate's flexibility of going into office and notes about their commute. If they are able to commute, record their method of transportation.\n",
+        "name": "record_commute_flexibility",
+        "parameters_json_schema": {
+          "properties": {
+            "can_commute": {
+              "description": "If the candidate can commute to the office",
+              "title": "Can Commute",
+              "type": "boolean"
+            },
+            "commute_method": {
+              "description": "The method of transportation the candidate will take to commute",
+              "enum": [
+                "driving",
+                "bus",
+                "subway",
+                "none"
+              ],
+              "title": "Commute Method",
+              "type": "string"
+            }
+          },
+          "required": [
+            "can_commute",
+            "commute_method"
+          ],
+          "title": "RecordCommuteFlexibilityArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

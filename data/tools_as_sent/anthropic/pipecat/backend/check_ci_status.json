@@ -1,0 +1,20 @@
+{
+  "tool_id": "pipecat/backend/check_ci_status.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "check_ci_status",
+    "description": "Check the CI status of a branch.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "branch": {
+          "type": "string",
+          "description": "The branch; main when omitted."
+        }
+      },
+      "required": []
+    }
+  }
+}

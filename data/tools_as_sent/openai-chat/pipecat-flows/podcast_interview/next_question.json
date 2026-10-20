@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/next_question.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "next_question",
+      "description": "Use this after you've thoroughly explored the current aspect with multiple questions and follow-ups.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

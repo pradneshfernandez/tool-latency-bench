@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/basic_dtmf_agent/ask_for_service_options.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "ask_for_service_options",
+    "description": "Ask user to which telephone service they want to use.",
+    "parameters": {
+      "properties": {},
+      "title": "AskForServiceOptionsArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

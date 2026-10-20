@@ -1,0 +1,19 @@
+{
+  "tool_id": "pipecat-flows/podcast_interview/next_question.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Use this after you've thoroughly explored the current aspect with multiple questions and follow-ups.",
+        "name": "next_question",
+        "parameters": {
+          "properties": {},
+          "required": [],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

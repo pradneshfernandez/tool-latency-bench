@@ -1,0 +1,25 @@
+{
+  "tool_id": "livekit/otel_trace/lookup_weather.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "lookup_weather",
+    "description": "Called when the user asks for weather related information.\n",
+    "parameters": {
+      "properties": {
+        "location": {
+          "description": "The location they are asking for",
+          "title": "Location",
+          "type": "string"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "title": "LookupWeatherArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

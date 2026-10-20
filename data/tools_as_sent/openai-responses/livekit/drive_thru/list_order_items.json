@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/drive_thru/list_order_items.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "list_order_items",
+    "description": "Retrieves the current list of items in the user's order, including each item's internal `order_id`.\n\nHelpful when:\n- An `order_id` is required before modifying or removing an existing item.\n- Confirming details or contents of the current order.",
+    "parameters": {
+      "properties": {},
+      "title": "ListOrderItemsArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

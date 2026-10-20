@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/realtime-openai-live-client-delegation-speaking-policy/rebook_flight.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Move the booking onto another flight.",
+        "name": "rebook_flight",
+        "parameters": {
+          "properties": {
+            "flight_number": {
+              "description": "The flight to move the booking to, e.g. \"UA716\".",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "flight_number"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/survey/record_work_style.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_work_style",
+    "description": "Call to record a summary of the candidate's work style.\n",
+    "input_schema": {
+      "properties": {
+        "work_style": {
+          "description": "The candidate's work style",
+          "enum": [
+            "independent",
+            "team_player"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "work_style"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "tool_id": "tau2-bench/retail/find_user_id_by_name_zip.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "find_user_id_by_name_zip",
+      "description": "Find user id by first name, last name, and zip code. If the user is not found, the function\n\nwill return an error message. By default, find user id by email, and only call this function\nif the user is not found by email or cannot remember email.",
+      "parameters": {
+        "properties": {
+          "first_name": {
+            "description": "The first name of the customer, such as 'John'.",
+            "title": "First Name",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "The last name of the customer, such as 'Doe'.",
+            "title": "Last Name",
+            "type": "string"
+          },
+          "zip": {
+            "description": "The zip code of the customer, such as '12345'.",
+            "title": "Zip",
+            "type": "string"
+          }
+        },
+        "required": [
+          "first_name",
+          "last_name",
+          "zip"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

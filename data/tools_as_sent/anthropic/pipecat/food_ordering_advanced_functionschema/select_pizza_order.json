@@ -1,0 +1,38 @@
+{
+  "tool_id": "pipecat/food_ordering_advanced_functionschema/select_pizza_order.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "select_pizza_order",
+    "description": "Record the pizza order details",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "string",
+          "enum": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "description": "Size of the pizza"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "pepperoni",
+            "cheese",
+            "supreme",
+            "vegetarian"
+          ],
+          "description": "Type of pizza"
+        }
+      },
+      "required": [
+        "size",
+        "type"
+      ]
+    }
+  }
+}

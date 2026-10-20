@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/code-assistant/ask_code.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "ask_code",
+      "description": "Ask a question about the codebase. A Claude Code worker will\nexplore the project by reading files, searching code, and running\ncommands. It remembers previous questions for follow-ups.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "The question about code, files, structure,\ndependencies, or anything in the project."
+          }
+        },
+        "required": [
+          "question"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/cancel_room_booking.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "cancel_room_booking",
+    "description": "Cancel the caller's room booking. The right tool the moment the caller wants to cancel - including when they pivot mid-modification (staged changes are simply abandoned). Verifies the caller first if not already verified. Returns the refund outcome - relay it exactly as returned; never guess or invent a refund amount or \"deposit\". When the caller asks \"will I lose my deposit if I cancel?\" while asking to cancel, this tool's return IS the answer: confirm they want to proceed and run it - don't quote refund policy as if the cancellation already happened and leave the booking standing.",
+    "parameters": {
+      "properties": {},
+      "title": "CancelRoomBookingArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

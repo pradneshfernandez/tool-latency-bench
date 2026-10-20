@@ -1,0 +1,28 @@
+{
+  "tool_id": "pipecat/features-user-email-gathering/store_user_emails.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "store_user_emails",
+      "description": "Store user emails when confirmed.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of user emails."
+          }
+        },
+        "required": [
+          "emails"
+        ]
+      }
+    }
+  }
+}

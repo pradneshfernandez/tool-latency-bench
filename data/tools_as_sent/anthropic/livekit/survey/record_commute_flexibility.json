@@ -1,0 +1,35 @@
+{
+  "tool_id": "livekit/survey/record_commute_flexibility.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_commute_flexibility",
+    "description": "Call to record the candidate's flexibility of going into office and notes about their commute. If they are able to commute, record their method of transportation.\n",
+    "input_schema": {
+      "properties": {
+        "can_commute": {
+          "description": "If the candidate can commute to the office",
+          "type": "boolean"
+        },
+        "commute_method": {
+          "description": "The method of transportation the candidate will take to commute",
+          "enum": [
+            "driving",
+            "bus",
+            "subway",
+            "none"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "can_commute",
+        "commute_method"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

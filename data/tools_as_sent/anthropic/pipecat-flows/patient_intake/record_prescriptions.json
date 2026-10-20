@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_prescriptions.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "record_prescriptions",
+    "description": "Record the user's prescriptions. Once confirmed, the next step is to collect allergy information.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "prescriptions": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "List of prescription objects, each with \"medication\" (str, the medication's name) and \"dosage\" (str, the prescription's dosage)."
+        }
+      },
+      "required": [
+        "prescriptions"
+      ]
+    }
+  }
+}

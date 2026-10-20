@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_user_information_by_email.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_user_information_by_email",
+    "input_schema": {
+      "properties": {
+        "email": {
+          "description": "The email of the user",
+          "title": "Email",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "type": "object"
+    },
+    "description": "Get the information (date of birth, email, phone number, address) for a user by their email."
+  }
+}

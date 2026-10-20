@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat/document-review/review_selection.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "review_selection",
+      "description": "Review the paragraph the user has selected with two reviewers, clarity and tone.\n\nTakes a few seconds; the user sees their progress on screen. Returns\neach reviewer's feedback, or an error when nothing is selected.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

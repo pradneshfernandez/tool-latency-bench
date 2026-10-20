@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/healthcare/handle_billing.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "handle_billing",
+      "strict": true,
+      "description": "Call for any billing inquiries, like if the user wants to check their outstanding balance or if they want to pay a bill.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

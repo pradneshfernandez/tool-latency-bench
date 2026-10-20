@@ -1,0 +1,17 @@
+{
+  "tool_id": "tau2-bench/airline/list_all_airports.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "list_all_airports",
+    "parameters": {
+      "properties": {},
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Returns a list of all available airports."
+  }
+}

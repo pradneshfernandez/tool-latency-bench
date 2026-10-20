@@ -1,0 +1,39 @@
+{
+  "tool_id": "livekit/hotel_receptionist/transfer_call.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Transfer the caller to a hotel DEPARTMENT - the restaurant, the duty manager, or housekeeping. NOT a guest's room (never connect a caller to a guest). Before calling this you must have told the caller you're putting them on hold to connect them to that department AND gotten their okay; only then transfer. Pass a one-line summary of what the caller needs so the department is briefed.\n",
+        "name": "transfer_call",
+        "parameters_json_schema": {
+          "properties": {
+            "destination": {
+              "description": "The department to transfer to.",
+              "enum": [
+                "restaurant",
+                "duty_manager",
+                "housekeeping"
+              ],
+              "title": "Destination",
+              "type": "string"
+            },
+            "summary": {
+              "description": "A one-line summary of what the caller needs.",
+              "title": "Summary",
+              "type": "string"
+            }
+          },
+          "required": [
+            "destination",
+            "summary"
+          ],
+          "title": "TransferCallArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

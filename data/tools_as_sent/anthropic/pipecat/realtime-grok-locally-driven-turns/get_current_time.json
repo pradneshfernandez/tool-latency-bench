@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat/realtime-grok-locally-driven-turns/get_current_time.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "get_current_time",
+    "description": "Get the current time.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

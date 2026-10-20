@@ -1,0 +1,58 @@
+{
+  "tool_id": "livekit/hotel_receptionist/order_flowers.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "order_flowers",
+      "strict": true,
+      "description": "Order a flower arrangement from the hotel florist for delivery to a room or recipient. The catalog (arrangements, prices, delivery cutoff) is in lookup_policy topic \"florist\" - look it up first and let the caller pick the arrangement, never pick for them. Collect the delivery date, where it goes (room number or recipient name), and the gift-card message, and read the card message back so it's right. Once they pick and agree, THIS CALL places the order - saying \"I'll get that arranged\" orders nothing; nothing exists until this returns a reference.\n",
+      "parameters": {
+        "properties": {
+          "arrangement": {
+            "description": "The arrangement the caller picked.",
+            "enum": [
+              "bouquet",
+              "roses",
+              "centerpiece"
+            ],
+            "type": "string"
+          },
+          "on_date": {
+            "description": "Delivery date in ISO YYYY-MM-DD format.",
+            "format": "date",
+            "type": "string"
+          },
+          "deliver_to": {
+            "description": "Where it goes - the number of the room or the recipient's name. Prefer room number when available.",
+            "type": "string"
+          },
+          "card_message": {
+            "description": "The gift-card message exactly as the caller dictates it.",
+            "type": "string"
+          },
+          "guest_name": {
+            "description": "The caller's full name.",
+            "type": "string"
+          },
+          "guest_phone": {
+            "description": "The caller's phone number, in case the florist needs to reach them.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "arrangement",
+          "on_date",
+          "deliver_to",
+          "card_message",
+          "guest_name",
+          "guest_phone"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

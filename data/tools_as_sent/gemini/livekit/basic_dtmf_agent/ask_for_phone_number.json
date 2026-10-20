@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/basic_dtmf_agent/ask_for_phone_number.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Ask user to provide a phone number.",
+        "name": "ask_for_phone_number"
+      }
+    ]
+  }
+}

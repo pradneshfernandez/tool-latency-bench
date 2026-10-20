@@ -1,0 +1,47 @@
+{
+  "tool_id": "tau2-bench/retail/exchange_delivered_order_items.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "exchange_delivered_order_items",
+    "input_schema": {
+      "properties": {
+        "order_id": {
+          "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.",
+          "title": "Order Id",
+          "type": "string"
+        },
+        "item_ids": {
+          "description": "The item ids to be exchanged, each such as '1008292230'. There could be duplicate items in the list.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Item Ids",
+          "type": "array"
+        },
+        "new_item_ids": {
+          "description": "The item ids to be exchanged for, each such as '1008292230'.\nThere could be duplicate items in the list. Each new item id should match the item id\nin the same position and be of the same product.",
+          "items": {
+            "type": "string"
+          },
+          "title": "New Item Ids",
+          "type": "array"
+        },
+        "payment_method_id": {
+          "description": "The payment method id to pay or receive refund for the item price difference,\nsuch as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up\nfrom the user or order details.",
+          "title": "Payment Method Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "item_ids",
+        "new_item_ids",
+        "payment_method_id"
+      ],
+      "type": "object"
+    },
+    "description": "Exchange items in a delivered order to new items of the same product type.\n\nFor a delivered order, return or exchange can be only done once by the agent.\nThe agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed."
+  }
+}

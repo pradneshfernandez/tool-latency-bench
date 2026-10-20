@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/revise_information.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "revise_information",
+      "description": "Return to prescriptions to revise information.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

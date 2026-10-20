@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/support_agent/transfer_to_human.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Called when the user asks to speak to a human agent. This will put the user on\nhold while the supervisor is connected.\n\nEnsure that the user has confirmed that they wanted to be transferred. Do not start transfer\nuntil the user has confirmed.\nExamples on when the tool should be called:\n----\n- User: Can I speak to your supervisor?\n- Assistant: Yes of course.\n----\n- Assistant: I'm unable to help with that, would you like to speak to a human agent?\n- User: Yes please.\n----",
+        "name": "transfer_to_human"
+      }
+    ]
+  }
+}

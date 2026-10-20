@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/start_card_update.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Replace the card on file for an existing room booking - the path when a guest's card isn't going through or they want a different card charged. Verifies the caller first, then a focused sub-task collects the replacement card (number, expiry, security code, cardholder) with its own read-back - never collect card digits yourself. Call this as your response once the caller offers a new card. Keep the money talk discreet throughout: the card \"isn't going through at the moment - possibly a technical issue\", never \"declined\" or \"rejected\" (full policy: lookup_policy topic \"payments_and_currency\").",
+        "name": "start_card_update"
+      }
+    ]
+  }
+}

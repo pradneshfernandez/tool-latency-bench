@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/open_email_dialog.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "open_email_dialog",
+    "description": "Open the email dialog. It collects the guest's email address (read back and confirmed) from the caller.",
+    "parameters": {
+      "properties": {},
+      "title": "OpenEmailDialogArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

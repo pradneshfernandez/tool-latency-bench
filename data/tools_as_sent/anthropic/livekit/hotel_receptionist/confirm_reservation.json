@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/hotel_receptionist/confirm_reservation.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "confirm_reservation",
+    "description": "Finalize once the date, party, time, and the caller's details are all captured: book\nthe table.",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

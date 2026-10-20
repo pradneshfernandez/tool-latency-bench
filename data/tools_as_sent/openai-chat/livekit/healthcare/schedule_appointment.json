@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/healthcare/schedule_appointment.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "schedule_appointment",
+      "strict": true,
+      "description": "Call to schedule an appointment for the user. Do not ask for any information in advance.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

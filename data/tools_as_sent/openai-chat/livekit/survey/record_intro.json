@@ -1,0 +1,32 @@
+{
+  "tool_id": "livekit/survey/record_intro.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "record_intro",
+      "strict": true,
+      "description": "Call to record the candidate's name and any notes about their response\n",
+      "parameters": {
+        "properties": {
+          "name": {
+            "description": "The candidate's name",
+            "type": "string"
+          },
+          "intro_notes": {
+            "description": "The candidate's introduction and any additional notes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "intro_notes"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

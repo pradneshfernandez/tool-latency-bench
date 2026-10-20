@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat-flows/hello_world/record_favorite_color.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "record_favorite_color",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string",
+          "description": "The user's favorite color."
+        }
+      },
+      "required": [
+        "color"
+      ]
+    },
+    "strict": null,
+    "description": "Record the color the user said is their favorite.\n\nHere \"record\" means print to the console, but any logic could go here:\nwrite to a database, make an API call, etc."
+  }
+}

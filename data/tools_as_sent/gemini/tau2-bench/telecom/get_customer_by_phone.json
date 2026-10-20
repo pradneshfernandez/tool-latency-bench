@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/telecom/get_customer_by_phone.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_customer_by_phone",
+        "description": "Finds a customer by their primary contact or line phone number.",
+        "parameters": {
+          "properties": {
+            "phone_number": {
+              "description": "The phone number to search for.",
+              "title": "Phone Number",
+              "type": "string"
+            }
+          },
+          "required": [
+            "phone_number"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

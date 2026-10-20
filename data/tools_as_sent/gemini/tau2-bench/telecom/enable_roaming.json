@@ -1,0 +1,34 @@
+{
+  "tool_id": "tau2-bench/telecom/enable_roaming.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "enable_roaming",
+        "description": "Enables international roaming on a line.",
+        "parameters": {
+          "properties": {
+            "customer_id": {
+              "description": "ID of the customer who owns the line.",
+              "title": "Customer Id",
+              "type": "string"
+            },
+            "line_id": {
+              "description": "ID of the line to enable roaming for.",
+              "title": "Line Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "customer_id",
+            "line_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

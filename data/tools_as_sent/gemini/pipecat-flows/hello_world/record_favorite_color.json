@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/hello_world/record_favorite_color.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the color the user said is their favorite.\n\nHere \"record\" means print to the console, but any logic could go here:\nwrite to a database, make an API call, etc.",
+        "name": "record_favorite_color",
+        "parameters": {
+          "properties": {
+            "color": {
+              "description": "The user's favorite color.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "color"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

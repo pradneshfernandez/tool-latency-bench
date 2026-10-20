@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat/openclaw-agent/agent_status.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "agent_status",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Say whether the agent is working, on what, and for how long.\n\nRead-only and instant: it reads what the voice loop already knows and does\nnot touch the agent."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/retail/transfer_to_human_agents.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "transfer_to_human_agents",
+    "input_schema": {
+      "properties": {
+        "summary": {
+          "description": "A summary of the user's issue.",
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "summary"
+      ],
+      "type": "object"
+    },
+    "description": "Transfer the user to a human agent, with a summary of the user's issue.\n\nOnly transfer if\n -  the user explicitly asks for a human agent\n -  given the policy and the available tools, you cannot solve the user's issue."
+  }
+}

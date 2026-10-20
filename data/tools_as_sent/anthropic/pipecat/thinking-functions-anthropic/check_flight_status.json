@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat/thinking-functions-anthropic/check_flight_status.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "check_flight_status",
+    "description": "Check the status of a flight. Returns status (e.g., \"on time\", \"delayed\") and departure time.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "flight_number": {
+          "type": "string",
+          "description": "The flight number, e.g. \"AA100\"."
+        }
+      },
+      "required": [
+        "flight_number"
+      ]
+    }
+  }
+}

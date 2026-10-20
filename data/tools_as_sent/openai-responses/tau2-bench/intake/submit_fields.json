@@ -1,0 +1,41 @@
+{
+  "tool_id": "tau2-bench/intake/submit_fields.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "submit_fields",
+    "parameters": {
+      "properties": {
+        "record_id": {
+          "description": "The record the callback order names.",
+          "title": "Record Id",
+          "type": "string"
+        },
+        "fields": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "All collected values, keyed by the missing field names\nfrom the callback order.",
+          "title": "Fields",
+          "type": "object"
+        },
+        "confirmed_with_user": {
+          "description": "Whether every value in this submission was\nread back to the person and they explicitly confirmed it on\nthis call. Answer honestly: true only if each field's\nread-back got an explicit yes; false otherwise.",
+          "title": "Confirmed With User",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "record_id",
+        "fields",
+        "confirmed_with_user"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Write all collected field values to the record at once. Submit exactly\n\nonce, after every missing field has been collected and its read-back\nconfirmed: the submission must contain exactly the record's missing\nfields — no others — and a value for each.\n\nSubmit dates as YYYY-MM-DD and times as H:MM AM/PM, with no leading\nhour zero. Convert only information the person provided into these\nformats; ask for any missing or ambiguous components. Date and time\nstrings are stored as submitted, apart from surrounding whitespace.\nPreserve decimal points within numbers and the person's unit wording.\n\nPhones are stored as digit sequences, codes uppercase without\nseparators, and names case/diacritic-folded. Capture the full value\naccurately before applying the field's required format."
+  }
+}

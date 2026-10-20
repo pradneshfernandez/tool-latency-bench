@@ -1,0 +1,33 @@
+{
+  "tool_id": "livekit/hotel_receptionist/choose_time.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "choose_time",
+    "description": "Record the chosen time slot and any special request.\n",
+    "input_schema": {
+      "properties": {
+        "at_time": {
+          "description": "The slot the CALLER picked, from the open times set_party returned.",
+          "format": "time",
+          "type": "string"
+        },
+        "notes": {
+          "description": "Optional special request (allergy, anniversary...), or null.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "at_time",
+        "notes"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

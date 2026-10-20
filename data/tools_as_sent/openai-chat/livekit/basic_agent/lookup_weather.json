@@ -1,0 +1,37 @@
+{
+  "tool_id": "livekit/basic_agent/lookup_weather.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_weather",
+      "strict": true,
+      "description": "Called when the user asks for weather related information.\nEnsure the user's location (city or region) is provided.\nWhen given a location, please estimate the latitude and longitude of the location and\ndo not ask the user for them.",
+      "parameters": {
+        "properties": {
+          "location": {
+            "description": "The location they are asking for",
+            "type": "string"
+          },
+          "latitude": {
+            "description": "The latitude of the location, do not ask user for it",
+            "type": "string"
+          },
+          "longitude": {
+            "description": "The longitude of the location, do not ask user for it",
+            "type": "string"
+          }
+        },
+        "required": [
+          "location",
+          "latitude",
+          "longitude"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

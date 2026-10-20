@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/podcast_interview/proceed_to_topic.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "proceed_to_topic",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "guest_summary": {
+          "type": "string",
+          "description": "A quick summary of who the guest is (name, role, area of expertise, etc.)."
+        }
+      },
+      "required": [
+        "guest_summary"
+      ]
+    },
+    "strict": null,
+    "description": "Use after the guest has introduced themselves."
+  }
+}

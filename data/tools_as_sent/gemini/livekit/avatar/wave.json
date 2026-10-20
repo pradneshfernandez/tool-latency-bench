@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/avatar/wave.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Wave to the user. Only call when they explicitly ask you to wave.",
+        "name": "wave"
+      }
+    ]
+  }
+}

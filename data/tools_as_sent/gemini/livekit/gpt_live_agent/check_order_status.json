@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/gpt_live_agent/check_order_status.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Check the delivery status of an order.\n",
+        "name": "check_order_status",
+        "parameters_json_schema": {
+          "properties": {
+            "order_id": {
+              "description": "The order reference, such as A1042.",
+              "title": "Order Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "order_id"
+          ],
+          "title": "CheckOrderStatusArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

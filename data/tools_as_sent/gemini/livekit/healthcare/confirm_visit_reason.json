@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/healthcare/confirm_visit_reason.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call to record the user's reason for their appointment.\n",
+        "name": "confirm_visit_reason",
+        "parameters_json_schema": {
+          "properties": {
+            "visit_reason": {
+              "description": "The user's reason for visiting a doctor",
+              "title": "Visit Reason",
+              "type": "string"
+            }
+          },
+          "required": [
+            "visit_reason"
+          ],
+          "title": "ConfirmVisitReasonArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

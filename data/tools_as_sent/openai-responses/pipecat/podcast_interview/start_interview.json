@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/podcast_interview/start_interview.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "start_interview",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "type": "string",
+          "description": "The topic the guest wants to discuss."
+        }
+      },
+      "required": [
+        "topic"
+      ]
+    },
+    "strict": null,
+    "description": "Use this when the guest has shared a clear topic they want to explore."
+  }
+}

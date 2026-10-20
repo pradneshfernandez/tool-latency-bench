@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/healthcare/transfer_to_human.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "transfer_to_human",
+      "strict": true,
+      "description": "Called when the user asks to speak to a human agent. This will put the user on\nhold while the supervisor is connected.\n\nEnsure that the user has confirmed that they wanted to be transferred. Do not start transfer\nuntil the user has confirmed.\nExamples on when the tool should be called:\n----\n- User: Can I speak to your supervisor?\n- Assistant: Yes of course.\n----\n- Assistant: I'm unable to help with that, would you like to speak to a human agent?\n- User: Yes please.\n----",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/query_engine/query_info.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Get more information about a specific topic",
+        "name": "query_info",
+        "parameters_json_schema": {
+          "properties": {
+            "query": {
+              "title": "Query",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "QueryInfoArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

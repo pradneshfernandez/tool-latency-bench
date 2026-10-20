@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/hotel_receptionist/confirm_reservation.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "confirm_reservation",
+      "strict": true,
+      "description": "Finalize once the date, party, time, and the caller's details are all captured: book\nthe table.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

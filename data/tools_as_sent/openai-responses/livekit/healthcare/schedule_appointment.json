@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/healthcare/schedule_appointment.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "schedule_appointment",
+    "description": "Call to schedule an appointment for the user. Do not ask for any information in advance.",
+    "parameters": {
+      "properties": {},
+      "title": "ScheduleAppointmentArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

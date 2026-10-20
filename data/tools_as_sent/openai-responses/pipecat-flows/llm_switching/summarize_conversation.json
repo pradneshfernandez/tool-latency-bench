@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/llm_switching/summarize_conversation.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "summarize_conversation",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Summarize the conversation so far."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "tool_id": "tau2-bench/airline/get_user_details.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "get_user_details",
+    "parameters": {
+      "properties": {
+        "user_id": {
+          "description": "The user ID, such as 'sara_doe_496'.",
+          "title": "User Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_id"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Get the details of a user, including their reservations."
+  }
+}

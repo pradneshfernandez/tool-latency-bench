@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/sensor-controller/set_response_rate.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "set_response_rate",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "rate": {
+          "type": "number",
+          "description": "Response rate between 0.01 (slow) and 0.3 (fast)."
+        }
+      },
+      "required": [
+        "rate"
+      ]
+    },
+    "strict": null,
+    "description": "Set how aggressively the sensor approaches the target."
+  }
+}

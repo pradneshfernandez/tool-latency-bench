@@ -1,0 +1,27 @@
+{
+  "tool_id": "tau2-bench/telecom/get_customer_by_phone.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_customer_by_phone",
+      "description": "Finds a customer by their primary contact or line phone number.",
+      "parameters": {
+        "properties": {
+          "phone_number": {
+            "description": "The phone number to search for.",
+            "title": "Phone Number",
+            "type": "string"
+          }
+        },
+        "required": [
+          "phone_number"
+        ],
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

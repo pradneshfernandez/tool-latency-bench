@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/otel_trace/transfer_to_alloy.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "transfer_to_alloy",
+    "description": "Transfer the call to Alloy.",
+    "parameters": {
+      "properties": {},
+      "title": "TransferToAlloyArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

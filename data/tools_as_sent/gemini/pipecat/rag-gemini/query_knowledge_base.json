@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/rag-gemini/query_knowledge_base.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Query the knowledge base for the answer to the question.",
+        "name": "query_knowledge_base",
+        "parameters": {
+          "properties": {
+            "question": {
+              "description": "The question to query the knowledge base with.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "question"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

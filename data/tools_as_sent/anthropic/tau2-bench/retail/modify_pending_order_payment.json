@@ -1,0 +1,29 @@
+{
+  "tool_id": "tau2-bench/retail/modify_pending_order_payment.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "modify_pending_order_payment",
+    "input_schema": {
+      "properties": {
+        "order_id": {
+          "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.",
+          "title": "Order Id",
+          "type": "string"
+        },
+        "payment_method_id": {
+          "description": "The payment method id to pay or receive refund for the item price difference, such as 'gift_card_0000000' or 'credit_card_0000000'. These can be looked up from the user or order details.",
+          "title": "Payment Method Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "order_id",
+        "payment_method_id"
+      ],
+      "type": "object"
+    },
+    "description": "Modify the payment method of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed."
+  }
+}

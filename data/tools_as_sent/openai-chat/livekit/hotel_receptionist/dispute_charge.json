@@ -1,0 +1,52 @@
+{
+  "tool_id": "livekit/hotel_receptionist/dispute_charge.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "dispute_charge",
+      "strict": true,
+      "description": "Handle a guest dispute on a line item.\n",
+      "parameters": {
+        "properties": {
+          "category": {
+            "description": "Pick the category that best matches what the caller is disputing.",
+            "enum": [
+              "minibar",
+              "room_service_restaurant",
+              "damage_cleaning",
+              "late_checkout_fee",
+              "cancellation_fee",
+              "no_show",
+              "double_charge_billing_error",
+              "other"
+            ],
+            "type": "string"
+          },
+          "line_item_label": {
+            "description": "The label of the line item on the invoice, as it appears.",
+            "type": "string"
+          },
+          "caller_note": {
+            "description": "A short summary of what the caller said about the charge.",
+            "type": "string"
+          },
+          "accepts_offered_resolution": {
+            "description": "Required. Set true ONLY after the caller has actually\naccepted the policy outcome you offered (a goodwill waiver, a credit, etc.).\nSet false if they pushed back, asked for a manager, or haven't been offered\nanything yet. Never default to true to skip the conversation.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "category",
+          "line_item_label",
+          "caller_note",
+          "accepts_offered_resolution"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

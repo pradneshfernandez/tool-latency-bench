@@ -1,0 +1,60 @@
+{
+  "tool_id": "livekit/hotel_receptionist/book_business_center.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "book_business_center",
+      "strict": true,
+      "description": "Book a business-centre service - a meeting room, secretarial help, or a printing job. The catalog (rates, hours, what's included) is in lookup_policy topic \"business_center\" - look it up first and narrow with the caller (which service, the date and start time, and how long) before booking. The options are for the CALLER to pick from, never pick for them. Once they pick and agree, THIS CALL is the booking - saying \"I'll get that set up\" books nothing; nothing exists until this returns a reference.\n",
+      "parameters": {
+        "properties": {
+          "service": {
+            "description": "The service the caller picked.",
+            "enum": [
+              "meeting_room",
+              "secretarial",
+              "printing"
+            ],
+            "type": "string"
+          },
+          "on_date": {
+            "description": "Service date in ISO YYYY-MM-DD format.",
+            "format": "date",
+            "type": "string"
+          },
+          "at_time": {
+            "description": "Start time in 24-hour HH:MM format.",
+            "format": "time",
+            "type": "string"
+          },
+          "duration_hours": {
+            "description": "How many hours the caller needs (printing is a flat one-hour job).",
+            "minimum": 1,
+            "type": "integer"
+          },
+          "guest_name": {
+            "description": "The caller's full name.",
+            "type": "string"
+          },
+          "guest_phone": {
+            "description": "The caller's phone number, in case the business centre needs to reach them.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "service",
+          "on_date",
+          "at_time",
+          "duration_hours",
+          "guest_name",
+          "guest_phone"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

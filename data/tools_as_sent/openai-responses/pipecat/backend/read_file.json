@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/backend/read_file.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "read_file",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The file's path, as search_codebase reports it."
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "strict": null,
+    "description": "Read a file from the codebase."
+  }
+}

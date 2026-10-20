@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat/multi_worker_handoff/transfer_to_router.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Hand the conversation back to the general assistant.\n\nCall this when the user no longer wants to make a reservation, or asks\na general question unrelated to booking a table.",
+        "name": "transfer_to_router",
+        "parameters": {
+          "properties": {
+            "reason": {
+              "description": "Why control is being handed back (e.g. 'user changed\ntheir mind', 'user asked about the menu').",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "reason"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

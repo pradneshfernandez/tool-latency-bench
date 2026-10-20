@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/end_quote.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "end_quote",
+    "description": "Complete the quote process when customer is satisfied.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

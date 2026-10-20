@@ -1,0 +1,29 @@
+{
+  "tool_id": "tau2-bench/telecom/resume_line.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "resume_line",
+    "input_schema": {
+      "properties": {
+        "customer_id": {
+          "description": "ID of the customer who owns the line.",
+          "title": "Customer Id",
+          "type": "string"
+        },
+        "line_id": {
+          "description": "ID of the line to resume.",
+          "title": "Line Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_id",
+        "line_id"
+      ],
+      "type": "object"
+    },
+    "description": "Resumes a suspended line.\n\nChecks: Line status must be Suspended or Pending Activation.\nLogic: Sets line status to Active, clears suspension_start_date."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/multi_worker_handoff/transfer_to_reservation.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "transfer_to_reservation",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "Why the user is being transferred."
+        }
+      },
+      "required": [
+        "reason"
+      ]
+    },
+    "strict": null,
+    "description": "Transfer the user to the reservation assistant.\n\nCall this as soon as the user wants to book, change, or ask about\nmaking a table reservation."
+  }
+}

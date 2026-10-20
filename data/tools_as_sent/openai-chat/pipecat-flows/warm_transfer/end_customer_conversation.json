@@ -1,0 +1,18 @@
+{
+  "tool_id": "pipecat-flows/warm_transfer/end_customer_conversation.json",
+  "provider": "openai-chat",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "end_customer_conversation",
+      "description": "End the conversation.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+}

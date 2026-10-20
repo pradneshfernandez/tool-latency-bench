@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/patient_intake/record_allergies.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the user's allergies. Once confirmed, then next step is to collect medical conditions.",
+        "name": "record_allergies",
+        "parameters": {
+          "properties": {
+            "allergies": {
+              "description": "List of allergy objects, each with \"name\" (str, what the user is allergic to).",
+              "items": {
+                "type": "OBJECT"
+              },
+              "type": "ARRAY"
+            }
+          },
+          "required": [
+            "allergies"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

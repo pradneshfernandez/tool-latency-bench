@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/retail/list_all_product_types.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "list_all_product_types",
+        "description": "List the name and product id of all product types.\n\nEach product type has a variety of different items with unique item ids and options.\nThere are only 50 product types in the store.",
+        "parameters": {
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

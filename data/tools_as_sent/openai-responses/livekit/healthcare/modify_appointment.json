@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/healthcare/modify_appointment.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "modify_appointment",
+    "description": "Call if the user requests to reschedule or cancel an existing appointment. Do not ask for any information in advance.",
+    "parameters": {
+      "properties": {
+        "function": {
+          "description": "Available functions to modify an existing appointment",
+          "enum": [
+            "reschedule",
+            "cancel"
+          ],
+          "title": "Function",
+          "type": "string"
+        }
+      },
+      "required": [
+        "function"
+      ],
+      "title": "ModifyAppointmentArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

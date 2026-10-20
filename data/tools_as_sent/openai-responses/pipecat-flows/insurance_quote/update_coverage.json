@@ -1,0 +1,29 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/update_coverage.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "update_coverage",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "coverage_amount": {
+          "type": "integer",
+          "description": "The desired coverage amount in dollars."
+        },
+        "deductible": {
+          "type": "integer",
+          "description": "The desired deductible amount in dollars."
+        }
+      },
+      "required": [
+        "coverage_amount",
+        "deductible"
+      ]
+    },
+    "strict": null,
+    "description": "Recalculate quote with new coverage options."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/healthcare/retrieve_available_doctors.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "retrieve_available_doctors",
+      "strict": true,
+      "description": "Call if the user inquires about the available doctors in the network",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

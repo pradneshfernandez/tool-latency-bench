@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/features-switch-languages/switch_language.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "switch_language",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "The language the user wants you to speak."
+        }
+      },
+      "required": [
+        "language"
+      ]
+    },
+    "strict": null,
+    "description": "Switch to another language when the user asks you to."
+  }
+}

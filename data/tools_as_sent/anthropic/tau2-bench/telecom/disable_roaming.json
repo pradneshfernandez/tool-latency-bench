@@ -1,0 +1,29 @@
+{
+  "tool_id": "tau2-bench/telecom/disable_roaming.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "disable_roaming",
+    "input_schema": {
+      "properties": {
+        "customer_id": {
+          "description": "ID of the customer who owns the line.",
+          "title": "Customer Id",
+          "type": "string"
+        },
+        "line_id": {
+          "description": "ID of the line to disable roaming for.",
+          "title": "Line Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer_id",
+        "line_id"
+      ],
+      "type": "object"
+    },
+    "description": "Disables international roaming on a line."
+  }
+}

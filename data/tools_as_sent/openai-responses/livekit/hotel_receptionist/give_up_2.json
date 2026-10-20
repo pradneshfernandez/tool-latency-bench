@@ -1,0 +1,25 @@
+{
+  "tool_id": "livekit/hotel_receptionist/give_up_2.json",
+  "provider": "openai-responses",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "give_up",
+    "description": "End the booking without making it: the caller no longer wants the room, OR they need something this flow can't do. The right tools for their request become available once this returns.\n",
+    "parameters": {
+      "properties": {
+        "reason": {
+          "description": "short explanation.",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "title": "GiveUpArgs",
+      "type": "object"
+    },
+    "type": "function"
+  }
+}

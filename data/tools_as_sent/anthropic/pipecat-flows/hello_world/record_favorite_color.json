@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/hello_world/record_favorite_color.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "record_favorite_color",
+    "description": "Record the color the user said is their favorite.\n\nHere \"record\" means print to the console, but any logic could go here:\nwrite to a database, make an API call, etc.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string",
+          "description": "The user's favorite color."
+        }
+      },
+      "required": [
+        "color"
+      ]
+    }
+  }
+}

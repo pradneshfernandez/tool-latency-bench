@@ -1,0 +1,28 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/get_user_information_by_id.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "get_user_information_by_id",
+        "description": "Get the information (date of birth, email, phone number, address) for a user by their user id.",
+        "parameters": {
+          "properties": {
+            "user_id": {
+              "description": "The ID of the user",
+              "title": "User Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "user_id"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

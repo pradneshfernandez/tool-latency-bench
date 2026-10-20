@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_invoice.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "lookup_invoice",
+      "strict": true,
+      "description": "Verify the caller, fetch their invoice, and read it back.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_email.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Collect the user's email address.",
+        "name": "collect_email"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/hotel_receptionist/decline_card_capture.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "decline_card_capture",
+    "description": "The caller explicitly refuses to provide their card.\n",
+    "input_schema": {
+      "properties": {
+        "reason": {
+          "description": "A short explanation of why the caller declined.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

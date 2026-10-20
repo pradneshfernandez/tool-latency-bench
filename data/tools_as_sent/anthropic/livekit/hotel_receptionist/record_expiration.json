@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/hotel_receptionist/record_expiration.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_expiration",
+    "description": "Record the card's expiration date.\n",
+    "input_schema": {
+      "properties": {
+        "month": {
+          "description": "Expiration month as a number, e.g. 4 for April.",
+          "type": "integer"
+        },
+        "year": {
+          "description": "Expiration year, last two digits, e.g. 28 for 2028.",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "month",
+        "year"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

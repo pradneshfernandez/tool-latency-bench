@@ -1,0 +1,34 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/give_discoverable_user_tool.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "give_discoverable_user_tool",
+        "description": "Pass a tool to the user so they can execute it themselves.\n\nUse this when the knowledge base indicates that the user should perform\nan action themselves (e.g., \"to do X, have the user call tool_name(args)\").\n\nThe user will then be able to call `call_discoverable_tool` with the same\ntool name and arguments to simulate executing the action.",
+        "parameters": {
+          "properties": {
+            "discoverable_tool_name": {
+              "description": "The name of the discoverable tool (e.g., \"open_webpage\", \"navigate_to_section\")",
+              "title": "Discoverable Tool Name",
+              "type": "string"
+            },
+            "arguments": {
+              "default": "{}",
+              "description": "JSON string of arguments for the tool (e.g., '{\"url\": \"https://example.com\"}')",
+              "title": "Arguments",
+              "type": "string"
+            }
+          },
+          "required": [
+            "discoverable_tool_name"
+          ],
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/multi_worker_handoff/end_conversation.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "end_conversation",
+    "description": "End the conversation when the user says goodbye.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "Why the conversation is ending."
+        }
+      },
+      "required": [
+        "reason"
+      ]
+    }
+  }
+}

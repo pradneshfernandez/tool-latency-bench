@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/basic_dtmf_agent/ask_for_service_options.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "ask_for_service_options",
+      "strict": true,
+      "description": "Ask user to which telephone service they want to use.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

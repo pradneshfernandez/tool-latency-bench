@@ -1,0 +1,29 @@
+{
+  "tool_id": "livekit/survey/record_intro.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "record_intro",
+    "description": "Call to record the candidate's name and any notes about their response\n",
+    "input_schema": {
+      "properties": {
+        "name": {
+          "description": "The candidate's name",
+          "type": "string"
+        },
+        "intro_notes": {
+          "description": "The candidate's introduction and any additional notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "intro_notes"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

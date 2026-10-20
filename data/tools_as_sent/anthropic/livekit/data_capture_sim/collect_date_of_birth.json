@@ -1,0 +1,16 @@
+{
+  "tool_id": "livekit/data_capture_sim/collect_date_of_birth.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "collect_date_of_birth",
+    "description": "Collect the user's date of birth (and time of birth if they know it).",
+    "input_schema": {
+      "properties": {},
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

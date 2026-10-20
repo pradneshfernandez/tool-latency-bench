@@ -1,0 +1,17 @@
+{
+  "tool_id": "pipecat-flows/food_ordering/get_delivery_estimate.json",
+  "provider": "openai-responses",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "get_delivery_estimate",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "strict": null,
+    "description": "Provide delivery estimate information."
+  }
+}

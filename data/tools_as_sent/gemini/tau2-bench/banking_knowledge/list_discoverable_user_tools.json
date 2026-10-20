@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/banking_knowledge/list_discoverable_user_tools.json",
+  "provider": "gemini",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/models/gemini-2.5-flash:generateContent",
+  "payload": {
+    "function_declarations": [
+      {
+        "name": "list_discoverable_user_tools",
+        "description": "List all tools that have been given to you by the agent.\n\nUse this to see what actions the agent has instructed you to perform.",
+        "parameters": {
+          "title": "parameters",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "tool_id": "tau2-bench/retail/get_item_details.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "get_item_details",
+    "input_schema": {
+      "properties": {
+        "item_id": {
+          "description": "The item id, such as '6086499569'. Be careful the item id is different from the product id.",
+          "title": "Item Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "item_id"
+      ],
+      "type": "object"
+    },
+    "description": "Get the inventory details of an item."
+  }
+}

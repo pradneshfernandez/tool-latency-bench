@@ -1,0 +1,24 @@
+{
+  "tool_id": "pipecat/backend/search_docs.json",
+  "provider": "openai-responses",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "type": "function",
+    "name": "search_docs",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "What to look for."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "strict": null,
+    "description": "Search the team's internal docs. Takes a few seconds."
+  }
+}

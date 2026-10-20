@@ -1,0 +1,44 @@
+{
+  "tool_id": "tau2-bench/airline/update_reservation_baggages.json",
+  "provider": "openai-responses",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/responses",
+  "payload": {
+    "name": "update_reservation_baggages",
+    "parameters": {
+      "properties": {
+        "reservation_id": {
+          "description": "The reservation ID, such as 'ZFA04Y'",
+          "title": "Reservation Id",
+          "type": "string"
+        },
+        "total_baggages": {
+          "description": "The updated total number of baggage items included in the reservation.",
+          "title": "Total Baggages",
+          "type": "integer"
+        },
+        "nonfree_baggages": {
+          "description": "The updated number of non-free baggage items included in the reservation.",
+          "title": "Nonfree Baggages",
+          "type": "integer"
+        },
+        "payment_id": {
+          "description": "The payment id stored in user profile, such as 'credit_card_7815826', 'gift_card_7815826', 'certificate_7815826'.",
+          "title": "Payment Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reservation_id",
+        "total_baggages",
+        "nonfree_baggages",
+        "payment_id"
+      ],
+      "title": "parameters",
+      "type": "object"
+    },
+    "strict": null,
+    "type": "function",
+    "description": "Update the baggage information of a reservation."
+  }
+}

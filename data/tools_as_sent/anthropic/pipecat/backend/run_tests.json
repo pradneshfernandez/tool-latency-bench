@@ -1,0 +1,27 @@
+{
+  "tool_id": "pipecat/backend/run_tests.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "run_tests",
+    "description": "Run the test suite, or one test file. Takes a while.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "A test file to run alone; the whole suite when omitted."
+        }
+      },
+      "required": []
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/healthcare/update_insurance.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "update_insurance",
+      "strict": true,
+      "description": "Call when the user requests to update their health insurance.\n",
+      "parameters": {
+        "properties": {
+          "updated_insurance": {
+            "description": "The new insurance value provided by the user",
+            "type": "string"
+          }
+        },
+        "required": [
+          "updated_insurance"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

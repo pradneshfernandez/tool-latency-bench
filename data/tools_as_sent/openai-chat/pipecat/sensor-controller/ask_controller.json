@@ -1,0 +1,25 @@
+{
+  "tool_id": "pipecat/sensor-controller/ask_controller.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "ask_controller",
+      "description": "Ask the temperature sensor controller anything about the sensor.\n\nForward the user's request verbatim and speak back the answer.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "The user's question or instruction to forward to the controller."
+          }
+        },
+        "required": [
+          "question"
+        ]
+      }
+    }
+  }
+}

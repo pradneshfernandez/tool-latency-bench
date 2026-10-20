@@ -1,0 +1,24 @@
+{
+  "tool_id": "livekit/healthcare/confirm_payment_proceeds.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "confirm_payment_proceeds",
+    "description": "Call to proceed with payment steps regarding the user's bill.\n",
+    "input_schema": {
+      "properties": {
+        "amount": {
+          "description": "The dollar amount the user wishes to pay toward their balance.",
+          "type": "number"
+        }
+      },
+      "required": [
+        "amount"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

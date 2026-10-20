@@ -1,0 +1,26 @@
+{
+  "tool_id": "pipecat-flows/insurance_quote/collect_marital_status.json",
+  "provider": "gemini",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record marital status after customer provides it.",
+        "name": "collect_marital_status",
+        "parameters": {
+          "properties": {
+            "marital_status": {
+              "description": "The customer's marital status. Must be one of \"single\", \"married\".",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "marital_status"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "tool_id": "pipecat-flows/multi_worker_handoff/transfer_to_reservation.json",
+  "provider": "anthropic",
+  "framework": "pipecat-ai 1.4.0 (pipecat-flows 96223f4)",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "transfer_to_reservation",
+    "description": "Transfer the user to the reservation assistant.\n\nCall this as soon as the user wants to book, change, or ask about\nmaking a table reservation.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "Why the user is being transferred."
+        }
+      },
+      "required": [
+        "reason"
+      ]
+    }
+  }
+}

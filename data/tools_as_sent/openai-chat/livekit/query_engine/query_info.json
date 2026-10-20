@@ -1,0 +1,26 @@
+{
+  "tool_id": "livekit/query_engine/query_info.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "query_info",
+      "strict": true,
+      "description": "Get more information about a specific topic",
+      "parameters": {
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

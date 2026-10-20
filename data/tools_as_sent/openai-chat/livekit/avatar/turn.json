@@ -1,0 +1,19 @@
+{
+  "tool_id": "livekit/avatar/turn.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "turn",
+      "strict": true,
+      "description": "Turn side to side. Only call when they explicitly ask you to turn.",
+      "parameters": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}

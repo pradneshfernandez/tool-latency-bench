@@ -1,0 +1,28 @@
+{
+  "tool_id": "livekit/healthcare/confirm_payment_proceeds.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call to proceed with payment steps regarding the user's bill.\n",
+        "name": "confirm_payment_proceeds",
+        "parameters_json_schema": {
+          "properties": {
+            "amount": {
+              "description": "The dollar amount the user wishes to pay toward their balance.",
+              "title": "Amount",
+              "type": "number"
+            }
+          },
+          "required": [
+            "amount"
+          ],
+          "title": "ConfirmPaymentProceedsArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

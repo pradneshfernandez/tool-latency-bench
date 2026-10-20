@@ -1,0 +1,42 @@
+{
+  "tool_id": "livekit/hotel_receptionist/choose_time.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Record the chosen time slot and any special request.\n",
+        "name": "choose_time",
+        "parameters_json_schema": {
+          "properties": {
+            "at_time": {
+              "description": "The slot the CALLER picked, from the open times set_party returned.",
+              "format": "time",
+              "title": "At Time",
+              "type": "string"
+            },
+            "notes": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional special request (allergy, anniversary...), or null.",
+              "title": "Notes"
+            }
+          },
+          "required": [
+            "at_time"
+          ],
+          "title": "ChooseTimeArgs",
+          "type": "object"
+        }
+      }
+    ]
+  }
+}

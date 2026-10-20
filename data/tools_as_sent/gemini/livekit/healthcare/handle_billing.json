@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/healthcare/handle_billing.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Call for any billing inquiries, like if the user wants to check their outstanding balance or if they want to pay a bill.",
+        "name": "handle_billing"
+      }
+    ]
+  }
+}

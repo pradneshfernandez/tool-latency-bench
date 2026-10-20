@@ -1,0 +1,39 @@
+{
+  "tool_id": "livekit/hotel_receptionist/take_guest_message.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "take_guest_message",
+    "description": "Take a message for someone the caller says is staying at the hotel. It gets delivered only if that person is in fact a guest - the result never tells you whether they are, and you must never tell the caller either: no confirming or denying anyone's presence, no room numbers, no connecting calls (see lookup_policy topic \"guest_privacy\"). Read the caller's name, number, and message back before calling this.\n",
+    "input_schema": {
+      "properties": {
+        "recipient": {
+          "description": "Full name of the person the message is for - first AND last. If the caller only gave a first name, ask for the last name before calling.",
+          "type": "string"
+        },
+        "caller_name": {
+          "description": "The caller's own name.",
+          "type": "string"
+        },
+        "caller_phone": {
+          "description": "The caller's callback number.",
+          "type": "string"
+        },
+        "message": {
+          "description": "The message, in the caller's words.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipient",
+        "caller_name",
+        "caller_phone",
+        "message"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

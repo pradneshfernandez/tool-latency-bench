@@ -1,0 +1,53 @@
+{
+  "tool_id": "livekit/hotel_receptionist/add_to_waitlist.json",
+  "provider": "anthropic",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "add_to_waitlist",
+    "description": "Put the caller on the waitlist for dates the hotel is SOLD OUT on. Use ONLY after check_room_availability has come back empty for their dates and the caller wants to be told if something opens up. Records their name, number, dates, and party size and returns a reference - it does NOT hold or promise a room; the desk reaches out only if a room frees up. Never use it when rooms ARE available (book those instead) and never imply it guarantees anything.\n",
+    "input_schema": {
+      "properties": {
+        "first_name": {
+          "description": "Caller's first name.",
+          "type": "string"
+        },
+        "last_name": {
+          "description": "Caller's last name.",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Callback number.",
+          "type": "string"
+        },
+        "check_in": {
+          "description": "Requested check-in date in ISO YYYY-MM-DD format.",
+          "format": "date",
+          "type": "string"
+        },
+        "check_out": {
+          "description": "Requested check-out date in ISO YYYY-MM-DD format.",
+          "format": "date",
+          "type": "string"
+        },
+        "guests": {
+          "description": "Number of guests.",
+          "maximum": 6,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "phone",
+        "check_in",
+        "check_out",
+        "guests"
+      ],
+      "type": "object",
+      "additionalProperties": false
+    },
+    "strict": true
+  }
+}

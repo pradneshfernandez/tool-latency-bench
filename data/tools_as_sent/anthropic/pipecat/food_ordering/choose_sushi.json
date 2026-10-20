@@ -1,0 +1,15 @@
+{
+  "tool_id": "pipecat/food_ordering/choose_sushi.json",
+  "provider": "anthropic",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/messages?beta=true",
+  "payload": {
+    "name": "choose_sushi",
+    "description": "User wants to order sushi. Let's get that order started.",
+    "input_schema": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

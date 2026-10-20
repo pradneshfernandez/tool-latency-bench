@@ -1,0 +1,31 @@
+{
+  "tool_id": "pipecat/persistent-context-gemini/get_image.json",
+  "provider": "gemini",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1beta/models/gemini-3.6-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Called when the user requests a description of their camera feed.",
+        "name": "get_image",
+        "parameters": {
+          "properties": {
+            "user_id": {
+              "description": "The ID of the user to grab the image from.",
+              "type": "STRING"
+            },
+            "question": {
+              "description": "The question that the user is asking about the image.",
+              "type": "STRING"
+            }
+          },
+          "required": [
+            "user_id",
+            "question"
+          ],
+          "type": "OBJECT"
+        }
+      }
+    ]
+  }
+}

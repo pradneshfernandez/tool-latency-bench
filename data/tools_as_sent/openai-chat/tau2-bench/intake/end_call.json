@@ -1,0 +1,18 @@
+{
+  "tool_id": "tau2-bench/intake/end_call.json",
+  "provider": "openai-chat",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "end_call",
+      "description": "Hang up and end the call. Call this exactly once, as your last action:\n\nafter submitting the collected fields and thanking the person, or when\nthe call cannot proceed. Ending the call is final — nothing can be\nsubmitted after it.",
+      "parameters": {
+        "properties": {},
+        "title": "parameters",
+        "type": "object"
+      }
+    }
+  }
+}

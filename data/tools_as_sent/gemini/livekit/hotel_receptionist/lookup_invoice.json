@@ -1,0 +1,14 @@
+{
+  "tool_id": "livekit/hotel_receptionist/lookup_invoice.json",
+  "provider": "gemini",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+  "payload": {
+    "functionDeclarations": [
+      {
+        "description": "Verify the caller, fetch their invoice, and read it back.",
+        "name": "lookup_invoice"
+      }
+    ]
+  }
+}

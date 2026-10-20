@@ -1,0 +1,34 @@
+{
+  "tool_id": "pipecat/function-calling-advanced-functionschema/get_current_weather.json",
+  "provider": "openai-chat",
+  "framework": "pipecat 5558d26",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "get_current_weather",
+      "description": "Get the current weather",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "The city and state, e.g. San Francisco, CA"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "celsius",
+              "fahrenheit"
+            ],
+            "description": "The temperature unit to use. Infer this from the user's location."
+          }
+        },
+        "required": [
+          "location",
+          "format"
+        ]
+      }
+    }
+  }
+}

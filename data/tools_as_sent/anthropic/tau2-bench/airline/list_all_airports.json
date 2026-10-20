@@ -1,0 +1,14 @@
+{
+  "tool_id": "tau2-bench/airline/list_all_airports.json",
+  "provider": "anthropic",
+  "framework": "litellm 1.81.11 (tau2-bench 989d328)",
+  "endpoint": "/v1/messages",
+  "payload": {
+    "name": "list_all_airports",
+    "input_schema": {
+      "properties": {},
+      "type": "object"
+    },
+    "description": "Returns a list of all available airports."
+  }
+}

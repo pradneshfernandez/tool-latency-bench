@@ -1,0 +1,27 @@
+{
+  "tool_id": "livekit/hotel_receptionist/give_up_2.json",
+  "provider": "openai-chat",
+  "framework": "livekit-agents + plugins 5b49888",
+  "endpoint": "/v1/chat/completions",
+  "payload": {
+    "type": "function",
+    "function": {
+      "name": "give_up",
+      "strict": true,
+      "description": "End the booking without making it: the caller no longer wants the room, OR they need something this flow can't do. The right tools for their request become available once this returns.\n",
+      "parameters": {
+        "properties": {
+          "reason": {
+            "description": "short explanation.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  }
+}
