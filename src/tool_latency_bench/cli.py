@@ -125,24 +125,31 @@ def run(benchmark_name, model, service, session, blocks, pause, reasoning_effort
 @cli.command()
 @click.argument("run_dir", type=click.Path(exists=True, file_okay=False, path_type=Path))
 def analyze(run_dir):
-    """Write analysis.md for one run: runs/{benchmark}/{timestamp}_{model}_{session}/."""
+    """Write analysis.md and analysis.png for one run: runs/{benchmark}/{timestamp}_{model}_{session}/."""
     run_dir = run_dir.resolve()
     cfg = load_benchmark(run_dir.parent.name)
     text = analysis.analyze(run_dir, cfg.conditions)
-    (run_dir / "analysis.md").write_text(text + "\n")
+    (run_dir / "analysis.md").write_text(text + "\n![latency ratios](analysis.png)\n")
+    analysis.plot([run_dir], cfg.conditions, f"{cfg.name}: {run_dir.name}", run_dir / "analysis.png")
     click.echo(text)
+    click.echo(f"\nwrote {run_dir.relative_to(ROOT)}/analysis.md and analysis.png")
 
 
 @cli.command()
 @click.argument("benchmark_name")
 def compare(benchmark_name):
-    """Put all runs (sessions) of a benchmark side by side."""
+    """Put all runs (sessions) of a benchmark side by side -> runs/{benchmark}/comparison.md/.png."""
     cfg = load_benchmark(benchmark_name)
-    run_dirs = sorted(p.parent for p in (ROOT / "runs" / benchmark_name).glob("*/runtime.json"))
+    out_dir = ROOT / "runs" / benchmark_name
+    run_dirs = sorted(p.parent for p in out_dir.glob("*/runtime.json"))
     if not run_dirs:
         raise click.UsageError(f"no completed runs in runs/{benchmark_name}/")
-    click.echo(f"# {benchmark_name}: {len(run_dirs)} runs\n")
-    click.echo(analysis.compare(run_dirs, cfg.conditions))
+    text = f"# {benchmark_name}: {len(run_dirs)} runs\n\n" + analysis.compare(run_dirs, cfg.conditions)
+    (out_dir / "comparison.md").write_text(text + "\n![latency ratios](comparison.png)\n")
+    analysis.plot(run_dirs, cfg.conditions, f"{benchmark_name}: sessions side by side",
+                  out_dir / "comparison.png")
+    click.echo(text)
+    click.echo(f"wrote runs/{benchmark_name}/comparison.md and comparison.png")
 
 
 @cli.command("show-request")

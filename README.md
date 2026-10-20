@@ -119,8 +119,8 @@ uv run tool-latency-bench list-benchmarks
 uv run tool-latency-bench show-request exp1_tool_count          # one assembled request, nothing sent
 uv run tool-latency-bench run exp1_tool_count --model <model> --service groq --session morning \
     --reasoning-effort <lowest the model accepts>
-uv run tool-latency-bench analyze runs/exp1_tool_count/<timestamp>_<model>_morning
-uv run tool-latency-bench compare exp1_tool_count               # all sessions side by side
+uv run tool-latency-bench analyze runs/exp1_tool_count/<timestamp>_<model>_morning   # analysis.md + .png
+uv run tool-latency-bench compare exp1_tool_count    # sessions side by side -> runs/<benchmark>/comparison.md + .png
 ```
 
 - Benchmarks: `benchmarks/exp1_tool_count/` (0/10/30/60 tools) and `benchmarks/exp2_complexity/`
@@ -138,6 +138,24 @@ uv run tool-latency-bench compare exp1_tool_count               # all sessions s
 - `--reasoning-effort` is sent as `reasoning_effort`; use the lowest value the model accepts
   (e.g. `minimal` for `gemini-3.5-flash-lite`, `none` for `gemini-3.8-flash`) and it is recorded
   in `runtime.json`. Tool sets never contain two tools with the same name (some APIs reject that).
+
+### Statistics
+
+Following [A statistical approach to model evaluations](https://www.anthropic.com/research/statistical-approach-to-model-evals):
+
+- **Paired differences.** Each block sends one user message under every condition, so the
+  effect is estimated from within-block differences in log latency, reported as a ratio vs
+  0 tools with a 95% CI (mean ± 1.96 × SE), plus the median per-block difference in ms.
+- **Clustered standard errors.** SEs are clustered on the user message. There are 30 distinct
+  messages, so the default 30 blocks use each message once; with more blocks messages repeat
+  and the clustering keeps the SE honest. A warning is shown if there are fewer than 10.
+- **Power.** Each effect also reports the smallest change the run could detect with 80% power
+  (± 2.8 × SE), and the number of blocks needed to detect a 5% change at the observed spread.
+  A "no difference" result only rules out effects larger than the detectable size.
+- **Errors per condition.** Blocks with an errored request are skipped; errors are counted per
+  condition and a warning is shown if they are uneven, since skipping them can bias the result.
+- **Sessions are reported side by side, not pooled.** Each time-of-day session is its own
+  cluster; with three of them they are a replication check, not extra precision.
 
 ### Status
 

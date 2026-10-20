@@ -9,6 +9,7 @@ dependencies = [
   "tiktoken>=0.12",
   "python-dotenv",
   "loguru",
+  "matplotlib>=3.11.2",
 ]
 
 [project.scripts]
