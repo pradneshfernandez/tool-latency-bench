@@ -19,10 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Third-party content: the tool definitions in data/tools_pool_v0/ were extracted
-from other projects and remain under their original licenses (MIT, BSD 2-Clause,
-Apache 2.0), not the license above. See the "Tool definition pool" section of
-README.md for each source, its license and copyright holder.
