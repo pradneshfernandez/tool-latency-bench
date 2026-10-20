@@ -101,7 +101,9 @@ python scripts/as_sent/report.py          # per framework x provider: what chang
 ```
 
 Framework commits come from `scripts/extract/sources.json`; package versions (litellm, pipecat-ai,
-provider SDKs) are pinned in `scripts/as_sent/requirements-*.txt`.
+provider SDKs) are pinned in `scripts/as_sent/requirements-*.txt`. See
+[docs/as_sent.md](docs/as_sent.md) for how the capture works, what each framework sends to each
+provider (with the code that does it), and the caveats.
 
 ## License
 
