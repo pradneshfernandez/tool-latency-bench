@@ -43,3 +43,8 @@ Pipecat's per-provider examples (`function-calling-openai`, `-anthropic`, `-groq
 the same tools, so exact duplicates (same name, description and parameters) were dropped,
 keeping the first copy by file path: 280 extracted, 105 kept. Other sources keep every tool.
 
+
+## License
+
+MIT, see [LICENSE](LICENSE). The tool definitions in `data/tools_pool_v0/` keep their original
+licenses, listed in the table above.
