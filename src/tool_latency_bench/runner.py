@@ -27,12 +27,23 @@ def _empty_result(error=None) -> dict:
             "input_tokens": None, "cached_tokens": None, "error": error}
 
 
+def is_answer(text: str) -> bool:
+    """True once `text` contains user-visible answer text, not only whitespace or a
+    (possibly unfinished) leading <think> block."""
+    s = text.lstrip()
+    if s.startswith("<think>"):
+        return "</think>" in s and bool(s.split("</think>", 1)[1].strip())
+    return bool(s) and not "<think>".startswith(s)
+
+
 def send_once(client, url, headers, payload):
     """One streamed request; the clock starts just before sending.
 
-    ttfat_ms: first delta carrying text content or a tool call (aiewf-eval's TTFAT).
-    actionable_ms: first text token, or, if a tool call starts first, the moment that
-    tool call is complete (finish_reason, or end of stream). The rest of the stream is
+    ttfat_ms: first delta carrying answer text or a tool call (aiewf-eval's TTFAT).
+    actionable_ms: first answer text, or, if a tool call starts first, the moment that
+    tool call is complete (finish_reason, or end of stream).
+    Answer text excludes whitespace and a leading <think>...</think> block, which some
+    open-weight models put in `content` instead of a separate reasoning field. The rest of the stream is
     still read to the end, outside the timing: it carries the usage chunk, and a stream
     closed early cannot go back to the connection pool, so the next request would pay
     for a new connection inside its timing.
@@ -40,6 +51,7 @@ def send_once(client, url, headers, payload):
     """
     res = _empty_result()
     in_tool = False
+    text = ""  # content received so far, to skip a leading <think> block
     t0 = time.perf_counter()
 
     def ms():
@@ -65,11 +77,15 @@ def send_once(client, url, headers, payload):
             if res["actionable_ms"] is None:
                 for choice in chunk.get("choices") or []:
                     delta = choice.get("delta") or {}
-                    if res["ttfat_ms"] is None and (delta.get("content") or delta.get("tool_calls")):
+                    answer = False
+                    if delta.get("content") and not in_tool:
+                        text += delta["content"]
+                        answer = is_answer(text)
+                    if res["ttfat_ms"] is None and (answer or delta.get("tool_calls")):
                         res["ttfat_ms"] = ms()
                     if delta.get("tool_calls"):
                         in_tool = True
-                    elif delta.get("content") and not in_tool:
+                    elif answer:
                         res["actionable_ms"], res["outcome"] = ms(), "text"
                     if in_tool and choice.get("finish_reason"):
                         res["actionable_ms"], res["outcome"] = ms(), "tool"
@@ -110,11 +126,13 @@ def create_run_directory(benchmark_name: str, model: str, session: str) -> Path:
 
 
 def run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir,
-        reasoning_effort=None) -> dict:
+        reasoning_effort=None, tool_choice=None) -> dict:
     paths = part_paths(cfg.name)
     parts = load_parts(paths)
     if reasoning_effort:
         parts["settings"]["reasoning_effort"] = reasoning_effort
+    if tool_choice:
+        parts["settings"]["tool_choice"] = tool_choice
     (run_dir / "request_parts").mkdir()
     for name, src in paths.items():
         shutil.copy(src, run_dir / "request_parts" / name)
@@ -131,6 +149,7 @@ def run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir,
         "benchmark": cfg.name, "model": model, "service": service, "base_url": base_url,
         "session": session, "blocks": blocks, "pause_s": pause, "seed": seed,
         "reasoning_effort": reasoning_effort,
+        "tool_choice": parts["settings"].get("tool_choice"),
         "started": datetime.now().astimezone().isoformat(timespec="seconds"),
         "request_parts": {k: str(v.relative_to(ROOT)) for k, v in paths.items()},
         "benchmark_info": cfg.info(),

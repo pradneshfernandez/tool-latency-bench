@@ -160,15 +160,14 @@ def unique_names(ids) -> bool:
 
 
 def sample_unique(rng, pool, k) -> list[str]:
-    """k tools in random order with no repeated name: shuffle, keep first of each name."""
-    seen, out = set(), []
-    for i in rng.sample(pool, len(pool)):
-        if tool_name(i) not in seen:
-            seen.add(tool_name(i))
-            out.append(i)
-            if len(out) == k:
-                return out
-    raise RuntimeError(f"pool has fewer than {k} distinct tool names")
+    """k tools in random order with no repeated name: k names drawn uniformly, then one
+    tool drawn uniformly among the tools with that name."""
+    by_name = {}
+    for i in sorted(pool):
+        by_name.setdefault(tool_name(i), []).append(i)
+    if len(by_name) < k:
+        raise RuntimeError(f"pool has fewer than {k} distinct tool names")
+    return [rng.choice(by_name[n]) for n in rng.sample(sorted(by_name), k)]
 
 
 def within_budget(ids, tokens, budget) -> bool:

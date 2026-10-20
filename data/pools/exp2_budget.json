@@ -1,5 +1,5 @@
 {
- "budget": 3030,
+ "budget": 3060,
  "tolerance": 0.05,
  "set_size": 20,
  "band": [
@@ -7,9 +7,9 @@
   185
  ],
  "acceptance": {
-  "simple": 0.973,
-  "medium": 0.9175,
-  "mixed": 0.986
+  "simple": 0.39625,
+  "medium": 0.41875,
+  "mixed": 0.676
  },
  "simple": [
   "data/tools_pool_v0/eva/airline/get_flight_status.json",

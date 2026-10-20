@@ -7,11 +7,13 @@ Run it as a background task and check progress in its output ("block N/30", "don
 
 ```
 uv run tool-latency-bench run <benchmark> --model <model> --service <service> \
-    --session <label> --reasoning-effort <lowest the model accepts>
+    --session <label> --tool-choice none --reasoning-effort <lowest the model accepts>
 ```
 
 - **Never run two benchmark runs at the same time.** Concurrent requests change each other's
   latency; runs must be strictly one after another.
+- **Run both modes:** `--tool-choice none` is the primary measurement (cost of reading the
+  tools); `--tool-choice auto` is the secondary, realistic one. Record which is which.
 - **Smoke run first** with `--blocks 2` for every new model/service. Check `results.csv`: no
   errors, `input_tokens` grows with `n_tools`, `cached_tokens` 0 or empty. Then delete the
   smoke run folder so `compare` does not include it.

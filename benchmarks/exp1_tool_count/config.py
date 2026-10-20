@@ -12,6 +12,9 @@ class BenchmarkConfig:
     # Condition names in display order; the first is the 0-tool baseline.
     conditions = ["0", "10", "30", "60"]
     default_blocks = 30
+    # Count and tokens grow together here, so the slope is reported per 1000 tool tokens.
+    dose_response = True
+    contrasts = []
 
     def __init__(self):
         self.pool = load_pool("exp1")

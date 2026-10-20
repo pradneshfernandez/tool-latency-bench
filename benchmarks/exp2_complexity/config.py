@@ -14,6 +14,9 @@ class BenchmarkConfig:
     # Condition names in display order; the first is the 0-tool baseline.
     conditions = ["none", "simple", "medium", "mixed"]
     default_blocks = 30
+    dose_response = False
+    # The question of this benchmark: direct paired comparisons between tool types.
+    contrasts = [("medium", "simple"), ("mixed", "simple")]
 
     def __init__(self):
         if not BUDGET_FILE.exists():

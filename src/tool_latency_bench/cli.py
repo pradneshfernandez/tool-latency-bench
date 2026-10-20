@@ -99,7 +99,10 @@ def list_benchmarks():
 @click.option("--pause", type=float, default=1.0, show_default=True, help="Seconds between requests")
 @click.option("--reasoning-effort", default=None,
               help="Sent as reasoning_effort; use the lowest the model accepts (e.g. none, minimal)")
-def run(benchmark_name, model, service, session, blocks, pause, reasoning_effort):
+@click.option("--tool-choice", type=click.Choice(["none", "auto"]), default=None,
+              help="Override tool_choice. 'none' keeps the tools in the prompt but the model "
+                   "always answers in text, isolating the cost of reading the tools")
+def run(benchmark_name, model, service, session, blocks, pause, reasoning_effort, tool_choice):
     """Run a benchmark."""
     cfg = load_benchmark(benchmark_name)
     base_url, key_env = SERVICE_ALIASES[service]
@@ -117,7 +120,7 @@ def run(benchmark_name, model, service, session, blocks, pause, reasoning_effort
     logger.info(f"{cfg.name}: {blocks} blocks, {model} via {service} ({base_url})")
     logger.info(f"run dir: {run_dir.relative_to(ROOT)}")
     rt = runner.run(cfg, model, service, base_url, api_key, session, blocks, pause, run_dir,
-                    reasoning_effort)
+                    reasoning_effort, tool_choice)
     logger.info(f"done: {rt['n_requests']} requests, {rt['n_errors']} errors")
     logger.info(f"analyze with: uv run tool-latency-bench analyze {run_dir.relative_to(ROOT)}")
 
@@ -128,9 +131,9 @@ def analyze(run_dir):
     """Write analysis.md and analysis.png for one run: runs/{benchmark}/{timestamp}_{model}_{session}/."""
     run_dir = run_dir.resolve()
     cfg = load_benchmark(run_dir.parent.name)
-    text = analysis.analyze(run_dir, cfg.conditions)
+    text = analysis.analyze(run_dir, cfg)
     (run_dir / "analysis.md").write_text(text + "\n![latency ratios](analysis.png)\n")
-    analysis.plot([run_dir], cfg.conditions, f"{cfg.name}: {run_dir.name}", run_dir / "analysis.png")
+    analysis.plot([run_dir], cfg, f"{cfg.name}: {run_dir.name}", run_dir / "analysis.png")
     click.echo(text)
     click.echo(f"\nwrote {run_dir.relative_to(ROOT)}/analysis.md and analysis.png")
 
@@ -144,9 +147,9 @@ def compare(benchmark_name):
     run_dirs = sorted(p.parent for p in out_dir.glob("*/runtime.json"))
     if not run_dirs:
         raise click.UsageError(f"no completed runs in runs/{benchmark_name}/")
-    text = f"# {benchmark_name}: {len(run_dirs)} runs\n\n" + analysis.compare(run_dirs, cfg.conditions)
+    text = f"# {benchmark_name}: {len(run_dirs)} runs\n\n" + analysis.compare(run_dirs, cfg)
     (out_dir / "comparison.md").write_text(text + "\n![latency ratios](comparison.png)\n")
-    analysis.plot(run_dirs, cfg.conditions, f"{benchmark_name}: sessions side by side",
+    analysis.plot(run_dirs, cfg, f"{benchmark_name}: sessions side by side",
                   out_dir / "comparison.png")
     click.echo(text)
     click.echo(f"wrote runs/{benchmark_name}/comparison.md and comparison.png")

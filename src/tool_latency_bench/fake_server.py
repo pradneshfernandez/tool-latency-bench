@@ -2,8 +2,9 @@
 
 Simulated latency grows with the request size, so tools visibly add delay:
 first chunk after BASE_S + PER_KTOKEN_S per 1000 input tokens (rough chars/4),
-times log-normal noise. With tools, it calls the first tool 60% of the time.
-A small share of requests get a 429 to exercise the retry path.
+times log-normal noise. With tools (and tool_choice not "none"), it calls the first tool
+60% of the time. Some text answers start with a <think> block in `content`, and a small
+share of requests get a 429, to exercise those paths in the runner.
 """
 
 import json
@@ -17,6 +18,7 @@ PER_KTOKEN_S = 0.04
 NOISE_SIGMA = 0.15
 TOKEN_GAP_S = 0.01
 RATE_LIMIT_SHARE = 0.03
+THINK_SHARE = 0.1
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -58,7 +60,7 @@ class Handler(BaseHTTPRequestHandler):
         time.sleep((BASE_S + PER_KTOKEN_S * prompt_tokens / 1000)
                    * random.lognormvariate(0, NOISE_SIGMA))
         send({"role": "assistant", "content": ""})
-        if tools and random.random() < 0.6:
+        if tools and body.get("tool_choice") != "none" and random.random() < 0.6:
             fn = tools[0]["function"]["name"]
             send({"tool_calls": [{"index": 0, "id": "call_1", "type": "function",
                                   "function": {"name": fn, "arguments": ""}}]})
@@ -67,7 +69,10 @@ class Handler(BaseHTTPRequestHandler):
                 send({"tool_calls": [{"index": 0, "function": {"arguments": part}}]})
             send({}, "tool_calls")
         else:
-            for word in ["Sure", ",", " I", " can", " help", "."]:
+            words = ["Sure", ",", " I", " can", " help", "."]
+            if random.random() < THINK_SHARE:
+                words = ["<think>", "The user", " asks.", "</think>", "\n"] + words
+            for word in words:
                 send({"content": word})
                 time.sleep(TOKEN_GAP_S)
             send({}, "stop")

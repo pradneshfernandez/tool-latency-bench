@@ -118,44 +118,79 @@ uv run tool-latency-bench build-pools      # data/pools/: exp1, exp2_simple, exp
 uv run tool-latency-bench list-benchmarks
 uv run tool-latency-bench show-request exp1_tool_count          # one assembled request, nothing sent
 uv run tool-latency-bench run exp1_tool_count --model <model> --service groq --session morning \
-    --reasoning-effort <lowest the model accepts>
+    --tool-choice none --reasoning-effort <lowest the model accepts>
 uv run tool-latency-bench analyze runs/exp1_tool_count/<timestamp>_<model>_morning   # analysis.md + .png
-uv run tool-latency-bench compare exp1_tool_count    # sessions side by side -> runs/<benchmark>/comparison.md + .png
+uv run tool-latency-bench compare exp1_tool_count    # runs side by side -> runs/<benchmark>/comparison.md + .png
 ```
 
-- Benchmarks: `benchmarks/exp1_tool_count/` (0/10/30/60 tools) and `benchmarks/exp2_complexity/`
-  (0 tools vs 20 simple / 20 medium / 10+10 mixed at the same total tokens).
-- Services (`--service`): `openai`, `google`, `groq`, `cerebras`, each an OpenAI-compatible
+- **Benchmarks.** `exp1_tool_count`: 0 / 10 / 30 / 60 tools of similar size (nested random
+  subsets). `exp2_complexity`: 0 tools vs 20 simple / 20 medium / 10+10 mixed tools with the
+  same total tiktoken count (±5%).
+- **Services** (`--service`): `openai`, `google`, `groq`, `cerebras`, each an OpenAI-compatible
   base URL plus an API key read from the environment or `.env`; and `fake`, a local streaming
   server with simulated delay for dry runs without a key.
-- Requests are built from `benchmarks/_shared/request_parts/` (system prompt, history, user
-  messages, settings); a benchmark can override any of these files in its own `request_parts/`.
-  A random nonce is prepended to the system prompt at send time.
-- Each run writes `runs/<benchmark>/<timestamp>_<model>_<session>/` with `results.csv`,
-  `runtime.json`, `run.log`, the `request_parts/` it used, and `analysis.md` after `analyze`.
-- `actionable_ms`: tool call complete if the model calls a tool, else first text token.
-  `ttfat_ms`: time to first answer token, i.e. first text or tool-call output.
+- **Requests** are built from `benchmarks/_shared/request_parts/` (system prompt, history, 30
+  user messages, settings); a benchmark can override any of these files in its own
+  `request_parts/`. A random nonce is prepended to the system prompt at send time. Tool sets
+  never contain two tools with the same name (some APIs reject that).
+- **Two modes** (`--tool-choice`):
+  - `none` (**primary**): the tools are in the prompt but the model always answers in text, so
+    the time to first answer text isolates the cost of the model reading the tool definitions.
+  - `auto` (secondary, realistic): the model may call a tool. Then `actionable_ms` also
+    includes generating the call's arguments (longer for tools with more parameters), and
+    whether it calls one depends on whether the drawn set has a relevant tool.
+- **Metrics.** `actionable_ms`: tool call complete if the model calls a tool, else first answer
+  text. `ttfat_ms`: first answer text or first tool-call output. Answer text skips whitespace and
+  a leading `<think>...</think>` block, which some open-weight models put in `content`.
 - `--reasoning-effort` is sent as `reasoning_effort`; use the lowest value the model accepts
-  (e.g. `minimal` for `gemini-3.5-flash-lite`, `none` for `gemini-3.8-flash`) and it is recorded
-  in `runtime.json`. Tool sets never contain two tools with the same name (some APIs reject that).
+  (e.g. `minimal` for `gemini-3.5-flash-lite`, `none` for `gemini-3.8-flash`).
+- Each run writes `runs/<benchmark>/<timestamp>_<model>_<session>/` with `results.csv`,
+  `runtime.json` (model, settings, seed, versions, counts), `run.log`, the `request_parts/` it
+  used, and `analysis.md` + `analysis.png` after `analyze`.
 
 ### Statistics
 
 Following [A statistical approach to model evaluations](https://www.anthropic.com/research/statistical-approach-to-model-evals):
 
-- **Paired differences.** Each block sends one user message under every condition, so the
-  effect is estimated from within-block differences in log latency, reported as a ratio vs
-  0 tools with a 95% CI (mean ± 1.96 × SE), plus the median per-block difference in ms.
-- **Clustered standard errors.** SEs are clustered on the user message. There are 30 distinct
-  messages, so the default 30 blocks use each message once; with more blocks messages repeat
-  and the clustering keeps the SE honest. A warning is shown if there are fewer than 10.
-- **Power.** Each effect also reports the smallest change the run could detect with 80% power
-  (± 2.8 × SE), and the number of blocks needed to detect a 5% change at the observed spread.
-  A "no difference" result only rules out effects larger than the detectable size.
+- **Paired differences.** Each block sends one user message under every condition in random
+  order, so effects are within-block differences in log latency, reported as ratios.
+- **Direct contrasts.** Experiment 2 reports medium vs simple and mixed vs simple as paired
+  contrasts within each block, not by comparing two intervals vs 0 tools. Experiment 1 reports a
+  dose-response slope (per-block regression on tool tokens) as well as each condition vs 0.
+- **Provider tokens.** Providers render tool schemas differently, so tiktoken counts are only an
+  approximation (in a Gemini smoke test, medium tools cost 1.22× their tiktoken count and simple
+  tools 1.13×). Tool tokens are therefore also measured as the provider's input tokens minus the
+  same block's 0-tool request, and effects are reported per 1000 of those tokens. A warning is
+  shown when contrasted sets differ by more than 5% in provider tokens; then compare the
+  per-token rates rather than the plain ratio.
+- **Clustered standard errors and t intervals.** SEs are clustered on the user message (30
+  distinct messages, so the default 30 blocks use each once); 95% intervals use the t
+  distribution with (clusters − 1) degrees of freedom. A warning is shown with fewer than 10
+  clusters.
+- **Robust estimates.** Next to each mean, the median with a cluster bootstrap interval, since one
+  latency spike can move a mean. The ms differences also get bootstrap intervals.
+- **Power.** Each effect reports the smallest change the run could detect with 80% power, and the
+  blocks needed to detect a 5% change at the observed spread. A "no difference" result only rules
+  out effects larger than the detectable size.
 - **Errors per condition.** Blocks with an errored request are skipped; errors are counted per
   condition and a warning is shown if they are uneven, since skipping them can bias the result.
 - **Sessions are reported side by side, not pooled.** Each time-of-day session is its own
   cluster; with three of them they are a replication check, not extra precision.
+
+### Known limitations
+
+- **Experiment 1 varies count and tokens together** (10 tools ≈ 740 tokens, 60 ≈ 4,400), so it
+  measures latency vs tool-definition load; it cannot separate "more tools" from "more tokens".
+- **Experiment 2's simple sets are not typical simple tools.** To share a token budget with
+  medium tools they come from the 125–185-token band (the top ~15% of simple tools, i.e. with
+  long descriptions), so the contrast is closer to "description-heavy vs schema-heavy" tools of
+  about 150 tokens each.
+- **Prompt caching** is prevented by a nonce at the start of the system prompt and by random tool
+  order. It can only be verified on providers that report `cached_tokens` (Gemini's endpoint
+  does not).
+- **TTFAT on tool calls** depends on how the provider streams them: some send the whole call in
+  one chunk, so TTFAT equals the completed call. Compare `ttfat_ms` across providers with care;
+  `tool_choice none` avoids this.
 
 ### Status
 
@@ -169,12 +204,13 @@ are very welcome.
 
 1. Put your key in `.env` (`OPENAI_API_KEY`, `GEMINI_API_KEY`, `GROQ_API_KEY` or
    `CEREBRAS_API_KEY`) and run `uv sync`.
-2. Smoke run first and check `results.csv` has no errors and `input_tokens` grows with
-   `n_tools`:
-   `uv run tool-latency-bench run exp1_tool_count --model <model> --service <service> --session smoke --blocks 2 --reasoning-effort <lowest>`
+2. Smoke run first and check `results.csv`: no errors, `input_tokens` grows with `n_tools`
+   (with `--tool-choice none` too, which confirms the provider keeps the tools in the prompt):
+   `uv run tool-latency-bench run exp1_tool_count --model <model> --service <service> --session smoke --blocks 2 --tool-choice none --reasoning-effort <lowest>`
    Then delete the smoke run folder.
-3. Run both benchmarks (default 30 blocks each). Ideally run each at three different times of
-   day with session labels such as `morning`, `afternoon`, `night`.
+3. Run both benchmarks in both modes (`--tool-choice none`, then `--tool-choice auto`), 30
+   blocks each, one run at a time. Ideally repeat at three times of day with session labels such
+   as `morning`, `afternoon`, `night`.
 4. Run `analyze` on each run folder.
 5. Share the run folders: open a PR adding them under `results/<service>/<model>/`, or zip them
    and post them. A run folder holds `results.csv`, `runtime.json`, `run.log`, the request parts
@@ -190,22 +226,21 @@ Run the tool latency benchmarks for model <model> on service <service>, with
 reasoning_effort <lowest setting the model accepts>, session label <label>.
 
 1. Check that the API key for <service> is set in .env (do not print it).
-2. Smoke run exp1_tool_count with --blocks 2. Confirm no errors, input_tokens grows
-   with n_tools, and cached_tokens is 0 or empty. If first tokens take more than a few
-   seconds or there are 429/503 errors, stop and tell me. Delete the smoke run folder.
-3. Run exp1_tool_count, then exp2_complexity, 30 blocks each, one after the other
-   (never in parallel), in the background.
-4. Run analyze on both run folders, then compare for both benchmarks.
-5. Report the comparison tables, the charts (comparison.png), every warning (uneven
-   errors, few clusters), and the detectable effect sizes. Do not change the request
-   parts, pools or tool stats.
+2. Smoke run exp1_tool_count with --blocks 2 --tool-choice none. Confirm no errors,
+   input_tokens grows with n_tools, and cached_tokens is 0 or empty. If first tokens take
+   more than a few seconds or there are 429/503 errors, stop and tell me. Delete the
+   smoke run folder.
+3. Run, one after the other (never in parallel), in the background, 30 blocks each:
+   exp1_tool_count --tool-choice none, exp2_complexity --tool-choice none,
+   exp1_tool_count --tool-choice auto, exp2_complexity --tool-choice auto.
+4. Run analyze on every run folder, then compare for both benchmarks.
+5. Report the comparison tables, the charts (comparison.png), every warning, the
+   exp2 contrasts (medium vs simple, per 1000 provider tokens), the exp1 slope, and the
+   detectable effect sizes. Do not change the request parts, pools or tool stats.
 ```
 
 Repeat with a different session label (e.g. `morning`, `afternoon`, `night`) at other times
 of day.
-
-Note: `cached_tokens` is only filled in when the provider reports it (Gemini's endpoint does
-not), so the prompt-cache check is only possible on providers that report it.
 
 ## License
 
