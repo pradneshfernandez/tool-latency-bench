@@ -1,0 +1,39 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "check_pto_eligibility",
+  "description": "check_pto_eligibility: Check whether an employee can take PTO for a given date range. Validates sufficient balance, checks for department blackout conflicts, and confirms no overlap with existing PTO requests. Returns the exact working days that count as PTO and the number of days to be deducted. For standard (M-F) employees, only weekdays minus org holidays count. For shift employees, only scheduled shifts in the range count.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "pto_type": {
+        "type": "string",
+        "description": "The type of PTO: pto (general paid time off for vacation/personal) or sick (sick leave)",
+        "enum": [
+          "pto",
+          "sick"
+        ]
+      },
+      "start_date": {
+        "type": "string",
+        "description": "The first day of requested time off in YYYY-MM-DD format. Example: 2026-05-07"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "The last day of requested time off in YYYY-MM-DD format. Example: 2026-05-13"
+      }
+    },
+    "required": [
+      "employee_id",
+      "pto_type",
+      "start_date",
+      "end_date"
+    ]
+  }
+}

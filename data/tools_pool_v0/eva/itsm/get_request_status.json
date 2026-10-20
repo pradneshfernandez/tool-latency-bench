@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_request_status",
+  "description": "get_request_status: Look up the current status of a prior software or hardware request, including approval routing, SLA deadline, and whether the SLA has been breached.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string",
+        "description": "The request ID to look up (e.g. REQ-SW-048271)."
+      }
+    },
+    "required": [
+      "request_id"
+    ]
+  }
+}

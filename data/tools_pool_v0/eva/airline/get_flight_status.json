@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "get_flight_status",
+  "description": "get_flight_status: Get specific information about a flight (including origin airport, destination airport, and departure time) as well as current status of a the flight including delays, cancellations, and gate information. For connecting flights, provide any segment's flight number.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "flight_number": {
+        "type": "string",
+        "description": "Flight number (e.g., SW123) - for connecting flights, can be any segment's flight number"
+      },
+      "flight_date": {
+        "type": "string",
+        "description": "Flight date (YYYY-MM-DD)"
+      }
+    },
+    "required": [
+      "flight_number",
+      "flight_date"
+    ]
+  }
+}

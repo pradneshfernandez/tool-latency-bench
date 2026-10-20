@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/survey/agent.py",
+  "domain": "survey",
+  "name": "end_screening",
+  "description": "Call when the interview/screening is concluded to hang up.",
+  "parameters": {
+    "properties": {},
+    "title": "EndScreeningArgs",
+    "type": "object"
+  }
+}

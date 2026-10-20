@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "notify_hr_compliance",
+  "description": "notify_hr_compliance: Notify HR compliance that an I-9 verification has been completed.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP072948"
+      },
+      "case_id": {
+        "type": "string",
+        "description": "The I-9 case ID. Format: CASE-I9-6digits. Example: CASE-I9-072948"
+      },
+      "notification_type": {
+        "type": "string",
+        "description": "The verification type completed: i9_verified (for initial verification) or i9_reverified (for reverification)",
+        "enum": [
+          "i9_verified",
+          "i9_reverified"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "case_id",
+      "notification_type"
+    ]
+  }
+}

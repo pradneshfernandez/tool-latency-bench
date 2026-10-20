@@ -1,0 +1,21 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/llamaindex-rag/query_engine.py",
+  "domain": "query_engine",
+  "name": "query_info",
+  "description": "Get more information about a specific topic",
+  "parameters": {
+    "properties": {
+      "query": {
+        "title": "Query",
+        "type": "string"
+      }
+    },
+    "required": [
+      "query"
+    ],
+    "title": "QueryInfoArgs",
+    "type": "object"
+  }
+}

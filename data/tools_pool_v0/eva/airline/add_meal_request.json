@@ -1,0 +1,52 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "add_meal_request",
+  "description": "add_meal_request: Add or update special meal request for a passenger on a flight segment.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "passenger_id": {
+        "type": "string",
+        "description": "Passenger identifier"
+      },
+      "journey_id": {
+        "type": "string",
+        "description": "Journey ID from get_reservation"
+      },
+      "meal_type": {
+        "type": "string",
+        "description": "Meal type",
+        "enum": [
+          "vegetarian",
+          "vegan",
+          "kosher",
+          "halal",
+          "gluten_free",
+          "diabetic",
+          "low_sodium",
+          "child",
+          "hindu",
+          "standard",
+          "none"
+        ]
+      },
+      "flight_number": {
+        "type": "string",
+        "description": "For multi-segment journeys, the specific flight number to apply meal request to. Omit to apply to all segments."
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "passenger_id",
+      "journey_id",
+      "meal_type"
+    ]
+  }
+}

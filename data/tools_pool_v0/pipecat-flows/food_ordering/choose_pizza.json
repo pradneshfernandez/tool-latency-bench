@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/food_ordering.py",
+  "domain": "food_ordering",
+  "name": "choose_pizza",
+  "description": "User wants to order pizza. Let's get that order started.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

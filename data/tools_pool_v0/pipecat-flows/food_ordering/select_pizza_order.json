@@ -1,0 +1,25 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/food_ordering.py",
+  "domain": "food_ordering",
+  "name": "select_pizza_order",
+  "description": "Record the pizza order details.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "size": {
+        "type": "string",
+        "description": "Size of the pizza. Must be one of \"small\", \"medium\", or \"large\"."
+      },
+      "pizza_type": {
+        "type": "string",
+        "description": "Type of pizza. Must be one of \"pepperoni\", \"cheese\", \"supreme\", or \"vegetarian\"."
+      }
+    },
+    "required": [
+      "size",
+      "pizza_type"
+    ]
+  }
+}

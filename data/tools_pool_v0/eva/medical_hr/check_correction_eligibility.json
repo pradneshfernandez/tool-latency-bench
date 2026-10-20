@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "check_correction_eligibility",
+  "description": "check_correction_eligibility: Verify whether a payroll correction can be submitted for a shift. Returns eligible: true and the currently logged hours on success. Blocks if a correction is already pending, the pay period is closed, or the shift has not been logged yet.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "shift_id": {
+        "type": "string",
+        "description": "The shift identifier. Format: SHF-YYYYMMDD-HHMM (SHF, dash, 8-digit date, dash, 4-digit 24-hour start time). Construct it from the shift date and start time the caller provides — e.g. a shift on July 2, 2026 starting at 7:00 PM becomes SHF-20260702-1900. Read the constructed ID back to the caller to confirm before using it. Example: SHF-20260501-0700"
+      }
+    },
+    "required": [
+      "employee_id",
+      "shift_id"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "mark_resolved",
+  "description": "mark_resolved: Record that a call was resolved without creating a ticket. Used when troubleshooting, an account unlock, or a password reset resolved the caller's issue directly. Writes an interaction record so the call has a concrete state change even when no ticket was created.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The caller's employee ID (e.g. EMP048271)."
+      },
+      "flow_id": {
+        "type": "string",
+        "description": "The type of issue that was resolved.",
+        "enum": [
+          "login_issue",
+          "network_connectivity",
+          "hardware_malfunction"
+        ]
+      },
+      "resolution_type": {
+        "type": "string",
+        "description": "How the issue was resolved. resolved_via_troubleshooting covers all cases where the issue was fixed during the call (including successful unlocks and password resets).",
+        "enum": [
+          "resolved_via_troubleshooting",
+          "transferred"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "flow_id",
+      "resolution_type"
+    ]
+  }
+}

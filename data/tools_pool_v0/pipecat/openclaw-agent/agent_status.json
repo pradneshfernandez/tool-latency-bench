@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/openclaw-agent/openclaw-agent.py",
+  "domain": "openclaw-agent",
+  "name": "agent_status",
+  "description": "Say whether the agent is working, on what, and for how long.\n\nRead-only and instant: it reads what the voice loop already knows and does\nnot touch the agent.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

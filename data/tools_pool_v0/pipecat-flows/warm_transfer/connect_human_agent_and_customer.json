@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/warm_transfer.py",
+  "domain": "warm_transfer",
+  "name": "connect_human_agent_and_customer",
+  "description": "Connect the human agent to the customer.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

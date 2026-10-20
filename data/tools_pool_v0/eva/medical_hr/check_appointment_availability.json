@@ -1,0 +1,47 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "check_appointment_availability",
+  "description": "check_appointment_availability: Check available time slots for a given appointment type on a specific date. Returns a list of available HH:MM time slots. If no slots are available on the requested date, returns up to 3 alternative dates that do have openings.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "department_code": {
+        "type": "string",
+        "description": "The department to check availability for",
+        "enum": [
+          "CARDIOLOGY",
+          "EMERGENCY",
+          "ONCOLOGY",
+          "SURGERY",
+          "NEUROLOGY",
+          "PEDIATRICS",
+          "RADIOLOGY",
+          "PATHOLOGY",
+          "ORTHOPEDICS",
+          "OBSTETRICS"
+        ]
+      },
+      "appointment_type": {
+        "type": "string",
+        "description": "The type of appointment",
+        "enum": [
+          "orientation_followup",
+          "return_to_work_checkin",
+          "competency_review"
+        ]
+      },
+      "preferred_date": {
+        "type": "string",
+        "description": "The date to check in YYYY-MM-DD format. Example: 2026-05-01"
+      }
+    },
+    "required": [
+      "department_code",
+      "appointment_type",
+      "preferred_date"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/insurance_quote.py",
+  "domain": "insurance_quote",
+  "name": "collect_marital_status",
+  "description": "Record marital status after customer provides it.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "marital_status": {
+        "type": "string",
+        "description": "The customer's marital status. Must be one of \"single\", \"married\"."
+      }
+    },
+    "required": [
+      "marital_status"
+    ]
+  }
+}

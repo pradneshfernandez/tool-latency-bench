@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/openclaw-agent/openclaw-agent.py",
+  "domain": "openclaw-agent",
+  "name": "send_to_agent",
+  "description": "Send the user's request to the agent, or add to what it is doing.\n\nUse this both to start new work and to pass along a follow-up, correction,\nor change of mind while the agent is already working. Forward what the user\nsaid; the agent decides whether that starts a task or redirects the running\none. The result arrives later and you will be asked to speak it.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_input": {
+        "type": "string",
+        "description": "What the user wants done or wants to add, keeping the\ndetails that matter."
+      }
+    },
+    "required": [
+      "user_input"
+    ]
+  }
+}

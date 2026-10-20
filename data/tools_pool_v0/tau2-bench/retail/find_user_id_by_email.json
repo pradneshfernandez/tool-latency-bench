@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/retail/tools.py",
+  "domain": "retail",
+  "name": "find_user_id_by_email",
+  "description": "Find user id by email. If the user is not found, the function will return an error message.",
+  "parameters": {
+    "properties": {
+      "email": {
+        "description": "The email of the user, such as 'something@example.com'.",
+        "title": "Email",
+        "type": "string"
+      }
+    },
+    "required": [
+      "email"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

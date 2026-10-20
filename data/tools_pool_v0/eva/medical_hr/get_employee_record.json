@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_employee_record",
+  "description": "get_employee_record: Retrieve an employee's record including name, department, role, unit, hire date, and employment status.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

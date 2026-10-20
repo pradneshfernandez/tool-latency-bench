@@ -1,0 +1,28 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/telecom/tools.py",
+  "domain": "telecom",
+  "name": "disable_roaming",
+  "description": "Disables international roaming on a line.",
+  "parameters": {
+    "properties": {
+      "customer_id": {
+        "description": "ID of the customer who owns the line.",
+        "title": "Customer Id",
+        "type": "string"
+      },
+      "line_id": {
+        "description": "ID of the line to disable roaming for.",
+        "title": "Line Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "customer_id",
+      "line_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

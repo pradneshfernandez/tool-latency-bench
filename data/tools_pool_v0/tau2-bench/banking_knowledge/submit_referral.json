@@ -1,0 +1,28 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "submit_referral",
+  "description": "Submit a referral request to refer someone to open an account.",
+  "parameters": {
+    "properties": {
+      "user_id": {
+        "description": "Your user ID (the referrer)",
+        "title": "User Id",
+        "type": "string"
+      },
+      "account_type": {
+        "description": "The type of account you are referring someone to open",
+        "title": "Account Type",
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id",
+      "account_type"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

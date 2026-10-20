@@ -1,0 +1,49 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "transfer_to_human_agents",
+  "description": "Transfer the user to a human agent.\n\nThe proper transfer reason enum can be found in the knowledge base: search it before calling this tool to select the proper applicable reason.",
+  "parameters": {
+    "properties": {
+      "summary": {
+        "description": "A summary of the user's issue and what was attempted before transfer.",
+        "title": "Summary",
+        "type": "string"
+      },
+      "reason": {
+        "default": "other",
+        "description": "The specific reason code for the transfer.",
+        "enum": [
+          "fraud_or_security_concern",
+          "account_closure_request",
+          "deceased_account_holder",
+          "legal_or_regulatory_matter",
+          "account_ownership_dispute",
+          "complex_billing_dispute",
+          "abusive_customer_behavior",
+          "third_party_inquiry",
+          "technical_system_error",
+          "unconfirmed_external_communication",
+          "customer_demands_after_unavailable_offer_refusal",
+          "kb_search_unsuccessful_customer_requests_transfer",
+          "specialized_department_required",
+          "accessibility_or_special_needs",
+          "customer_frustrated_demands_human",
+          "supervisor_request_service_complaint",
+          "customer_requests_human_no_specific_reason",
+          "request_completed_customer_wants_human_followup",
+          "other"
+        ],
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "summary"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

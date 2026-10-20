@@ -1,0 +1,20 @@
+{
+  "source": "tau-bench",
+  "commit": "59a200c",
+  "file_path": "tau_bench/envs/retail/tools/get_user_details.py",
+  "domain": "retail",
+  "name": "get_user_details",
+  "description": "Get the details of a user, including their orders.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The user id, such as 'sara_doe_496'."
+      }
+    },
+    "required": [
+      "user_id"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "request_human_agent_transfer",
+  "description": "Request to be transferred to a human agent for assistance.\n\nUse this when you want to speak with a real human agent instead of\nthe automated system. Each request will be logged and processed.",
+  "parameters": {
+    "properties": {},
+    "title": "parameters",
+    "type": "object"
+  }
+}

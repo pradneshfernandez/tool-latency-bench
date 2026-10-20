@@ -1,0 +1,32 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_existing_outage",
+  "description": "check_existing_outage: Check whether an active outage has already been reported for a given service. Returns the outage ticket if one exists, or empty if no active outage is on file.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "service_name": {
+        "type": "string",
+        "description": "The name of the affected service from the service catalog.",
+        "enum": [
+          "email_exchange",
+          "vpn_gateway",
+          "erp_oracle",
+          "crm_platform",
+          "hr_portal",
+          "code_repository",
+          "ci_cd_pipeline",
+          "file_storage",
+          "sso_identity",
+          "print_service"
+        ]
+      }
+    },
+    "required": [
+      "service_name"
+    ]
+  }
+}

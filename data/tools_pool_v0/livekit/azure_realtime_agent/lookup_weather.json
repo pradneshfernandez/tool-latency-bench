@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/azure_realtime_agent.py",
+  "domain": "azure_realtime_agent",
+  "name": "lookup_weather",
+  "description": "Called when the user asks for weather related information.\n",
+  "parameters": {
+    "properties": {
+      "location": {
+        "description": "The city or region to look up the weather for",
+        "title": "Location",
+        "type": "string"
+      }
+    },
+    "required": [
+      "location"
+    ],
+    "title": "LookupWeatherArgs",
+    "type": "object"
+  }
+}

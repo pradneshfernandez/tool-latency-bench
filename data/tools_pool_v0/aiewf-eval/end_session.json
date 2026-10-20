@@ -1,0 +1,13 @@
+{
+  "source": "aiewf-eval",
+  "commit": "ff1e9fa",
+  "file_path": "benchmarks/_shared/tools.py",
+  "domain": "_shared",
+  "name": "end_session",
+  "description": "End the current session.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

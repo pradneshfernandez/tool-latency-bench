@@ -1,0 +1,30 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "initiate_asset_return",
+  "description": "initiate_asset_return: Initiate a return authorization for a device being replaced. Generates a return shipping label and sets a 14-day return deadline. Returns the return instructions and deadline.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee returning the device (e.g. EMP048271)."
+      },
+      "asset_tag": {
+        "type": "string",
+        "description": "The asset tag of the device to return (e.g. AST-LPT-284719)."
+      },
+      "request_id": {
+        "type": "string",
+        "description": "The hardware request ID associated with the replacement (e.g. REQ-HW-048271)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "asset_tag",
+      "request_id"
+    ]
+  }
+}

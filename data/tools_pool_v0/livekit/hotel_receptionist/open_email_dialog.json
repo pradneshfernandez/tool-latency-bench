@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_room.py",
+  "domain": "hotel_receptionist",
+  "name": "open_email_dialog",
+  "description": "Open the email dialog. It collects the guest's email address (read back and confirmed) from the caller.",
+  "parameters": {
+    "properties": {},
+    "title": "OpenEmailDialogArgs",
+    "type": "object"
+  }
+}

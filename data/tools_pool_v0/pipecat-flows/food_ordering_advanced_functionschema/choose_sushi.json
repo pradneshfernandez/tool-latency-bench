@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/food_ordering_advanced_functionschema.py",
+  "domain": "food_ordering_advanced_functionschema",
+  "name": "choose_sushi",
+  "description": "User wants to order sushi. Let's get that order started.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

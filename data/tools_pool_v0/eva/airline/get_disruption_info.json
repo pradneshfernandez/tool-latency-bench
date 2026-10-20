@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "get_disruption_info",
+  "description": "get_disruption_info: Get detailed information about flight disruption for IRROPS handling. Determines passenger rebooking entitlements based on disruption type and cause.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "flight_number": {
+        "type": "string",
+        "description": "Flight number to look up disruption for (e.g. SW123)"
+      },
+      "date": {
+        "type": "string",
+        "description": "Flight date (YYYY-MM-DD)"
+      }
+    },
+    "required": [
+      "flight_number",
+      "date"
+    ]
+  }
+}

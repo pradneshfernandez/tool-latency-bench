@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_mfa_reset",
+  "description": "submit_mfa_reset: Submit a request to change the phone-of-record for MFA. This always returns in_person_required because phone-of-record changes cannot be completed over the phone. A security case is opened to track the required in-person visit.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting the change (e.g. EMP048271)."
+      },
+      "new_phone_last_four": {
+        "type": "string",
+        "description": "Last 4 digits of the new phone number the caller wants on file (e.g. 9912)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "new_phone_last_four"
+    ]
+  }
+}

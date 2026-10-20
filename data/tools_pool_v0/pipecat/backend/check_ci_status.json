@@ -1,0 +1,18 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/llm-with-backend/backend.py",
+  "domain": "backend",
+  "name": "check_ci_status",
+  "description": "Check the CI status of a branch.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "branch": {
+        "type": "string",
+        "description": "The branch; main when omitted."
+      }
+    },
+    "required": []
+  }
+}

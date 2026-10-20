@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_services.py",
+  "domain": "hotel_receptionist",
+  "name": "set_do_not_disturb",
+  "description": "Place a Do-Not-Disturb hold on an in-house guest's room when they ask not to be disturbed / to hold their calls and messages. It's a standing hold (until lifted), not a one-off like a single message or a wake-up call. Take the room number. Always tell the guest that a genuine emergency or hotel safety matter still overrides DND.\n",
+  "parameters": {
+    "properties": {
+      "room": {
+        "description": "The guest's room number.",
+        "title": "Room",
+        "type": "string"
+      }
+    },
+    "required": [
+      "room"
+    ],
+    "title": "SetDoNotDisturbArgs",
+    "type": "object"
+  }
+}

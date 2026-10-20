@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/modify_booking.py",
+  "domain": "hotel_receptionist",
+  "name": "confirm_changes",
+  "description": "Write the pending changes back to the booking. Call this once the\ncaller has nothing more to change.",
+  "parameters": {
+    "properties": {},
+    "title": "ConfirmChangesArgs",
+    "type": "object"
+  }
+}

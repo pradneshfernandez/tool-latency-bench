@@ -1,0 +1,33 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/food_ordering_advanced_functionschema.py",
+  "domain": "food_ordering_advanced_functionschema",
+  "name": "select_sushi_order",
+  "description": "Record the sushi order details",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 10,
+        "description": "Number of rolls to order"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "california",
+          "spicy tuna",
+          "rainbow",
+          "dragon"
+        ],
+        "description": "Type of sushi roll"
+      }
+    },
+    "required": [
+      "count",
+      "type"
+    ]
+  }
+}

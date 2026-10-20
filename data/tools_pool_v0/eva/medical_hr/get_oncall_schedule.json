@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_oncall_schedule",
+  "description": "get_oncall_schedule: Retrieve an employee's current on-call registrations for a given unit. Returns existing registrations so any scheduling conflicts can be identified.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "unit_code": {
+        "type": "string",
+        "description": "The unit to check. Format: digits+letter-letters. Example: 4B-ICU"
+      }
+    },
+    "required": [
+      "employee_id",
+      "unit_code"
+    ]
+  }
+}

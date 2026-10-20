@@ -1,0 +1,40 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "complete_onboarding_task",
+  "description": "complete_onboarding_task: Mark a single onboarding task as complete using the completion code the employee received upon finishing the task. The code is validated before the task is marked done. Returns the list of remaining incomplete tasks. Only one task can be marked per call.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP072948"
+      },
+      "task_code": {
+        "type": "string",
+        "description": "The onboarding task to mark complete",
+        "enum": [
+          "BLS_UPLOAD",
+          "I9_VERIFY",
+          "BADGE_PICKUP",
+          "OCC_HEALTH",
+          "HIPAA_TRAIN",
+          "DRUG_SCREEN",
+          "TB_TEST",
+          "ORIENTATION"
+        ]
+      },
+      "completion_code": {
+        "type": "string",
+        "description": "The 4-character alphanumeric code the employee received upon completing the task. Case-insensitive. Example: AB12"
+      }
+    },
+    "required": [
+      "employee_id",
+      "task_code",
+      "completion_code"
+    ]
+  }
+}

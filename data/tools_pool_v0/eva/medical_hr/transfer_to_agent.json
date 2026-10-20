@@ -1,0 +1,37 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "transfer_to_agent",
+  "description": "transfer_to_agent: Transfer the call to a live human agent. Provide context so the live agent can pick up the conversation seamlessly.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. If the caller has not been authenticated, use the ID they provided. Example: EMP048271"
+      },
+      "transfer_reason": {
+        "type": "string",
+        "description": "The reason for the transfer",
+        "enum": [
+          "caller_requested",
+          "policy_exception_needed",
+          "unable_to_resolve",
+          "complaint_escalation",
+          "technical_issue"
+        ]
+      },
+      "issue_summary": {
+        "type": "string",
+        "description": "A brief summary of the caller's request, what was attempted, and why the transfer is needed. This should be in the same language as the conversation you had with the user."
+      }
+    },
+    "required": [
+      "employee_id",
+      "transfer_reason",
+      "issue_summary"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_onboarding_checklist",
+  "description": "get_onboarding_checklist: Retrieve the onboarding task checklist for an employee. Returns all tasks with their current status (pending or complete).\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP072948"
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

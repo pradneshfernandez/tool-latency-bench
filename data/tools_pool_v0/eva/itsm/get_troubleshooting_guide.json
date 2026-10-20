@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_troubleshooting_guide",
+  "description": "get_troubleshooting_guide: Retrieve a step-by-step troubleshooting guide for a specific issue category. Returns numbered steps to walk the caller through before further action is taken.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "issue_category": {
+        "type": "string",
+        "description": "The category of issue to retrieve troubleshooting steps for.",
+        "enum": [
+          "login_issue",
+          "network_connectivity",
+          "hardware_malfunction"
+        ]
+      }
+    },
+    "required": [
+      "issue_category"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/survey/agent.py",
+  "domain": "survey",
+  "name": "record_weaknesses",
+  "description": "Call to record a summary of the candidate's weaknesses.\n",
+  "parameters": {
+    "properties": {
+      "weaknesses_summary": {
+        "description": "A summary of the candidate's weaknesses",
+        "title": "Weaknesses Summary",
+        "type": "string"
+      }
+    },
+    "required": [
+      "weaknesses_summary"
+    ],
+    "title": "RecordWeaknessesArgs",
+    "type": "object"
+  }
+}

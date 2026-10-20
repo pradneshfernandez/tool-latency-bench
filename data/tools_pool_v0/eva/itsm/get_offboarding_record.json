@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_offboarding_record",
+  "description": "get_offboarding_record: Look up an off-boarding record for an employee. Returns the off-boarding status, last working day, and whether access removal has already been initiated. Returns no_offboarding_record if HR has not yet filed one.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The departing employee's ID (e.g. EMP072948)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

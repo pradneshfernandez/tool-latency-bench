@@ -1,0 +1,68 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "submit_i9_verification",
+  "description": "submit_i9_verification: Submit or update I-9 work authorization verification for an employee. For initial verification, the employee must have a populated onboarding checklist in the system. For reverification, a prior I-9 record must already exist. Returns a case_id on success.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP072948"
+      },
+      "verification_action": {
+        "type": "string",
+        "description": "The action type: initial_verification (first-time I-9) or reverification (updating expiring documents)",
+        "enum": [
+          "initial_verification",
+          "reverification"
+        ]
+      },
+      "document_list_type": {
+        "type": "string",
+        "description": "The I-9 document list: LIST_A (single document proving both identity and work authorization), LIST_B (identity only), or LIST_C (work authorization only)",
+        "enum": [
+          "LIST_A",
+          "LIST_B",
+          "LIST_C"
+        ]
+      },
+      "document_type_code": {
+        "type": "string",
+        "description": "The document type. US_PASSPORT (U.S. passport or passport card, LIST_A). PERM_RESIDENT_CARD (Permanent Resident / green card, LIST_A). EAD (Employment Authorization Document, LIST_A). DRIVERS_LICENSE (state-issued driver's license, LIST_B identity). STATE_ID (state-issued non-driver ID, LIST_B identity). SSN_CARD (unrestricted Social Security card, LIST_C work auth). BIRTH_CERT (U.S. birth certificate, LIST_C work auth).",
+        "enum": [
+          "US_PASSPORT",
+          "PERM_RESIDENT_CARD",
+          "EAD",
+          "DRIVERS_LICENSE",
+          "STATE_ID",
+          "SSN_CARD",
+          "BIRTH_CERT"
+        ]
+      },
+      "document_number": {
+        "type": "string",
+        "description": "The document's ID number, 6-12 uppercase alphanumeric characters. Must be captured exactly as provided by the caller. Example: A12345678"
+      },
+      "document_expiration_date": {
+        "type": "string",
+        "description": "The document's expiration date in YYYY-MM-DD format. Example: 2030-08-14"
+      },
+      "issuing_country_code": {
+        "type": "string",
+        "description": "The 2-letter ISO country code of the issuing country. Convert country names to codes. Example: US, IN, MX"
+      }
+    },
+    "required": [
+      "employee_id",
+      "verification_action",
+      "document_list_type",
+      "document_type_code",
+      "document_number",
+      "document_expiration_date",
+      "issuing_country_code"
+    ]
+  }
+}

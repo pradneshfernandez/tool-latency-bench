@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "confirm_visit_reason",
+  "description": "Call to record the user's reason for their appointment.\n",
+  "parameters": {
+    "properties": {
+      "visit_reason": {
+        "description": "The user's reason for visiting a doctor",
+        "title": "Visit Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "visit_reason"
+    ],
+    "title": "ConfirmVisitReasonArgs",
+    "type": "object"
+  }
+}

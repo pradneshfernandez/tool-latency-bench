@@ -1,0 +1,25 @@
+{
+  "source": "tau-bench",
+  "commit": "59a200c",
+  "file_path": "tau_bench/envs/airline/tools/send_certificate.py",
+  "domain": "airline",
+  "name": "send_certificate",
+  "description": "Send a certificate to a user. Be careful!",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The ID of the user to book the reservation, such as 'sara_doe_496'."
+      },
+      "amount": {
+        "type": "number",
+        "description": "Certificate amount to send."
+      }
+    },
+    "required": [
+      "user_id",
+      "amount"
+    ]
+  }
+}

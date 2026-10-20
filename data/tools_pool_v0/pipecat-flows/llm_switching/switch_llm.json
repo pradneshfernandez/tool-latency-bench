@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/llm_switching.py",
+  "domain": "llm_switching",
+  "name": "switch_llm",
+  "description": "Switch the current LLM service.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "llm": {
+        "type": "string",
+        "description": "The name of the LLM service to switch to. Must be one of \"OpenAI\", \"Google\", \"Anthropic\", or \"AWS\"."
+      }
+    },
+    "required": [
+      "llm"
+    ]
+  }
+}

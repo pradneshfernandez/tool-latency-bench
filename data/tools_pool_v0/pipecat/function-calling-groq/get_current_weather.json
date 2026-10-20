@@ -1,0 +1,24 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/function-calling/function-calling-groq.py",
+  "domain": "function-calling-groq",
+  "name": "get_current_weather",
+  "description": "Get the current weather.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "The city and state, e.g. \"San Francisco, CA\"."
+      },
+      "format": {
+        "type": "string",
+        "description": "The temperature unit to use. Must be either \"celsius\" or \"fahrenheit\". Infer this from the user's location."
+      }
+    },
+    "required": [
+      "location"
+    ]
+  }
+}

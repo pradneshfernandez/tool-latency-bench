@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/podcast_interview.py",
+  "domain": "podcast_interview",
+  "name": "proceed_to_topic",
+  "description": "Use after the guest has introduced themselves.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "guest_summary": {
+        "type": "string",
+        "description": "A quick summary of who the guest is (name, role, area of expertise, etc.)."
+      }
+    },
+    "required": [
+      "guest_summary"
+    ]
+  }
+}

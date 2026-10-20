@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_license_record",
+  "description": "get_license_record: Retrieve a provider's license record including license type, expiration date, current status, and any existing extension details.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "state_license_number": {
+        "type": "string",
+        "description": "The state license number. Format: 2-letter state code, dash, 2-4 letter license type, dash, 6-8 digits. Example: MA-RN-004821"
+      }
+    },
+    "required": [
+      "npi",
+      "state_license_number"
+    ]
+  }
+}

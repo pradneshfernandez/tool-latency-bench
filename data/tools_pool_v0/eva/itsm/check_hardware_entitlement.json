@@ -1,0 +1,29 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_hardware_entitlement",
+  "description": "check_hardware_entitlement: Check whether an employee is eligible for a hardware request. Returns their current device information, lifecycle status (whether the device meets the minimum age for replacement), and whether a request is already pending for this equipment category.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee to check entitlement for (e.g. EMP048271)."
+      },
+      "request_type": {
+        "type": "string",
+        "description": "The type of hardware being requested.",
+        "enum": [
+          "laptop_replacement",
+          "monitor_bundle"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "request_type"
+    ]
+  }
+}

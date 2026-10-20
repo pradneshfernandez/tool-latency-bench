@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_group_memberships",
+  "description": "get_group_memberships: Retrieve an employee's current access group memberships. Returns a list of group codes, names, and whether each requires approval to join or leave.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee whose memberships to retrieve (e.g. EMP048271)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

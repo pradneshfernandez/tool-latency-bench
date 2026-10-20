@@ -1,0 +1,42 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "issue_travel_credit",
+  "description": "issue_travel_credit: Issue a travel credit or future flight voucher to the passenger.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "passenger_id": {
+        "type": "string",
+        "description": "Passenger identifier"
+      },
+      "amount": {
+        "type": "number",
+        "description": "Credit amount in USD"
+      },
+      "credit_reason": {
+        "type": "string",
+        "description": "Reason for credit",
+        "enum": [
+          "cancellation_non_refundable",
+          "fare_difference_negative",
+          "service_recovery",
+          "goodwill",
+          "downgrade_compensation"
+        ]
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "passenger_id",
+      "amount",
+      "credit_reason"
+    ]
+  }
+}

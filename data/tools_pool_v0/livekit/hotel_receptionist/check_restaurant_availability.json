@@ -1,0 +1,31 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "check_restaurant_availability",
+  "description": "Check restaurant time slots for a date. Read-only browsing - to actually book a table, call start_restaurant_booking.\n",
+  "parameters": {
+    "properties": {
+      "on_date": {
+        "description": "The date to check, in ISO YYYY-MM-DD format (e.g. \"2026-01-20\").",
+        "format": "date",
+        "title": "On Date",
+        "type": "string"
+      },
+      "party_size": {
+        "description": "Number of guests (must be >= 1; ask the caller if not specified).",
+        "maximum": 6,
+        "minimum": 1,
+        "title": "Party Size",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "on_date",
+      "party_size"
+    ],
+    "title": "CheckRestaurantAvailabilityArgs",
+    "type": "object"
+  }
+}

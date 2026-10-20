@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/telephony/basic_dtmf_agent.py",
+  "domain": "basic_dtmf_agent",
+  "name": "ask_for_phone_number",
+  "description": "Ask user to provide a phone number.",
+  "parameters": {
+    "properties": {},
+    "title": "AskForPhoneNumberArgs",
+    "type": "object"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/data_capture_sim/agent.py",
+  "domain": "data_capture_sim",
+  "name": "collect_credit_card",
+  "description": "Collect the user's credit card details (number, expiration, security code, cardholder).",
+  "parameters": {
+    "properties": {},
+    "title": "CollectCreditCardArgs",
+    "type": "object"
+  }
+}

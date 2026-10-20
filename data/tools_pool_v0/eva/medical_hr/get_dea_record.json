@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_dea_record",
+  "description": "get_dea_record: Retrieve a provider's DEA registration record, including DEA number, current facility, state, schedule codes, and expiration date.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "dea_number": {
+        "type": "string",
+        "description": "The provider's DEA number. Format: 2 uppercase letters followed by 7 digits. Example: BK4729183"
+      }
+    },
+    "required": [
+      "npi",
+      "dea_number"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_services.py",
+  "domain": "hotel_receptionist",
+  "name": "request_flight_reconfirmation",
+  "description": "Log a flight-reconfirmation request for an in-house guest: the concierge calls the carrier and rings the guest's room with the result. Collect ALL the flight details first and read the booking reference back before calling - a wrong reference makes the whole request useless.\n",
+  "parameters": {
+    "properties": {
+      "room": {
+        "description": "The guest's room number.",
+        "title": "Room",
+        "type": "string"
+      },
+      "airline": {
+        "description": "The carrier name (e.g. \"Iberia\").",
+        "title": "Airline",
+        "type": "string"
+      },
+      "flight_number": {
+        "description": "Airline code and number as given (e.g. \"IB 6174\").",
+        "title": "Flight Number",
+        "type": "string"
+      },
+      "flight_date": {
+        "description": "Flight date in ISO YYYY-MM-DD format. When the caller says a weekday (\"Thursday\"), resolve it against today and say the concrete date back (\"Thursday - that's June eleventh?\") BEFORE calling; a one-day slip sends the whole request to the wrong flight.",
+        "format": "date",
+        "title": "Flight Date",
+        "type": "string"
+      },
+      "booking_reference": {
+        "description": "The airline booking reference, letters and digits only.",
+        "title": "Booking Reference",
+        "type": "string"
+      },
+      "seat_check": {
+        "description": "True if the guest also wants their seat assignment checked - it's handled in the same carrier call.",
+        "title": "Seat Check",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "room",
+      "airline",
+      "flight_number",
+      "flight_date",
+      "booking_reference",
+      "seat_check"
+    ],
+    "title": "RequestFlightReconfirmationArgs",
+    "type": "object"
+  }
+}

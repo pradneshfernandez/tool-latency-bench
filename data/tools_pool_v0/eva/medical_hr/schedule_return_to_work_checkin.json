@@ -1,0 +1,47 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "schedule_return_to_work_checkin",
+  "description": "schedule_return_to_work_checkin: Schedule a return-to-work check-in appointment tied to an FMLA case. The appointment must fall on or after the leave end date. Rejects appointments scheduled before the leave ends. The time slot must have been confirmed as available.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "case_id": {
+        "type": "string",
+        "description": "The FMLA case ID. Format: CASE-FMLA-6digits. Example: CASE-FMLA-048271"
+      },
+      "department_code": {
+        "type": "string",
+        "description": "The employee's department",
+        "enum": [
+          "CARDIOLOGY",
+          "EMERGENCY",
+          "ONCOLOGY",
+          "SURGERY",
+          "NEUROLOGY",
+          "PEDIATRICS",
+          "RADIOLOGY",
+          "PATHOLOGY",
+          "ORTHOPEDICS",
+          "OBSTETRICS"
+        ]
+      },
+      "appointment_datetime": {
+        "type": "string",
+        "description": "The appointment date and time in YYYY-MM-DD HH:MM format. Must be on or after the leave end date, and must be a slot confirmed as available. Example: 2026-07-02 09:00"
+      }
+    },
+    "required": [
+      "employee_id",
+      "case_id",
+      "department_code",
+      "appointment_datetime"
+    ]
+  }
+}

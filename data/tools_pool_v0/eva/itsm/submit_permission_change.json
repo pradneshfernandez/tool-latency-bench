@@ -1,0 +1,35 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_permission_change",
+  "description": "submit_permission_change: Submit a permission change request due to a role change. The effective date must not be in the past and must match the HR-approved date. Returns a case ID.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee whose permissions are being changed (e.g. EMP048271)."
+      },
+      "new_role_code": {
+        "type": "string",
+        "description": "The new role code (e.g. SWE)."
+      },
+      "permission_template_id": {
+        "type": "string",
+        "description": "The permission template selected by the caller (e.g. PTPL-SWE-01)."
+      },
+      "effective_date": {
+        "type": "string",
+        "description": "The date the role change takes effect, in YYYY-MM-DD format. Must match the HR-approved effective date (e.g. 2026-09-01)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "new_role_code",
+      "permission_template_id",
+      "effective_date"
+    ]
+  }
+}

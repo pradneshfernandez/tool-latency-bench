@@ -1,0 +1,52 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "register_oncall_availability",
+  "description": "register_oncall_availability: Register an employee's on-call availability for a date window, including any blackout dates within the window when they are unavailable. Returns a registration_id on success. Blackout dates must fall within the availability window or the request is rejected.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "unit_code": {
+        "type": "string",
+        "description": "The unit for the on-call registration. Format: digits+letter-letters. Example: 4B-ICU"
+      },
+      "availability_start_date": {
+        "type": "string",
+        "description": "The first day of the availability window in YYYY-MM-DD format. Example: 2026-06-01"
+      },
+      "availability_end_date": {
+        "type": "string",
+        "description": "The last day of the availability window in YYYY-MM-DD format. Example: 2026-06-30"
+      },
+      "oncall_tier": {
+        "type": "string",
+        "description": "The on-call tier: primary (first to be called) or backup (called if primary is unavailable)",
+        "enum": [
+          "primary",
+          "backup"
+        ]
+      },
+      "blackout_dates": {
+        "type": "array",
+        "description": "Dates within the availability window when the employee is unavailable, each in YYYY-MM-DD format. Pass an empty list [] if there are none.",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "employee_id",
+      "unit_code",
+      "availability_start_date",
+      "availability_end_date",
+      "oncall_tier",
+      "blackout_dates"
+    ]
+  }
+}

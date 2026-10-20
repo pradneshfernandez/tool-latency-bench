@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/verify_booking.py",
+  "domain": "hotel_receptionist",
+  "name": "give_up",
+  "description": "End the verification step: after repeated failures, OR the moment the caller pivots to something verification isn't needed for (a new booking, a general question, giving up on the lookup). The right tools for their request become available again once this returns.\n",
+  "parameters": {
+    "properties": {
+      "reason": {
+        "description": "short explanation (e.g. \"no booking found - caller wants a new booking instead\")",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reason"
+    ],
+    "title": "GiveUpArgs",
+    "type": "object"
+  }
+}

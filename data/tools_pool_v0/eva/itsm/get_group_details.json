@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_group_details",
+  "description": "get_group_details: Retrieve details about a specific access group, including its description, approval requirements, current member count, and eligibility restrictions. Eligibility may be restricted by department or role — an empty list on either dimension means unrestricted.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "group_code": {
+        "type": "string",
+        "description": "The access group code (e.g. GRP-ENGCORE)."
+      }
+    },
+    "required": [
+      "group_code"
+    ]
+  }
+}

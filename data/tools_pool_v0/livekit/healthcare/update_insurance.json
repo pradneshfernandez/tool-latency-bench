@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "update_insurance",
+  "description": "Call when the user requests to update their health insurance.\n",
+  "parameters": {
+    "properties": {
+      "updated_insurance": {
+        "description": "The new insurance value provided by the user",
+        "title": "Updated Insurance",
+        "type": "string"
+      }
+    },
+    "required": [
+      "updated_insurance"
+    ],
+    "title": "UpdateInsuranceArgs",
+    "type": "object"
+  }
+}

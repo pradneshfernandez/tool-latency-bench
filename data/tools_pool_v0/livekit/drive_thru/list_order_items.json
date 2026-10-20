@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/drive_thru/agent.py",
+  "domain": "drive_thru",
+  "name": "list_order_items",
+  "description": "Retrieves the current list of items in the user's order, including each item's internal `order_id`.\n\nHelpful when:\n- An `order_id` is required before modifying or removing an existing item.\n- Confirming details or contents of the current order.",
+  "parameters": {
+    "properties": {},
+    "title": "ListOrderItemsArgs",
+    "type": "object"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "check_oncall_eligibility",
+  "description": "check_oncall_eligibility: Verify whether an employee is eligible to register for on-call duty on a given unit. Blocks if the employee is currently on leave or is missing required certifications for the unit.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "unit_code": {
+        "type": "string",
+        "description": "The unit to check eligibility for. Format: digits+letter-letters. Example: 4B-ICU"
+      }
+    },
+    "required": [
+      "employee_id",
+      "unit_code"
+    ]
+  }
+}

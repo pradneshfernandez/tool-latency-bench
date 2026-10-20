@@ -1,0 +1,40 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "submit_payroll_correction",
+  "description": "submit_payroll_correction: Submit a payroll correction for a specific shift. Returns a case_id on success. Rejects the correction if the pay period has already closed.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "shift_id": {
+        "type": "string",
+        "description": "The shift being corrected. Format: SHF-YYYYMMDD-HHMM. If the caller only has the shift date and start time, construct the ID from those (e.g. a shift on May 1, 2026 at 7:00 AM becomes SHF-20260501-0700). Example: SHF-20260501-0700"
+      },
+      "correction_type": {
+        "type": "string",
+        "description": "The type of correction. on_call_hours (on-call time was logged incorrectly or not at all). overtime_hours (overtime beyond scheduled hours was not captured). differential_missed (shift differential pay was not applied to eligible hours).",
+        "enum": [
+          "on_call_hours",
+          "overtime_hours",
+          "differential_missed"
+        ]
+      },
+      "corrected_hours": {
+        "type": "number",
+        "description": "The corrected total hours for the chosen correction type — not a delta from the current value and not the total shift hours. For overtime_hours: total overtime hours worked. For on_call_hours: total on-call hours. For differential_missed: total hours the differential should have applied to. Must be greater than 0 and at most 24. Example: 8.0"
+      }
+    },
+    "required": [
+      "employee_id",
+      "shift_id",
+      "correction_type",
+      "corrected_hours"
+    ]
+  }
+}

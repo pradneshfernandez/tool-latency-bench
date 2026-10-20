@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "initiate_asset_recovery",
+  "description": "initiate_asset_recovery: Initiate recovery of company hardware from a departing employee after their access has been removed. Retrieves the employee's assigned assets and creates a recovery order with pickup or shipping instructions.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "departing_employee_id": {
+        "type": "string",
+        "description": "The departing employee's ID (e.g. EMP072948)."
+      },
+      "case_id": {
+        "type": "string",
+        "description": "The access removal case ID (e.g. CASE-ACCT-072948)."
+      },
+      "recovery_method": {
+        "type": "string",
+        "description": "How equipment will be recovered. shipping_label = a prepaid label is mailed and the employee ships devices back; drop_off = the employee returns devices in person to an IT office.",
+        "enum": [
+          "shipping_label",
+          "drop_off"
+        ]
+      }
+    },
+    "required": [
+      "departing_employee_id",
+      "case_id",
+      "recovery_method"
+    ]
+  }
+}

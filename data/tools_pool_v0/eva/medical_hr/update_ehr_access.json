@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "update_ehr_access",
+  "description": "update_ehr_access: Update a provider's EHR system access permissions following privilege reactivation.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "case_id": {
+        "type": "string",
+        "description": "The privilege reactivation case ID. Format: CASE-PRV-6digits. Example: CASE-PRV-048271"
+      },
+      "access_change_type": {
+        "type": "string",
+        "description": "The EHR access level to restore: reactivate_full (all modules and patient records) or reactivate_restricted (limited read-only access)",
+        "enum": [
+          "reactivate_full",
+          "reactivate_restricted"
+        ]
+      }
+    },
+    "required": [
+      "npi",
+      "case_id",
+      "access_change_type"
+    ]
+  }
+}

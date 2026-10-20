@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "escalate_approval",
+  "description": "escalate_approval: Escalate a pending approval to a skip-level approver. Only succeeds if the original SLA has been breached — returns an error if the SLA has not yet been breached. Sets a new 48-hour SLA window on the escalation.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string",
+        "description": "The request ID to escalate (e.g. REQ-SW-048271)."
+      },
+      "escalate_to_employee_id": {
+        "type": "string",
+        "description": "The skip-level approver's employee ID (e.g. EMP031482)."
+      }
+    },
+    "required": [
+      "request_id",
+      "escalate_to_employee_id"
+    ]
+  }
+}

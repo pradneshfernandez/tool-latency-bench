@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/insurance_quote.py",
+  "domain": "insurance_quote",
+  "name": "collect_age",
+  "description": "Record customer's age.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "age": {
+        "type": "integer",
+        "description": "The customer's age."
+      }
+    },
+    "required": [
+      "age"
+    ]
+  }
+}

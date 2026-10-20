@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "lookup_new_hire",
+  "description": "lookup_new_hire: Look up a new hire's record in the HR system to verify they exist. Returns basic information including name, department, role, and start date.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "new_hire_employee_id": {
+        "type": "string",
+        "description": "The new hire's employee ID (e.g. EMP092841)."
+      }
+    },
+    "required": [
+      "new_hire_employee_id"
+    ]
+  }
+}

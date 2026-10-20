@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/insurance_quote.py",
+  "domain": "insurance_quote",
+  "name": "end_quote",
+  "description": "Complete the quote process when customer is satisfied.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

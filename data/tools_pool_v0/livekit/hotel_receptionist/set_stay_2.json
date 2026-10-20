@@ -1,0 +1,38 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/modify_booking.py",
+  "domain": "hotel_receptionist",
+  "name": "set_stay",
+  "description": "Update the stay (check-in, check-out, party size) on the booking being modified.\n\nPass the FULL new stay even if only one field is changing - omit nothing.",
+  "parameters": {
+    "properties": {
+      "check_in": {
+        "description": "New check-in date in ISO YYYY-MM-DD format. May equal the\nexisting check-in (e.g. when the caller is in-house and just\nwants to extend or shorten the check-out).",
+        "format": "date",
+        "title": "Check In",
+        "type": "string"
+      },
+      "check_out": {
+        "description": "New check-out date in ISO YYYY-MM-DD format.",
+        "format": "date",
+        "title": "Check Out",
+        "type": "string"
+      },
+      "guests": {
+        "description": "New number of guests (must be >= 1).",
+        "maximum": 6,
+        "minimum": 1,
+        "title": "Guests",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "check_in",
+      "check_out",
+      "guests"
+    ],
+    "title": "SetStayArgs",
+    "type": "object"
+  }
+}

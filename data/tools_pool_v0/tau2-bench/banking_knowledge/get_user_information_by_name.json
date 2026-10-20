@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "get_user_information_by_name",
+  "description": "Get the information (date of birth, email, phone number, address) for a user by their name. Case Sensitive.",
+  "parameters": {
+    "properties": {
+      "customer_name": {
+        "description": "The name of the user",
+        "title": "Customer Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "customer_name"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

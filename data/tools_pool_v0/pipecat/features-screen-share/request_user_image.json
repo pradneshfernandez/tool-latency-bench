@@ -1,0 +1,27 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/features/features-screen-share.py",
+  "domain": "features-screen-share",
+  "name": "request_user_image",
+  "description": "Request an image from the user's video and add it to the LLM context.\n\nThis pushes a UserImageRequestFrame upstream to the transport. The transport\nanswers it with the next frame from the requested video source, as a\nUserImageRawFrame that the LLM assistant aggregator adds to the context. The\nresult_callback is invoked once the image is retrieved and processed.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string"
+      },
+      "question": {
+        "type": "string"
+      },
+      "video_source": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id",
+      "question",
+      "video_source"
+    ]
+  }
+}

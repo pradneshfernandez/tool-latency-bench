@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/survey/agent.py",
+  "domain": "survey",
+  "name": "record_experience",
+  "description": "Call to record the work experience the candidate has and a description of each role with a clear timeline.\n",
+  "parameters": {
+    "properties": {
+      "years_of_experience": {
+        "description": "The years of experience the candidate has",
+        "title": "Years Of Experience",
+        "type": "integer"
+      },
+      "experience_description": {
+        "description": "A description of each role they previously held. Take note of the corresponding companies as well.",
+        "title": "Experience Description",
+        "type": "string"
+      }
+    },
+    "required": [
+      "years_of_experience",
+      "experience_description"
+    ],
+    "title": "RecordExperienceArgs",
+    "type": "object"
+  }
+}

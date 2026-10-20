@@ -1,0 +1,58 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "log_verification",
+  "description": "Log a verification record after successfully verifying a user's identity.\n\nCall this tool after you have verified a user by confirming 2 out of 4 identity fields\n(date of birth, email, phone number, address). This creates an audit record of the verification.",
+  "parameters": {
+    "properties": {
+      "name": {
+        "description": "The verified user's full name",
+        "title": "Name",
+        "type": "string"
+      },
+      "user_id": {
+        "description": "The verified user's ID",
+        "title": "User Id",
+        "type": "string"
+      },
+      "address": {
+        "description": "The verified user's address",
+        "title": "Address",
+        "type": "string"
+      },
+      "email": {
+        "description": "The verified user's email",
+        "title": "Email",
+        "type": "string"
+      },
+      "phone_number": {
+        "description": "The verified user's phone number",
+        "title": "Phone Number",
+        "type": "string"
+      },
+      "date_of_birth": {
+        "description": "The verified user's date of birth (MM/DD/YYYY format)",
+        "title": "Date Of Birth",
+        "type": "string"
+      },
+      "time_verified": {
+        "description": "The timestamp of the verification (e.g., \"2025-11-14 03:40:00 EST\")",
+        "title": "Time Verified",
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "user_id",
+      "address",
+      "email",
+      "phone_number",
+      "date_of_birth",
+      "time_verified"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

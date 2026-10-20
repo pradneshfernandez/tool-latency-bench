@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "add_baggage_allowance",
+  "description": "add_baggage_allowance: Add checked baggage allowance to a flight segment. Agent must specify exact number of bags (0-5).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "journey_id": {
+        "type": "string",
+        "description": "Journey ID from get_reservation"
+      },
+      "num_bags": {
+        "type": "integer",
+        "description": "Number of checked bags (0-5)"
+      },
+      "flight_number": {
+        "type": "string",
+        "description": "For multi-segment journeys, the specific flight number to add baggage to. Omit to apply to all segments in the journey."
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "journey_id",
+      "num_bags"
+    ]
+  }
+}

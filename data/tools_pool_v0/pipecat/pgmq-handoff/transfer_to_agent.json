@@ -1,0 +1,25 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/distributed-handoff/pgmq-handoff/llm.py",
+  "domain": "pgmq-handoff",
+  "name": "transfer_to_agent",
+  "description": "Transfer the user to another agent.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "agent": {
+        "type": "string",
+        "description": "The agent to transfer to (e.g. 'greeter', 'support')."
+      },
+      "reason": {
+        "type": "string",
+        "description": "Why the user is being transferred."
+      }
+    },
+    "required": [
+      "agent",
+      "reason"
+    ]
+  }
+}

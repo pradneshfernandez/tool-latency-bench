@@ -1,0 +1,25 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/realtime/realtime-openai-live-client-delegation-speaking-policy.py",
+  "domain": "realtime-openai-live-client-delegation-speaking-policy",
+  "name": "find_alternative_flights",
+  "description": "Find later flights on a route today.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "origin": {
+        "type": "string",
+        "description": "Departure airport code, e.g. \"SFO\"."
+      },
+      "destination": {
+        "type": "string",
+        "description": "Arrival airport code, e.g. \"JFK\"."
+      }
+    },
+    "required": [
+      "origin",
+      "destination"
+    ]
+  }
+}

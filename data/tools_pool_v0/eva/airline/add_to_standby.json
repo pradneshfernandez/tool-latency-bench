@@ -1,0 +1,33 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "add_to_standby",
+  "description": "add_to_standby: Add passenger to standby list for a flight.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "journey_id": {
+        "type": "string",
+        "description": "Journey ID to add passenger to standby for"
+      },
+      "passenger_ids": {
+        "type": "array",
+        "description": "Passenger IDs to add to standby (eg. ['PAX002', 'PAX003'])",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "journey_id",
+      "passenger_ids"
+    ]
+  }
+}

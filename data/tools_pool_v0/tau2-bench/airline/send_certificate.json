@@ -1,0 +1,28 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/airline/tools.py",
+  "domain": "airline",
+  "name": "send_certificate",
+  "description": "Send a certificate to a user. Be careful!",
+  "parameters": {
+    "properties": {
+      "user_id": {
+        "description": "The ID of the user to book the reservation, such as 'sara_doe_496'.",
+        "title": "User Id",
+        "type": "string"
+      },
+      "amount": {
+        "description": "The amount of the certificate to send.",
+        "title": "Amount",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "user_id",
+      "amount"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

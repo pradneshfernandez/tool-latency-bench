@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_pto_balance",
+  "description": "get_pto_balance: Retrieve an employee's PTO balances by type (general PTO and sick leave). Also returns the employee's schedule type (standard or shift), which determines how PTO days are calculated.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

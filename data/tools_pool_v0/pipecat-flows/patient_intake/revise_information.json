@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/patient_intake.py",
+  "domain": "patient_intake",
+  "name": "revise_information",
+  "description": "Return to prescriptions to revise information.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

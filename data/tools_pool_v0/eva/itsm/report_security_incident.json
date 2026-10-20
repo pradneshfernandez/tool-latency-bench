@@ -1,0 +1,35 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "report_security_incident",
+  "description": "report_security_incident: Open a security case for a lost, stolen, or potentially compromised company device. Returns a security case ID.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee reporting the incident (e.g. EMP048271)."
+      },
+      "asset_tag": {
+        "type": "string",
+        "description": "The asset tag of the affected device, which must be assigned to the caller (e.g. AST-LPT-284719)."
+      },
+      "incident_type": {
+        "type": "string",
+        "description": "The type of security incident.",
+        "enum": [
+          "lost",
+          "stolen",
+          "suspected_compromise"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "asset_tag",
+      "incident_type"
+    ]
+  }
+}

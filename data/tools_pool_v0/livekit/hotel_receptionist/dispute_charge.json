@@ -1,0 +1,50 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_rooms.py",
+  "domain": "hotel_receptionist",
+  "name": "dispute_charge",
+  "description": "Handle a guest dispute on a line item.\n",
+  "parameters": {
+    "properties": {
+      "category": {
+        "description": "Pick the category that best matches what the caller is disputing.",
+        "enum": [
+          "minibar",
+          "room_service_restaurant",
+          "damage_cleaning",
+          "late_checkout_fee",
+          "cancellation_fee",
+          "no_show",
+          "double_charge_billing_error",
+          "other"
+        ],
+        "title": "Category",
+        "type": "string"
+      },
+      "line_item_label": {
+        "description": "The label of the line item on the invoice, as it appears.",
+        "title": "Line Item Label",
+        "type": "string"
+      },
+      "caller_note": {
+        "description": "A short summary of what the caller said about the charge.",
+        "title": "Caller Note",
+        "type": "string"
+      },
+      "accepts_offered_resolution": {
+        "description": "Required. Set true ONLY after the caller has actually\naccepted the policy outcome you offered (a goodwill waiver, a credit, etc.).\nSet false if they pushed back, asked for a manager, or haven't been offered\nanything yet. Never default to true to skip the conversation.",
+        "title": "Accepts Offered Resolution",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "category",
+      "line_item_label",
+      "caller_note",
+      "accepts_offered_resolution"
+    ],
+    "title": "DisputeChargeArgs",
+    "type": "object"
+  }
+}

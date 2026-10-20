@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_application_details",
+  "description": "get_application_details: Look up a software application by its product name. Resolves the name using exact case-insensitive matching against product names and common aliases (e.g. \"IntelliJ\" resolves to \"JetBrains IntelliJ IDEA Ultimate\"). Returns the catalog ID, full name, description, whether manager approval is required, and available access levels.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "application_name": {
+        "type": "string",
+        "description": "The application name as the caller says it (e.g. Slack, Confluence, Salesforce)."
+      }
+    },
+    "required": [
+      "application_name"
+    ]
+  }
+}

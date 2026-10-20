@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/modify_booking.py",
+  "domain": "hotel_receptionist",
+  "name": "give_up",
+  "description": "End the modification flow, leaving the booking unchanged: the caller no longer wants changes, OR they need something this flow can't do (cancellation, manager callback, followup, anything else). The right tools for their request become available once this returns.\n",
+  "parameters": {
+    "properties": {
+      "reason": {
+        "description": "short explanation (e.g. \"guest wants a manager callback instead\").",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reason"
+    ],
+    "title": "GiveUpArgs",
+    "type": "object"
+  }
+}

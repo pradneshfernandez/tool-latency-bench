@@ -1,0 +1,26 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "modify_appointment",
+  "description": "Call if the user requests to reschedule or cancel an existing appointment. Do not ask for any information in advance.",
+  "parameters": {
+    "properties": {
+      "function": {
+        "description": "Available functions to modify an existing appointment",
+        "enum": [
+          "reschedule",
+          "cancel"
+        ],
+        "title": "Function",
+        "type": "string"
+      }
+    },
+    "required": [
+      "function"
+    ],
+    "title": "ModifyAppointmentArgs",
+    "type": "object"
+  }
+}

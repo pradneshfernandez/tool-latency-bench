@@ -1,0 +1,32 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "attempt_account_unlock",
+  "description": "attempt_account_unlock: Attempt to unlock a locked user account on a specific system. Returns success if the account was locked and is now unlocked. Returns cannot_unlock_security_hold if the account is under a security investigation or admin hold — in that case the account cannot be unlocked through the service desk. Returns an error if the account is not actually locked.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee whose account should be unlocked (e.g. EMP048271)."
+      },
+      "target_system": {
+        "type": "string",
+        "description": "The system where the account is locked.",
+        "enum": [
+          "active_directory",
+          "sso_identity",
+          "email_exchange",
+          "vpn_gateway",
+          "erp_oracle"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "target_system"
+    ]
+  }
+}

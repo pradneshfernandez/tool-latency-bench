@@ -1,0 +1,60 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "add_visa_dependent",
+  "description": "add_visa_dependent: Add a dependent to an existing visa petition. Returns an amendment_id on success.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP081034"
+      },
+      "visa_petition_number": {
+        "type": "string",
+        "description": "The visa petition number. Format: 3 uppercase letters followed by 10 digits. Example: WAC2512045678"
+      },
+      "dependent_first_name": {
+        "type": "string",
+        "description": "The dependent's first name, 2-30 characters, letters and hyphens only. Example: Priya, Jean-Luc"
+      },
+      "dependent_last_name": {
+        "type": "string",
+        "description": "The dependent's last name, 2-30 characters, letters and hyphens only. Example: Sharma, Dupont"
+      },
+      "relationship": {
+        "type": "string",
+        "description": "The dependent's relationship to the employee",
+        "enum": [
+          "spouse",
+          "child",
+          "domestic_partner"
+        ]
+      },
+      "dependent_date_of_birth": {
+        "type": "string",
+        "description": "The dependent's date of birth in YYYY-MM-DD format. Example: 2024-03-15"
+      },
+      "dependent_country_of_birth": {
+        "type": "string",
+        "description": "The 2-letter ISO country code for the dependent's country of birth. Convert country names to codes. Example: IN, US, MX"
+      },
+      "uscis_receipt_number": {
+        "type": "string",
+        "description": "The USCIS receipt number for the petition amendment. Format: 3 uppercase letters followed by 10 digits. This is a different identifier from the visa petition number. Example: IOE0912345678"
+      }
+    },
+    "required": [
+      "employee_id",
+      "visa_petition_number",
+      "dependent_first_name",
+      "dependent_last_name",
+      "relationship",
+      "dependent_date_of_birth",
+      "dependent_country_of_birth",
+      "uscis_receipt_number"
+    ]
+  }
+}

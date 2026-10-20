@@ -1,0 +1,35 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "notify_pdmp",
+  "description": "notify_pdmp: Notify the state Prescription Drug Monitoring Program of a DEA registration transfer.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "dea_number": {
+        "type": "string",
+        "description": "The provider's DEA number. Format: 2 uppercase letters followed by 7 digits. Example: BK4729183"
+      },
+      "state_code": {
+        "type": "string",
+        "description": "The 2-letter US state abbreviation for the new registration state. Example: CA"
+      },
+      "facility_code": {
+        "type": "string",
+        "description": "The facility code for the new registration location. Format: 2-4 uppercase letters, dash, 2 digits, 1 letter. Example: BWH-02A"
+      }
+    },
+    "required": [
+      "npi",
+      "dea_number",
+      "state_code",
+      "facility_code"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/intake/tools.py",
+  "domain": "intake",
+  "name": "end_call",
+  "description": "Hang up and end the call. Call this exactly once, as your last action:\n\nafter submitting the collected fields and thanking the person, or when\nthe call cannot proceed. Ending the call is final — nothing can be\nsubmitted after it.",
+  "parameters": {
+    "properties": {},
+    "title": "parameters",
+    "type": "object"
+  }
+}

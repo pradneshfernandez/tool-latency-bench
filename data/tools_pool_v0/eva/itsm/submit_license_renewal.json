@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_license_renewal",
+  "description": "submit_license_renewal: Submit a renewal for an existing software license. The license must be within 30 days of expiration or have expired no more than 14 days ago. If outside this window, returns not_in_renewal_window with the expiration date so the caller can be advised to submit a new license request instead.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee renewing the license (e.g. EMP048271)."
+      },
+      "license_assignment_id": {
+        "type": "string",
+        "description": "The identifier for the specific license assignment being renewed, in the format LASGN followed by a dash and 6 digits (e.g. LASGN-048271)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "license_assignment_id"
+    ]
+  }
+}

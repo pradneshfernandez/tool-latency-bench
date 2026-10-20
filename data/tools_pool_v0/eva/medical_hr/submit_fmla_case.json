@@ -1,0 +1,41 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "submit_fmla_case",
+  "description": "submit_fmla_case: Open an FMLA leave case. Returns a case_id on success. Rejects the request if the employee is not eligible or if the requested leave duration exceeds the remaining FMLA balance.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "leave_category": {
+        "type": "string",
+        "description": "The FMLA leave category (mutually exclusive): employee_medical_condition (employee's own serious health condition), family_member_serious_illness (caring for ill spouse, child, or parent), bonding (birth, adoption, or foster placement within 12 months), or military_exigency (family member's active duty)",
+        "enum": [
+          "employee_medical_condition",
+          "family_member_serious_illness",
+          "bonding",
+          "military_exigency"
+        ]
+      },
+      "leave_start_date": {
+        "type": "string",
+        "description": "The first day of leave in YYYY-MM-DD format. Must be today or a future date. Example: 2026-05-01"
+      },
+      "leave_end_date": {
+        "type": "string",
+        "description": "The last day of leave in YYYY-MM-DD format. The total duration must not exceed the employee's remaining FMLA weeks. Example: 2026-07-01"
+      }
+    },
+    "required": [
+      "employee_id",
+      "leave_category",
+      "leave_start_date",
+      "leave_end_date"
+    ]
+  }
+}

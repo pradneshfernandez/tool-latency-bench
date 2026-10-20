@@ -1,0 +1,25 @@
+{
+  "source": "aiewf-eval",
+  "commit": "ff1e9fa",
+  "file_path": "benchmarks/_shared/tools.py",
+  "domain": "_shared",
+  "name": "submit_session_suggestion",
+  "description": "Submit a suggestion for a new session.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The name of the person making the suggestion."
+      },
+      "suggestion_text": {
+        "type": "string",
+        "description": "The text of the session suggestion."
+      }
+    },
+    "required": [
+      "name",
+      "suggestion_text"
+    ]
+  }
+}

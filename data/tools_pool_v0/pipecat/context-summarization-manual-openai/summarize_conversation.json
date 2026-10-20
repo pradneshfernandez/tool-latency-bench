@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/context-summarization/context-summarization-manual-openai.py",
+  "domain": "context-summarization-manual-openai",
+  "name": "summarize_conversation",
+  "description": "Summarize and compress the conversation history. Call this when the user asks you to summarize the conversation or when you want to free up context space.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

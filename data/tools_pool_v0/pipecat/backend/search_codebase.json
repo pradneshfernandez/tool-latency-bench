@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/llm-with-backend/backend.py",
+  "domain": "backend",
+  "name": "search_codebase",
+  "description": "Search the codebase for files relevant to a query.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "What to look for: a symbol, a file name, or a description."
+      }
+    },
+    "required": [
+      "query"
+    ]
+  }
+}

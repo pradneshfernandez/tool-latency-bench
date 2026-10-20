@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_room.py",
+  "domain": "hotel_receptionist",
+  "name": "open_phone_dialog",
+  "description": "Open the phone dialog. It collects the guest's phone number (read back and confirmed) from the caller.",
+  "parameters": {
+    "properties": {},
+    "title": "OpenPhoneDialogArgs",
+    "type": "object"
+  }
+}

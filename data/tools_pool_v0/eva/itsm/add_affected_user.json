@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "add_affected_user",
+  "description": "add_affected_user: Add an employee to the affected users list of an existing outage ticket. Used when a caller reports an outage that has already been logged, to avoid creating a duplicate ticket.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticket_number": {
+        "type": "string",
+        "description": "The existing outage ticket number (e.g. INC0048271)."
+      },
+      "employee_id": {
+        "type": "string",
+        "description": "The employee reporting the same outage (e.g. EMP048271)."
+      }
+    },
+    "required": [
+      "ticket_number",
+      "employee_id"
+    ]
+  }
+}

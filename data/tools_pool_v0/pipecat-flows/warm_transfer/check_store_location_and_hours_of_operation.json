@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/warm_transfer.py",
+  "domain": "warm_transfer",
+  "name": "check_store_location_and_hours_of_operation",
+  "description": "Check store location and hours of operation.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

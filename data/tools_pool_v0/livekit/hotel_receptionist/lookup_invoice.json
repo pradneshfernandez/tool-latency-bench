@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_rooms.py",
+  "domain": "hotel_receptionist",
+  "name": "lookup_invoice",
+  "description": "Verify the caller, fetch their invoice, and read it back.",
+  "parameters": {
+    "properties": {},
+    "title": "LookupInvoiceArgs",
+    "type": "object"
+  }
+}

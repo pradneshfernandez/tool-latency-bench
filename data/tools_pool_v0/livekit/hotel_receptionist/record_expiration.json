@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/get_card.py",
+  "domain": "hotel_receptionist",
+  "name": "record_expiration",
+  "description": "Record the card's expiration date.\n",
+  "parameters": {
+    "properties": {
+      "month": {
+        "description": "Expiration month as a number, e.g. 4 for April.",
+        "title": "Month",
+        "type": "integer"
+      },
+      "year": {
+        "description": "Expiration year, last two digits, e.g. 28 for 2028.",
+        "title": "Year",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "month",
+      "year"
+    ],
+    "title": "RecordExpirationArgs",
+    "type": "object"
+  }
+}

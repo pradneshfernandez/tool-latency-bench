@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_existing_accounts",
+  "description": "check_existing_accounts: Check whether an employee already has active system accounts. Returns a list of existing accounts or empty if none exist.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee to check for existing accounts (e.g. EMP092841)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

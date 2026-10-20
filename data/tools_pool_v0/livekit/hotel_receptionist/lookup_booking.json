@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_rooms.py",
+  "domain": "hotel_receptionist",
+  "name": "lookup_booking",
+  "description": "Read-only lookup of a confirmed room booking. Use this when the caller wants to\ncheck or recall their booking details (dates, room type, what they're paying, who\nit's under, check-in time) without changing anything. Verifies the caller first.",
+  "parameters": {
+    "properties": {},
+    "title": "LookupBookingArgs",
+    "type": "object"
+  }
+}

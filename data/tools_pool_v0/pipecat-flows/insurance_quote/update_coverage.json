@@ -1,0 +1,25 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/insurance_quote.py",
+  "domain": "insurance_quote",
+  "name": "update_coverage",
+  "description": "Recalculate quote with new coverage options.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "coverage_amount": {
+        "type": "integer",
+        "description": "The desired coverage amount in dollars."
+      },
+      "deductible": {
+        "type": "integer",
+        "description": "The desired deductible amount in dollars."
+      }
+    },
+    "required": [
+      "coverage_amount",
+      "deductible"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_room.py",
+  "domain": "hotel_receptionist",
+  "name": "confirm_booking",
+  "description": "Finalize the booking and charge the card. Call ONLY after every detail is captured AND the caller has agreed to your read-back (dates, room and extras, total, card last four). Returns the final confirmation - relay it to the caller; the booking flow ends with this call.",
+  "parameters": {
+    "properties": {},
+    "title": "ConfirmBookingArgs",
+    "type": "object"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/flows/python/warm_transfer.py",
+  "domain": "warm_transfer",
+  "name": "end_customer_conversation",
+  "description": "End the conversation.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

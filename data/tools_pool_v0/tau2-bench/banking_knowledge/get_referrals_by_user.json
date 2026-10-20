@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "get_referrals_by_user",
+  "description": "Get all referrals made by a user.",
+  "parameters": {
+    "properties": {
+      "user_id": {
+        "description": "The ID of the user (referrer) to look up referrals for",
+        "title": "User Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

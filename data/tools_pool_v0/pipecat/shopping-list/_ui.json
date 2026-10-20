@@ -1,0 +1,23 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/ui-worker/shopping-list/bot.py",
+  "domain": "shopping-list",
+  "name": "_ui",
+  "description": "Send a job to the UI worker and hand its answer to the voice LLM.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "payload": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "name",
+      "payload"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/persistent-context/persistent-context-anthropic.py",
+  "domain": "persistent-context-anthropic",
+  "name": "save_conversation",
+  "description": "Save the current conversation. Use this function to persist the current conversation to external storage.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

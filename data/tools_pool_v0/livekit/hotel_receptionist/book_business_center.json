@@ -1,0 +1,60 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_services.py",
+  "domain": "hotel_receptionist",
+  "name": "book_business_center",
+  "description": "Book a business-centre service - a meeting room, secretarial help, or a printing job. The catalog (rates, hours, what's included) is in lookup_policy topic \"business_center\" - look it up first and narrow with the caller (which service, the date and start time, and how long) before booking. The options are for the CALLER to pick from, never pick for them. Once they pick and agree, THIS CALL is the booking - saying \"I'll get that set up\" books nothing; nothing exists until this returns a reference.\n",
+  "parameters": {
+    "properties": {
+      "service": {
+        "description": "The service the caller picked.",
+        "enum": [
+          "meeting_room",
+          "secretarial",
+          "printing"
+        ],
+        "title": "Service",
+        "type": "string"
+      },
+      "on_date": {
+        "description": "Service date in ISO YYYY-MM-DD format.",
+        "format": "date",
+        "title": "On Date",
+        "type": "string"
+      },
+      "at_time": {
+        "description": "Start time in 24-hour HH:MM format.",
+        "format": "time",
+        "title": "At Time",
+        "type": "string"
+      },
+      "duration_hours": {
+        "description": "How many hours the caller needs (printing is a flat one-hour job).",
+        "minimum": 1,
+        "title": "Duration Hours",
+        "type": "integer"
+      },
+      "guest_name": {
+        "description": "The caller's full name.",
+        "title": "Guest Name",
+        "type": "string"
+      },
+      "guest_phone": {
+        "description": "The caller's phone number, in case the business centre needs to reach them.",
+        "title": "Guest Phone",
+        "type": "string"
+      }
+    },
+    "required": [
+      "service",
+      "on_date",
+      "at_time",
+      "duration_hours",
+      "guest_name",
+      "guest_phone"
+    ],
+    "title": "BookBusinessCenterArgs",
+    "type": "object"
+  }
+}

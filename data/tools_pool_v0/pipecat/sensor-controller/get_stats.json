@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/sensor-controller/sensor-controller.py",
+  "domain": "sensor-controller",
+  "name": "get_stats",
+  "description": "Rolling minimum, maximum, average, and trend of the temperature.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

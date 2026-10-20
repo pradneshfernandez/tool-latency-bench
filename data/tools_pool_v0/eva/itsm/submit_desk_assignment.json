@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_desk_assignment",
+  "description": "submit_desk_assignment: Submit a desk assignment for an employee. The desk code must be one that was confirmed as available. Returns an error if the employee already has an assigned desk (already_assigned), or if their previous assignment is less than 90 days old (too_soon — reassignment cooldown).\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee being assigned the desk (e.g. EMP048271)."
+      },
+      "desk_code": {
+        "type": "string",
+        "description": "The specific desk code to assign (e.g. BLD3-FL2-D107)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "desk_code"
+    ]
+  }
+}

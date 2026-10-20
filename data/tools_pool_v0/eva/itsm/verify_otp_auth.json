@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "verify_otp_auth",
+  "description": "verify_otp_auth: Verify the 6-digit one-time passcode the caller reads from their text message. Returns whether the code matched.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's unique identifier (e.g. EMP048271)."
+      },
+      "otp_code": {
+        "type": "string",
+        "description": "The 6-digit code the caller reads from their SMS (e.g. 483920)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "otp_code"
+    ]
+  }
+}

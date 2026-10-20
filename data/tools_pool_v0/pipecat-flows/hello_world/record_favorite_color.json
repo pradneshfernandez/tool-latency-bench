@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/quickstart/hello_world.py",
+  "domain": "hello_world",
+  "name": "record_favorite_color",
+  "description": "Record the color the user said is their favorite.\n\nHere \"record\" means print to the console, but any logic could go here:\nwrite to a database, make an API call, etc.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "color": {
+        "type": "string",
+        "description": "The user's favorite color."
+      }
+    },
+    "required": [
+      "color"
+    ]
+  }
+}

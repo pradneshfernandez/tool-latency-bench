@@ -1,0 +1,13 @@
+{
+  "source": "tau-bench",
+  "commit": "59a200c",
+  "file_path": "tau_bench/envs/airline/tools/list_all_airports.py",
+  "domain": "airline",
+  "name": "list_all_airports",
+  "description": "List all airports and their cities.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

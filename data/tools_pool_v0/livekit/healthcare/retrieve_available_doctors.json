@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "retrieve_available_doctors",
+  "description": "Call if the user inquires about the available doctors in the network",
+  "parameters": {
+    "properties": {},
+    "title": "RetrieveAvailableDoctorsArgs",
+    "type": "object"
+  }
+}

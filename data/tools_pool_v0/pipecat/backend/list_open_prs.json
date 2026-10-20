@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/llm-with-backend/backend.py",
+  "domain": "backend",
+  "name": "list_open_prs",
+  "description": "List the team's open pull requests.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

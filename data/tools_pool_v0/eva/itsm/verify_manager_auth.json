@@ -1,0 +1,30 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "verify_manager_auth",
+  "description": "verify_manager_auth: Authenticate a caller as both an employee and an authorized manager in a single step. Verifies the employee ID, phone last four, and a 6-character alphanumeric manager authorization code issued by IT security. Returns the manager's department and list of direct reports on success. Use this instead of standard verification for flows where the caller is acting on behalf of another employee.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The manager's employee ID (e.g. EMP048271)."
+      },
+      "phone_last_four": {
+        "type": "string",
+        "description": "Last 4 digits of the manager's registered phone number (e.g. 7294)."
+      },
+      "manager_auth_code": {
+        "type": "string",
+        "description": "6-character alphanumeric authorization code, uppercase letters and digits (e.g. K4M2P9)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "phone_last_four",
+      "manager_auth_code"
+    ]
+  }
+}

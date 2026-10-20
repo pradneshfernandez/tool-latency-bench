@@ -1,0 +1,33 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "notify_immigration_counsel",
+  "description": "notify_immigration_counsel: Notify immigration counsel of a change to a visa petition.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP081034"
+      },
+      "visa_petition_number": {
+        "type": "string",
+        "description": "The visa petition number. Format: 3 uppercase letters followed by 10 digits. Example: WAC2512045678"
+      },
+      "notification_type": {
+        "type": "string",
+        "description": "The type of change",
+        "enum": [
+          "dependent_added"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "visa_petition_number",
+      "notification_type"
+    ]
+  }
+}

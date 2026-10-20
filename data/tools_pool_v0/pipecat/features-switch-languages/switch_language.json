@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/features/features-switch-languages.py",
+  "domain": "features-switch-languages",
+  "name": "switch_language",
+  "description": "Switch to another language when the user asks you to.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "language": {
+        "type": "string",
+        "description": "The language the user wants you to speak."
+      }
+    },
+    "required": [
+      "language"
+    ]
+  }
+}

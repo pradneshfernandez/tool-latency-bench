@@ -1,0 +1,23 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/features/features-user-email-gathering.py",
+  "domain": "features-user-email-gathering",
+  "name": "store_user_emails",
+  "description": "Store user emails when confirmed.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "emails": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The list of user emails."
+      }
+    },
+    "required": [
+      "emails"
+    ]
+  }
+}

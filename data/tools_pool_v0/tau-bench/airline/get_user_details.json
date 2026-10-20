@@ -1,0 +1,20 @@
+{
+  "source": "tau-bench",
+  "commit": "59a200c",
+  "file_path": "tau_bench/envs/airline/tools/get_user_details.py",
+  "domain": "airline",
+  "name": "get_user_details",
+  "description": "Get the details of an user, including their reservations.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The user id, such as 'sara_doe_496'."
+      }
+    },
+    "required": [
+      "user_id"
+    ]
+  }
+}

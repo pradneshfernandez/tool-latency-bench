@@ -1,0 +1,51 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "create_incident_ticket",
+  "description": "create_incident_ticket: Create a new incident ticket. Returns the ticket number in INC format. The category is determined by the agent based on what the caller described — the caller does not choose the category directly.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee affected by the incident (e.g. EMP048271)."
+      },
+      "category": {
+        "type": "string",
+        "description": "The incident category, determined from the caller's description of the problem.",
+        "enum": [
+          "login_issue",
+          "service_outage",
+          "hardware_malfunction",
+          "network_connectivity"
+        ]
+      },
+      "urgency": {
+        "type": "string",
+        "description": "Urgency level inferred from the caller's business impact. low = workaround available, not time-sensitive; medium = degraded but functional; high = completely blocked, no workaround.",
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "affected_system": {
+        "type": "string",
+        "description": "The system or resource affected. For login or outage issues, use the system identifier (e.g. active_directory, sso_identity, email_exchange, vpn_gateway, erp_oracle, crm_platform, hr_portal, code_repository, ci_cd_pipeline, file_storage, print_service). For hardware issues, use the asset tag (e.g. AST-LPT-284719). For network issues, use vpn, wifi, or ethernet."
+      },
+      "troubleshooting_completed": {
+        "type": "boolean",
+        "description": "Whether troubleshooting steps were attempted before creating the ticket. Must be true for login and network connectivity issues."
+      }
+    },
+    "required": [
+      "employee_id",
+      "category",
+      "urgency",
+      "affected_system",
+      "troubleshooting_completed"
+    ]
+  }
+}

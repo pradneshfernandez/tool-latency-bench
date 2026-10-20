@@ -1,0 +1,43 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "reactivate_privileges",
+  "description": "reactivate_privileges: Reactivate one or more suspended clinical privileges for a provider. Returns a case_id on success. Only privileges that are currently suspended can be reactivated.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "privilege_codes": {
+        "type": "array",
+        "description": "The privilege codes to reactivate. Format per code: PRV-CATEGORY-3digits. Only include codes the caller explicitly confirmed. Example: [PRV-CARD-001, PRV-ICU-003]",
+        "items": {
+          "type": "string"
+        }
+      },
+      "clearance_code": {
+        "type": "string",
+        "description": "The occupational health clearance code. Format: CLR-LETTERS-6digits. Example: CLR-OCC-048271"
+      },
+      "leave_type_on_record": {
+        "type": "string",
+        "description": "The type of leave the provider was on (mutually exclusive): medical_leave (employer-approved medical, not FMLA), personal_leave (approved personal/unpaid, not medical or FMLA), or fmla_leave (FMLA-protected leave)",
+        "enum": [
+          "medical_leave",
+          "personal_leave",
+          "fmla_leave"
+        ]
+      }
+    },
+    "required": [
+      "npi",
+      "privilege_codes",
+      "clearance_code",
+      "leave_type_on_record"
+    ]
+  }
+}

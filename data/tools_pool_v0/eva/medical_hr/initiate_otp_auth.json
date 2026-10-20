@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "initiate_otp_auth",
+  "description": "initiate_otp_auth: Send a one-time passcode via SMS to the phone number on file for the given employee. Returns the last four digits of the phone number so the agent can confirm with the caller that the code was sent to the right number.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

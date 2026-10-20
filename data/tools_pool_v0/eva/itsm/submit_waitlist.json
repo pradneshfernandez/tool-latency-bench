@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_waitlist",
+  "description": "submit_waitlist: Place an employee on the waitlist for a desk or parking space when nothing is currently available in their preferred building or zone. Returns a waitlist ID and the employee's position in the queue.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee to place on the waitlist (e.g. EMP048271)."
+      },
+      "resource_type": {
+        "type": "string",
+        "description": "Whether the waitlist is for a desk or a parking space.",
+        "enum": [
+          "desk",
+          "parking"
+        ]
+      },
+      "zone_or_building": {
+        "type": "string",
+        "description": "The building code (for desks) or parking zone code (for parking) to waitlist for (e.g. BLD3 or PZA)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "resource_type",
+      "zone_or_building"
+    ]
+  }
+}

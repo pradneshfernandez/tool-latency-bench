@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_i9_record",
+  "description": "get_i9_record: Retrieve the current I-9 verification record for an employee, including verification status and any previously submitted document details.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP072948"
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "verify_cost_center_budget",
+  "description": "verify_cost_center_budget: Verify that the department cost center has available budget for a hardware purchase. The department and cost center are automatically looked up from the employee's record — the caller does not need to provide a cost center code. Returns whether budget is available.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee whose department budget should be checked (e.g. EMP048271)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

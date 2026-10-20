@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/sensor-controller/sensor-controller.py",
+  "domain": "sensor-controller",
+  "name": "set_response_rate",
+  "description": "Set how aggressively the sensor approaches the target.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "rate": {
+        "type": "number",
+        "description": "Response rate between 0.01 (slow) and 0.3 (fast)."
+      }
+    },
+    "required": [
+      "rate"
+    ]
+  }
+}

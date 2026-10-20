@@ -1,0 +1,28 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/retail/tools.py",
+  "domain": "retail",
+  "name": "cancel_pending_order",
+  "description": "Cancel a pending order. If the order is already processed or delivered,\n\nit cannot be cancelled. The agent needs to explain the cancellation detail\nand ask for explicit user confirmation (yes/no) to proceed. If the user confirms,\nthe order status will be changed to 'cancelled' and the payment will be refunded.\nThe refund will be added to the user's gift card balance immediately if the payment\nwas made using a gift card, otherwise the refund would take 5-7 business days to process.\nThe function returns the order details after the cancellation.",
+  "parameters": {
+    "properties": {
+      "order_id": {
+        "description": "The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.",
+        "title": "Order Id",
+        "type": "string"
+      },
+      "reason": {
+        "description": "The reason for cancellation, which should be either 'no longer needed' or 'ordered by mistake'.",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "reason"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

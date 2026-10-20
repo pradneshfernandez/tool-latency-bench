@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_employee_record",
+  "description": "get_employee_record: Retrieve an employee's basic profile: name, department, role, employment status, and contact information.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's unique identifier (e.g. EMP048271)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

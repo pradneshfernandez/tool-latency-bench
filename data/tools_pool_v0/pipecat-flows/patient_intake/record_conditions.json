@@ -1,0 +1,23 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/patient_intake.py",
+  "domain": "patient_intake",
+  "name": "record_conditions",
+  "description": "Record the user's medical conditions. Once confirmed, the next step is to collect visit reasons.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "conditions": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "List of condition objects, each with \"name\" (str, the user's medical condition)."
+      }
+    },
+    "required": [
+      "conditions"
+    ]
+  }
+}

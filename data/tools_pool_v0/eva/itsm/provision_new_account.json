@@ -1,0 +1,48 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "provision_new_account",
+  "description": "provision_new_account: Provision system accounts for a new hire. Creates accounts in all required systems and assigns initial access groups. Returns a case ID, list of provisioned accounts, and the new hire's email address.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "manager_employee_id": {
+        "type": "string",
+        "description": "The requesting manager's employee ID (e.g. EMP048271)."
+      },
+      "new_hire_employee_id": {
+        "type": "string",
+        "description": "The new hire's employee ID (e.g. EMP092841)."
+      },
+      "department_code": {
+        "type": "string",
+        "description": "The new hire's department code (e.g. ENG)."
+      },
+      "role_code": {
+        "type": "string",
+        "description": "The new hire's role code (e.g. SWE)."
+      },
+      "start_date": {
+        "type": "string",
+        "description": "The new hire's start date in YYYY-MM-DD format (e.g. 2026-08-18)."
+      },
+      "access_groups": {
+        "type": "array",
+        "description": "List of initial access group codes to assign (e.g. ['GRP-ENGCORE', 'GRP-VPNALL']).",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "manager_employee_id",
+      "new_hire_employee_id",
+      "department_code",
+      "role_code",
+      "start_date",
+      "access_groups"
+    ]
+  }
+}

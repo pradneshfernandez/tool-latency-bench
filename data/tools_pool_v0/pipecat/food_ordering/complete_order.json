@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/flows/python/food_ordering.py",
+  "domain": "food_ordering",
+  "name": "complete_order",
+  "description": "User confirms the order is correct.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

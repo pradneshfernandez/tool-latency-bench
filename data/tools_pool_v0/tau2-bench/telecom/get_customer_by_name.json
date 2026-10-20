@@ -1,0 +1,28 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/telecom/tools.py",
+  "domain": "telecom",
+  "name": "get_customer_by_name",
+  "description": "Searches for customers by name and DOB. May return multiple matches if names are similar,\n\nDOB helps disambiguate.",
+  "parameters": {
+    "properties": {
+      "full_name": {
+        "description": "The full name of the customer.",
+        "title": "Full Name",
+        "type": "string"
+      },
+      "dob": {
+        "description": "Date of birth for verification, in the format YYYY-MM-DD.",
+        "title": "Dob",
+        "type": "string"
+      }
+    },
+    "required": [
+      "full_name",
+      "dob"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

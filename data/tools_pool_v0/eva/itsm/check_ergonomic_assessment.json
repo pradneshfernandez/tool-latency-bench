@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_ergonomic_assessment",
+  "description": "check_ergonomic_assessment: Check whether an employee has a completed ergonomic assessment on file. Returns the assessment status and completion date if one exists. Required before ordering standing desk converters or ergonomic chairs.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee to check (e.g. EMP048271)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

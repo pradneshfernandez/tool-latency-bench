@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/telecom/tools.py",
+  "domain": "telecom",
+  "name": "get_customer_by_id",
+  "description": "Retrieves a customer directly by their unique ID.",
+  "parameters": {
+    "properties": {
+      "customer_id": {
+        "description": "The unique identifier of the customer.",
+        "title": "Customer Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "customer_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_rooms.py",
+  "domain": "hotel_receptionist",
+  "name": "start_room_booking",
+  "description": "Start the room-booking flow. Call it the MOMENT the caller wants to book - never pre-collect name, email, phone, or card yourself first; the flow gathers everything. Its return is the FINAL result of the booking (\"You're booked\", code, total): relay that to the caller and move on - there is nothing further to confirm or call afterwards.",
+  "parameters": {
+    "properties": {},
+    "title": "StartRoomBookingArgs",
+    "type": "object"
+  }
+}

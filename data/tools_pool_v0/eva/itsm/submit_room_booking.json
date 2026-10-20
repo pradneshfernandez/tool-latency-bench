@@ -1,0 +1,45 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_room_booking",
+  "description": "submit_room_booking: Book a conference room for a specific date and time window. The room code must be one that was confirmed as available. Returns a booking request ID and confirmation details.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee booking the room (e.g. EMP048271)."
+      },
+      "room_code": {
+        "type": "string",
+        "description": "The room code to book (e.g. BLD3-FL2-RM204)."
+      },
+      "date": {
+        "type": "string",
+        "description": "Booking date in YYYY-MM-DD format (e.g. 2026-08-15)."
+      },
+      "start_time": {
+        "type": "string",
+        "description": "Start time in 24-hour HH:MM format (e.g. 09:00)."
+      },
+      "end_time": {
+        "type": "string",
+        "description": "End time in 24-hour HH:MM format (e.g. 10:30)."
+      },
+      "attendee_count": {
+        "type": "integer",
+        "description": "Number of expected attendees (e.g. 8)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "room_code",
+      "date",
+      "start_time",
+      "end_time",
+      "attendee_count"
+    ]
+  }
+}

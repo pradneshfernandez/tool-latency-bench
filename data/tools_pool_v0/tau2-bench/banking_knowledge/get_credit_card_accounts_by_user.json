@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/banking_knowledge/tools.py",
+  "domain": "banking_knowledge",
+  "name": "get_credit_card_accounts_by_user",
+  "description": "Get all credit card accounts for a user.\n\nReturns information about each credit card account including card type,\ndate opened, current balance, and reward points.",
+  "parameters": {
+    "properties": {
+      "user_id": {
+        "description": "The ID of the user to look up credit card accounts for",
+        "title": "User Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/get_card.py",
+  "domain": "hotel_receptionist",
+  "name": "decline_card_capture",
+  "description": "The caller explicitly refuses to provide their card.\n",
+  "parameters": {
+    "properties": {
+      "reason": {
+        "description": "A short explanation of why the caller declined.",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reason"
+    ],
+    "title": "DeclineCardCaptureArgs",
+    "type": "object"
+  }
+}

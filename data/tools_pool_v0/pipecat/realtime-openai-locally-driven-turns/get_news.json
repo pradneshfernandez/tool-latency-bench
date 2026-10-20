@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/realtime/realtime-openai-locally-driven-turns.py",
+  "domain": "realtime-openai-locally-driven-turns",
+  "name": "get_news",
+  "description": "Get the current news.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

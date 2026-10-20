@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/otel_trace.py",
+  "domain": "otel_trace",
+  "name": "transfer_to_alloy",
+  "description": "Transfer the call to Alloy.",
+  "parameters": {
+    "properties": {},
+    "title": "TransferToAlloyArgs",
+    "type": "object"
+  }
+}

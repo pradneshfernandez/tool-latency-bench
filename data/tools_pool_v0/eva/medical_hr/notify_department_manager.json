@@ -1,0 +1,36 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "notify_department_manager",
+  "description": "notify_department_manager: Send a notification to the department manager about a completed employee action.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "case_id": {
+        "type": "string",
+        "description": "The case ID for the action being reported. Format: CASE-PREFIX-6digits. Example: CASE-SWP-048271"
+      },
+      "notification_type": {
+        "type": "string",
+        "description": "The type of action being reported",
+        "enum": [
+          "shift_swap_confirmed",
+          "fmla_opened",
+          "payroll_correction_submitted",
+          "pto_request_submitted"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "case_id",
+      "notification_type"
+    ]
+  }
+}

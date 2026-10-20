@@ -1,0 +1,50 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "schedule_field_dispatch",
+  "description": "schedule_field_dispatch: Schedule a field technician to visit the employee's location to inspect or repair hardware. Checks technician availability for the requested date and time window. Returns a dispatch confirmation ID and appointment details.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticket_number": {
+        "type": "string",
+        "description": "The incident ticket number (e.g. INC0048271)."
+      },
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting the dispatch (e.g. EMP048271)."
+      },
+      "building_code": {
+        "type": "string",
+        "description": "The building where the device is located (e.g. BLD3)."
+      },
+      "floor_code": {
+        "type": "string",
+        "description": "The floor where the device is located (e.g. FL2)."
+      },
+      "preferred_date": {
+        "type": "string",
+        "description": "Preferred dispatch date in YYYY-MM-DD format (e.g. 2026-08-15)."
+      },
+      "time_window": {
+        "type": "string",
+        "description": "Preferred time window. morning = 08:00–12:00; afternoon = 12:00–17:00; full_day = 08:00–17:00.",
+        "enum": [
+          "morning",
+          "afternoon",
+          "full_day"
+        ]
+      }
+    },
+    "required": [
+      "ticket_number",
+      "employee_id",
+      "building_code",
+      "floor_code",
+      "preferred_date",
+      "time_window"
+    ]
+  }
+}

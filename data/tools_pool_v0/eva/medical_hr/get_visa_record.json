@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_visa_record",
+  "description": "get_visa_record: Retrieve a visa sponsorship record for an employee using their visa petition number.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP081034"
+      },
+      "visa_petition_number": {
+        "type": "string",
+        "description": "The visa petition number. Format: 3 uppercase letters followed by 10 digits. Example: WAC2512045678"
+      }
+    },
+    "required": [
+      "employee_id",
+      "visa_petition_number"
+    ]
+  }
+}

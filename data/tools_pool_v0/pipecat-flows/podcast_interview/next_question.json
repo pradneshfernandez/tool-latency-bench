@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/podcast_interview.py",
+  "domain": "podcast_interview",
+  "name": "next_question",
+  "description": "Use this after you've thoroughly explored the current aspect with multiple questions and follow-ups.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

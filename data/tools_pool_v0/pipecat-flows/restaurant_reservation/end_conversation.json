@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/restaurant_reservation.py",
+  "domain": "restaurant_reservation",
+  "name": "end_conversation",
+  "description": "End the conversation.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

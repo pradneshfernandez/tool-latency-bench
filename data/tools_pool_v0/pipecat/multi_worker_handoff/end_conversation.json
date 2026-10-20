@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/flows/python/multi_worker_handoff.py",
+  "domain": "multi_worker_handoff",
+  "name": "end_conversation",
+  "description": "End the conversation when the user says goodbye.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "description": "Why the conversation is ending."
+      }
+    },
+    "required": [
+      "reason"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "verify_employee_auth",
+  "description": "verify_employee_auth: Authenticate an employee using their employee ID and the last four digits of their phone number on file. Returns the caller's name on success and whether authentication passed. This is the standard identity verification used for most service desk requests.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's unique identifier, in the format EMP followed by 6 digits (e.g. EMP048271)."
+      },
+      "phone_last_four": {
+        "type": "string",
+        "description": "The last 4 digits of the employee's phone number registered in the system (e.g. 7294)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "phone_last_four"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "cancel_reservation",
+  "description": "cancel_reservation: Cancel a flight booking.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "journey_id": {
+        "type": "string",
+        "description": "Journey ID of the booking to cancel, from get_reservation bookings list"
+      },
+      "cancellation_reason": {
+        "type": "string",
+        "description": "Reason for cancellation",
+        "enum": [
+          "voluntary",
+          "irrops_refund",
+          "24_hour_rule",
+          "schedule_unacceptable",
+          "medical",
+          "bereavement"
+        ]
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "journey_id",
+      "cancellation_reason"
+    ]
+  }
+}

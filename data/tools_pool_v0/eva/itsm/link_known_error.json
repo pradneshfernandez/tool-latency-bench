@@ -1,0 +1,37 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "link_known_error",
+  "description": "link_known_error: Search the known error database for an entry matching the affected service and link it to an incident ticket. Returns the known error ID and workaround if a match is found, or indicates no match exists.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticket_number": {
+        "type": "string",
+        "description": "The incident ticket number to link (e.g. INC0048271)."
+      },
+      "service_name": {
+        "type": "string",
+        "description": "The affected service to search the known error database for.",
+        "enum": [
+          "email_exchange",
+          "vpn_gateway",
+          "erp_oracle",
+          "crm_platform",
+          "hr_portal",
+          "code_repository",
+          "ci_cd_pipeline",
+          "file_storage",
+          "sso_identity",
+          "print_service"
+        ]
+      }
+    },
+    "required": [
+      "ticket_number",
+      "service_name"
+    ]
+  }
+}

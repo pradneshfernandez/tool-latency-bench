@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "get_reservation",
+  "description": "get_reservation: Retrieve flight reservation using confirmation number and passenger last name. This is typically the first tool called to authenticate the caller and load their flight numbers.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "6-character alphanumeric booking confirmation code"
+      },
+      "last_name": {
+        "type": "string",
+        "description": "Passenger last name for verification"
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "last_name"
+    ]
+  }
+}

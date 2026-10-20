@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/telephony/bank-ivr/ivr_navigator_agent.py",
+  "domain": "ivr_navigator_agent",
+  "name": "record_task_result_and_hang_up",
+  "description": "Record the IVR navigation task results and hang up the call/session.\n\nONLY call this tool once you have completed the task and the IVR has processed the result.\n\nDO not call this tool under any other circumstances, assume IVR system is always working correctly.",
+  "parameters": {
+    "properties": {
+      "content": {
+        "description": "The information gathered from completing a task, short validation, or any IVR interaction observation.",
+        "title": "Content",
+        "type": "string"
+      }
+    },
+    "required": [
+      "content"
+    ],
+    "title": "RecordTaskResultAndHangUpArgs",
+    "type": "object"
+  }
+}

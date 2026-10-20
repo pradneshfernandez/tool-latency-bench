@@ -1,0 +1,42 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "schedule_orientation_followup",
+  "description": "schedule_orientation_followup: Schedule an orientation follow-up appointment for a new hire after onboarding tasks have been completed. The appointment must be at a time slot that has been confirmed as available.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP072948"
+      },
+      "department_code": {
+        "type": "string",
+        "description": "The employee's department",
+        "enum": [
+          "CARDIOLOGY",
+          "EMERGENCY",
+          "ONCOLOGY",
+          "SURGERY",
+          "NEUROLOGY",
+          "PEDIATRICS",
+          "RADIOLOGY",
+          "PATHOLOGY",
+          "ORTHOPEDICS",
+          "OBSTETRICS"
+        ]
+      },
+      "appointment_datetime": {
+        "type": "string",
+        "description": "The appointment date and time in YYYY-MM-DD HH:MM format. Must be a slot confirmed as available. Example: 2026-05-05 09:00"
+      }
+    },
+    "required": [
+      "employee_id",
+      "department_code",
+      "appointment_datetime"
+    ]
+  }
+}

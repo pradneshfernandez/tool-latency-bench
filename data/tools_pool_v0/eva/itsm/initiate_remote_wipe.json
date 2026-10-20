@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "initiate_remote_wipe",
+  "description": "initiate_remote_wipe: Dispatch a remote wipe command to a compromised device. Links the wipe to an existing security case.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "asset_tag": {
+        "type": "string",
+        "description": "The asset tag of the device to wipe (e.g. AST-LPT-284719)."
+      },
+      "security_case_id": {
+        "type": "string",
+        "description": "The security case ID to link the wipe to (e.g. SEC-048271)."
+      }
+    },
+    "required": [
+      "asset_tag",
+      "security_case_id"
+    ]
+  }
+}

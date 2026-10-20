@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "give_up",
+  "description": "Caller wants to abandon the reservation.\n",
+  "parameters": {
+    "properties": {
+      "reason": {
+        "description": "short explanation.",
+        "title": "Reason",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reason"
+    ],
+    "title": "GiveUpArgs",
+    "type": "object"
+  }
+}

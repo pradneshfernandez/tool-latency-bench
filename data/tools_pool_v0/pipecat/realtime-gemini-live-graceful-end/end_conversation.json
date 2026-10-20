@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/realtime/realtime-gemini-live-graceful-end.py",
+  "domain": "realtime-gemini-live-graceful-end",
+  "name": "end_conversation",
+  "description": "Gracefully end the conversation",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

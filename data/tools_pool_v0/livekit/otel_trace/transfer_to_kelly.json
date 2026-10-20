@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/otel_trace.py",
+  "domain": "otel_trace",
+  "name": "transfer_to_kelly",
+  "description": "Transfer the call to Kelly.",
+  "parameters": {
+    "properties": {},
+    "title": "TransferToKellyArgs",
+    "type": "object"
+  }
+}

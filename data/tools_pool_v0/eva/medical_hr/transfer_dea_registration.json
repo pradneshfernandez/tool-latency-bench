@@ -1,0 +1,50 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "transfer_dea_registration",
+  "description": "transfer_dea_registration: Transfer a DEA registration to a new facility and state. The current registration remains active until the effective date, at which point the new facility and state take effect. Returns a case_id on success.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "dea_number": {
+        "type": "string",
+        "description": "The provider's DEA number. Format: 2 uppercase letters followed by 7 digits. Example: BK4729183"
+      },
+      "new_facility_code": {
+        "type": "string",
+        "description": "The facility the DEA registration is being transferred to. This is the new facility, not the provider's current home facility. Format: 2-4 uppercase letters, dash, 2 digits, 1 letter. Example: BWH-02A"
+      },
+      "new_state_code": {
+        "type": "string",
+        "description": "The 2-letter US state abbreviation for the new facility's location. Example: CA, NY, TX"
+      },
+      "transfer_reason": {
+        "type": "string",
+        "description": "The reason for the transfer: facility_relocation (same role, moving to a different facility), role_change (new clinical role at a different facility), or additional_practice_site (adding a second location while keeping the original)",
+        "enum": [
+          "facility_relocation",
+          "role_change",
+          "additional_practice_site"
+        ]
+      },
+      "effective_date": {
+        "type": "string",
+        "description": "The date the transfer takes effect in YYYY-MM-DD format. Example: 2026-06-01"
+      }
+    },
+    "required": [
+      "npi",
+      "dea_number",
+      "new_facility_code",
+      "new_state_code",
+      "transfer_reason",
+      "effective_date"
+    ]
+  }
+}

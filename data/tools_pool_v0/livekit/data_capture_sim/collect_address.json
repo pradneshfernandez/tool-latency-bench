@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/data_capture_sim/agent.py",
+  "domain": "data_capture_sim",
+  "name": "collect_address",
+  "description": "Collect the user's mailing address.",
+  "parameters": {
+    "properties": {},
+    "title": "CollectAddressArgs",
+    "type": "object"
+  }
+}

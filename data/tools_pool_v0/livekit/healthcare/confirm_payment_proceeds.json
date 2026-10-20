@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "confirm_payment_proceeds",
+  "description": "Call to proceed with payment steps regarding the user's bill.\n",
+  "parameters": {
+    "properties": {
+      "amount": {
+        "description": "The dollar amount the user wishes to pay toward their balance.",
+        "title": "Amount",
+        "type": "number"
+      }
+    },
+    "required": [
+      "amount"
+    ],
+    "title": "ConfirmPaymentProceedsArgs",
+    "type": "object"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/verify_booking.py",
+  "domain": "hotel_receptionist",
+  "name": "lookup_by_card",
+  "description": "Look up a booking by last name + last 4 digits of the card on file.\n",
+  "parameters": {
+    "properties": {
+      "last_name": {
+        "description": "Caller's last name.",
+        "title": "Last Name",
+        "type": "string"
+      },
+      "card_last4": {
+        "description": "Last 4 digits of the credit card on file.",
+        "title": "Card Last4",
+        "type": "string"
+      }
+    },
+    "required": [
+      "last_name",
+      "card_last4"
+    ],
+    "title": "LookupByCardArgs",
+    "type": "object"
+  }
+}

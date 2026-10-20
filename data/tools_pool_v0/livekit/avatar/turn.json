@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/avatar/agent.py",
+  "domain": "avatar",
+  "name": "turn",
+  "description": "Turn side to side. Only call when they explicitly ask you to turn.",
+  "parameters": {
+    "properties": {},
+    "title": "TurnArgs",
+    "type": "object"
+  }
+}

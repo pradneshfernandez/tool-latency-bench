@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "verify_employee_auth",
+  "description": "verify_employee_auth: Authenticate a standard employee using their employee ID and date of birth. Returns the caller's first and last name on success, or an authentication failure if the credentials do not match.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "date_of_birth": {
+        "type": "string",
+        "description": "The employee's date of birth in YYYY-MM-DD format. Example: 1986-03-04"
+      }
+    },
+    "required": [
+      "employee_id",
+      "date_of_birth"
+    ]
+  }
+}

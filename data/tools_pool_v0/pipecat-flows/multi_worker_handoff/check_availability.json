@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/multi_worker_handoff.py",
+  "domain": "multi_worker_handoff",
+  "name": "check_availability",
+  "description": "Check availability for the requested time.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "time": {
+        "type": "string",
+        "description": "Reservation time (e.g., '6:00 PM')."
+      }
+    },
+    "required": [
+      "time"
+    ]
+  }
+}

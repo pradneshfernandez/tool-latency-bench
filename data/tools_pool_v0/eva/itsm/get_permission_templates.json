@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_permission_templates",
+  "description": "get_permission_templates: Retrieve available permission templates for a given role. Returns template IDs, descriptions, and the permissions each grants. The caller selects which template matches their new responsibilities.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "role_code": {
+        "type": "string",
+        "description": "The role code to retrieve templates for (e.g. SWE)."
+      }
+    },
+    "required": [
+      "role_code"
+    ]
+  }
+}

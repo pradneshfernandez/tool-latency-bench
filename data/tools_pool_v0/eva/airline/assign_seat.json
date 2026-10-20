@@ -1,0 +1,45 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "assign_seat",
+  "description": "assign_seat: Assign a seat to a passenger based on preference (window, aisle, middle). Automatically generates unique seat assignments for multiple passengers.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "passenger_id": {
+        "type": "string",
+        "description": "Passenger identifier"
+      },
+      "journey_id": {
+        "type": "string",
+        "description": "Journey ID from get_reservation"
+      },
+      "seat_preference": {
+        "type": "string",
+        "description": "Seat preference",
+        "enum": [
+          "window",
+          "aisle",
+          "middle",
+          "no_preference"
+        ]
+      },
+      "flight_number": {
+        "type": "string",
+        "description": "For multi-segment journeys, the specific flight number to assign seat on. Omit for single-segment journeys."
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "passenger_id",
+      "journey_id",
+      "seat_preference"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/sensor-controller/sensor-controller.py",
+  "domain": "sensor-controller",
+  "name": "ask_controller",
+  "description": "Ask the temperature sensor controller anything about the sensor.\n\nForward the user's request verbatim and speak back the answer.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "description": "The user's question or instruction to forward to the controller."
+      }
+    },
+    "required": [
+      "question"
+    ]
+  }
+}

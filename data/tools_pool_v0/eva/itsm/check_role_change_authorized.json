@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_role_change_authorized",
+  "description": "check_role_change_authorized: Confirm that HR has pre-approved a role change for an employee before any permission modifications are made. Returns the HR case ID and the approved effective date on success, or not_authorized if HR has not approved the role change.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting the permission change (e.g. EMP048271)."
+      },
+      "new_role_code": {
+        "type": "string",
+        "description": "The role code the employee is transitioning to (e.g. MGENG)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "new_role_code"
+    ]
+  }
+}

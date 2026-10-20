@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/restaurant_reservation.py",
+  "domain": "restaurant_reservation",
+  "name": "collect_party_size",
+  "description": "Record the number of people in the party.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "size": {
+        "type": "integer",
+        "description": "Number of people in the party. Must be between 1 and 12."
+      }
+    },
+    "required": [
+      "size"
+    ]
+  }
+}

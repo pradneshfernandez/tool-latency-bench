@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/retail/tools.py",
+  "domain": "retail",
+  "name": "get_user_details",
+  "description": "Get the details of a user, including their orders.",
+  "parameters": {
+    "properties": {
+      "user_id": {
+        "description": "The user id, such as 'sara_doe_496'.",
+        "title": "User Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "user_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

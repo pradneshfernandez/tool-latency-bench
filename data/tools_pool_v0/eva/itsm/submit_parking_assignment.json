@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_parking_assignment",
+  "description": "submit_parking_assignment: Submit a parking space assignment for an employee. The space ID must be one confirmed as available. Returns an error if the employee already has an assigned space (already_assigned), or if their previous assignment is less than 180 days old (too_soon — reassignment cooldown).\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee being assigned the space (e.g. EMP048271)."
+      },
+      "parking_space_id": {
+        "type": "string",
+        "description": "The specific parking space ID to assign (e.g. PZA-042)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "parking_space_id"
+    ]
+  }
+}

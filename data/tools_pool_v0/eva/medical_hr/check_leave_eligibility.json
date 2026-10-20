@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "check_leave_eligibility",
+  "description": "check_leave_eligibility: Verify whether an employee meets FMLA eligibility requirements (12 months of employment, 1,250+ hours in the past year). Returns eligible: true, months employed, hours worked, and remaining FMLA weeks on success.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

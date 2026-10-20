@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_services.py",
+  "domain": "hotel_receptionist",
+  "name": "flag_late_arrival",
+  "description": "Flag a confirmed booking with an expected late-arrival note (\"checking in around 1 AM\", \"redeye lands at 11 PM\"). Verifies the caller first. The note goes onto the booking so the front desk holds the room and doesn't no-show it.\n",
+  "parameters": {
+    "properties": {
+      "note": {
+        "description": "A short, concrete description of when the caller expects to arrive (e.g. \"around 1 AM\" or \"after midnight, redeye flight\").",
+        "title": "Note",
+        "type": "string"
+      }
+    },
+    "required": [
+      "note"
+    ],
+    "title": "FlagLateArrivalArgs",
+    "type": "object"
+  }
+}

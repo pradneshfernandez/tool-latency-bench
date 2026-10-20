@@ -1,0 +1,35 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "confirm_shift_swap",
+  "description": "confirm_shift_swap: Record a shift swap between two employees. Returns a case_id on success. Rejects the swap if the colleague does not meet certification requirements for the unit.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee ID of the original shift owner. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "shift_id": {
+        "type": "string",
+        "description": "The shift being swapped. Format: SHF-YYYYMMDD-HHMM. If the caller only has the shift date and start time, construct the ID from those (e.g. a shift on May 1, 2026 at 7:00 AM becomes SHF-20260501-0700). Example: SHF-20260501-0700"
+      },
+      "colleague_employee_id": {
+        "type": "string",
+        "description": "The employee ID of the colleague taking the shift. Format: EMP followed by 6 digits. Example: EMP039124"
+      },
+      "unit_code": {
+        "type": "string",
+        "description": "The unit where the shift takes place. Format: digits+letter-letters. Example: 4B-ICU"
+      }
+    },
+    "required": [
+      "employee_id",
+      "shift_id",
+      "colleague_employee_id",
+      "unit_code"
+    ]
+  }
+}

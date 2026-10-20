@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/rag/rag-gemini.py",
+  "domain": "rag-gemini",
+  "name": "query_knowledge_base",
+  "description": "Query the knowledge base for the answer to the question.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "description": "The question to query the knowledge base with."
+      }
+    },
+    "required": [
+      "question"
+    ]
+  }
+}

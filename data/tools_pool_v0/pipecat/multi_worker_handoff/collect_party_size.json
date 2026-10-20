@@ -1,0 +1,20 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/flows/python/multi_worker_handoff.py",
+  "domain": "multi_worker_handoff",
+  "name": "collect_party_size",
+  "description": "Record the party size and advance the reservation to choosing a time.\n\nCall this whenever the user gives a party size. Always call it to move\nforward — do not skip it just because a size already appears earlier in\nthe conversation.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "size": {
+        "type": "integer",
+        "description": "Number of people in the party. Must be between 1 and 12."
+      }
+    },
+    "required": [
+      "size"
+    ]
+  }
+}

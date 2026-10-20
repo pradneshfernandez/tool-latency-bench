@@ -1,0 +1,36 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "choose_time",
+  "description": "Record the chosen time slot and any special request.\n",
+  "parameters": {
+    "properties": {
+      "at_time": {
+        "description": "The slot the CALLER picked, from the open times set_party returned.",
+        "format": "time",
+        "title": "At Time",
+        "type": "string"
+      },
+      "notes": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Optional special request (allergy, anniversary...), or null.",
+        "title": "Notes"
+      }
+    },
+    "required": [
+      "at_time"
+    ],
+    "title": "ChooseTimeArgs",
+    "type": "object"
+  }
+}

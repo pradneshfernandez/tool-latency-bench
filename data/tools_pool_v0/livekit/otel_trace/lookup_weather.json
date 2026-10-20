@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/otel_trace.py",
+  "domain": "otel_trace",
+  "name": "lookup_weather",
+  "description": "Called when the user asks for weather related information.\n",
+  "parameters": {
+    "properties": {
+      "location": {
+        "description": "The location they are asking for",
+        "title": "Location",
+        "type": "string"
+      }
+    },
+    "required": [
+      "location"
+    ],
+    "title": "LookupWeatherArgs",
+    "type": "object"
+  }
+}

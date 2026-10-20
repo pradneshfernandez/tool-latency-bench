@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/frontdesk/agent.py",
+  "domain": "frontdesk",
+  "name": "schedule_appointment",
+  "description": "Schedule an appointment at the given slot.\n",
+  "parameters": {
+    "properties": {
+      "slot_id": {
+        "description": "The identifier for the selected time slot (as shown in the list of available slots).",
+        "title": "Slot Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "slot_id"
+    ],
+    "title": "ScheduleAppointmentArgs",
+    "type": "object"
+  }
+}

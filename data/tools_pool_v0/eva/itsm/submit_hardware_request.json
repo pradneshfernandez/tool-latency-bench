@@ -1,0 +1,82 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_hardware_request",
+  "description": "submit_hardware_request: Submit a hardware request for a laptop replacement or monitor bundle. Returns a request ID on success.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting hardware (e.g. EMP048271)."
+      },
+      "request_type": {
+        "type": "string",
+        "description": "The type of hardware being requested.",
+        "enum": [
+          "laptop_replacement",
+          "monitor_bundle"
+        ]
+      },
+      "justification": {
+        "type": "string",
+        "description": "The reason for the request. For laptops: end_of_life, performance_degradation, physical_damage, or lost_or_stolen. For monitors: new_setup or replacement.",
+        "enum": [
+          "end_of_life",
+          "performance_degradation",
+          "physical_damage",
+          "lost_or_stolen",
+          "new_setup",
+          "replacement"
+        ]
+      },
+      "delivery_building": {
+        "type": "string",
+        "description": "The building for delivery. Can be a building code (e.g. BLD3) or a common name or alias (e.g. Headquarters, Downtown)."
+      },
+      "delivery_floor": {
+        "type": "string",
+        "description": "The floor for delivery (e.g. FL2)."
+      },
+      "current_asset_tag": {
+        "type": "string",
+        "description": "The asset tag of the current device being replaced (e.g. AST-LPT-284719). Required for laptop replacements unless the device is lost or stolen, and for monitor bundles when justification is replacement. **Omit this field entirely** (do not include the key) when not applicable — do not pass null, an empty string, or 'N/A'."
+      },
+      "laptop_os": {
+        "type": "string",
+        "description": "The operating system for the new laptop. Required for laptop replacements only. **Omit this field entirely** (do not include the key) for monitor_bundle and other request types — do not pass null, an empty string, or 'N/A'.",
+        "enum": [
+          "macos",
+          "windows"
+        ]
+      },
+      "laptop_size": {
+        "type": "string",
+        "description": "The screen size for the new laptop. Required for laptop replacements only. **Omit this field entirely** (do not include the key) for monitor_bundle and other request types — do not pass null, an empty string, or 'N/A'.",
+        "enum": [
+          "13_inch",
+          "14_inch",
+          "16_inch"
+        ]
+      },
+      "monitor_size": {
+        "type": "string",
+        "description": "The monitor size. Required for monitor bundles only. **Omit this field entirely** (do not include the key) for laptop_replacement and other request types — do not pass null, an empty string, or 'N/A'.",
+        "enum": [
+          "24_inch",
+          "27_inch",
+          "32_inch"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "request_type",
+      "justification",
+      "delivery_building",
+      "delivery_floor"
+    ]
+  }
+}

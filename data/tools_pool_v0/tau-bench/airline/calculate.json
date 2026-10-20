@@ -1,0 +1,20 @@
+{
+  "source": "tau-bench",
+  "commit": "59a200c",
+  "file_path": "tau_bench/envs/airline/tools/calculate.py",
+  "domain": "airline",
+  "name": "calculate",
+  "description": "Calculate the result of a mathematical expression.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "expression": {
+        "type": "string",
+        "description": "The mathematical expression to calculate, such as '2 + 2'. The expression can contain numbers, operators (+, -, *, /), parentheses, and spaces."
+      }
+    },
+    "required": [
+      "expression"
+    ]
+  }
+}

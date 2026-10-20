@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/telephony/basic_dtmf_agent.py",
+  "domain": "basic_dtmf_agent",
+  "name": "ask_for_service_options",
+  "description": "Ask user to which telephone service they want to use.",
+  "parameters": {
+    "properties": {},
+    "title": "AskForServiceOptionsArgs",
+    "type": "object"
+  }
+}

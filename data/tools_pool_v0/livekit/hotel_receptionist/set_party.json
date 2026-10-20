@@ -1,0 +1,30 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "set_party",
+  "description": "Record the date + party size. The return lists the open time slots - offer them to the caller and let them pick; don't choose a slot yourself.\n",
+  "parameters": {
+    "properties": {
+      "on_date": {
+        "description": "Reservation date in ISO YYYY-MM-DD format (e.g. \"2026-01-20\").",
+        "format": "date",
+        "title": "On Date",
+        "type": "string"
+      },
+      "party_size": {
+        "description": "Number of guests, exactly as the caller stated it - never shrink it to fit; if it's too big to seat, that's handled below.",
+        "minimum": 1,
+        "title": "Party Size",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "on_date",
+      "party_size"
+    ],
+    "title": "SetPartyArgs",
+    "type": "object"
+  }
+}

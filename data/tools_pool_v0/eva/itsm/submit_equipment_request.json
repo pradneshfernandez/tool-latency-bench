@@ -1,0 +1,42 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_equipment_request",
+  "description": "submit_equipment_request: Submit a request for office or ergonomic equipment. Returns a request ID.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting the equipment (e.g. EMP048271)."
+      },
+      "equipment_type": {
+        "type": "string",
+        "description": "The type of equipment being requested.",
+        "enum": [
+          "standing_desk_converter",
+          "ergonomic_chair",
+          "ergonomic_keyboard",
+          "monitor_arm",
+          "footrest"
+        ]
+      },
+      "delivery_building": {
+        "type": "string",
+        "description": "The building for delivery. Can be a code (e.g. BLD3) or name/alias (e.g. Headquarters)."
+      },
+      "delivery_floor": {
+        "type": "string",
+        "description": "The floor for delivery (e.g. FL2)."
+      }
+    },
+    "required": [
+      "employee_id",
+      "equipment_type",
+      "delivery_building",
+      "delivery_floor"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "record_health_insurance",
+  "description": "Record the user's health insurance.\n",
+  "parameters": {
+    "properties": {
+      "insurance": {
+        "description": "The user's health insurance",
+        "enum": [
+          "Anthem",
+          "Aetna",
+          "EmblemHealth",
+          "HealthFirst"
+        ],
+        "title": "Insurance",
+        "type": "string"
+      }
+    },
+    "required": [
+      "insurance"
+    ],
+    "title": "RecordHealthInsuranceArgs",
+    "type": "object"
+  }
+}

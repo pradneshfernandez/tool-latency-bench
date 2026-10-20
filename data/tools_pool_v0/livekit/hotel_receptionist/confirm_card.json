@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/get_card.py",
+  "domain": "hotel_receptionist",
+  "name": "confirm_card",
+  "description": "Finalize the card capture. Call only after the caller has agreed to the read-back of the last four digits and expiration.",
+  "parameters": {
+    "properties": {},
+    "title": "ConfirmCardArgs",
+    "type": "object"
+  }
+}

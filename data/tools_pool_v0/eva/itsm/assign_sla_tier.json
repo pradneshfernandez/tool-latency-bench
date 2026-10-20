@@ -1,0 +1,30 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "assign_sla_tier",
+  "description": "assign_sla_tier: Assign an SLA tier to an incident ticket, setting response and resolution time targets. The tier must match the ticket's urgency: high urgency maps to tier_1 (1hr response, 4hr resolution), medium to tier_2 (4hr response, 8hr resolution), low to tier_3 (8hr response, 24hr resolution). Returns the expected response time.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticket_number": {
+        "type": "string",
+        "description": "The incident ticket number (e.g. INC0048271)."
+      },
+      "sla_tier": {
+        "type": "string",
+        "description": "SLA tier corresponding to the ticket's urgency. tier_1 = high urgency; tier_2 = medium; tier_3 = low.",
+        "enum": [
+          "tier_1",
+          "tier_2",
+          "tier_3"
+        ]
+      }
+    },
+    "required": [
+      "ticket_number",
+      "sla_tier"
+    ]
+  }
+}

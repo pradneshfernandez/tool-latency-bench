@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "confirm_reservation",
+  "description": "Finalize once the date, party, time, and the caller's details are all captured: book\nthe table.",
+  "parameters": {
+    "properties": {},
+    "title": "ConfirmReservationArgs",
+    "type": "object"
+  }
+}

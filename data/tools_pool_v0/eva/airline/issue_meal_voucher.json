@@ -1,0 +1,36 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "issue_meal_voucher",
+  "description": "issue_meal_voucher: Issue a meal voucher for delays or disruptions that qualify.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "passenger_id": {
+        "type": "string",
+        "description": "Passenger identifier"
+      },
+      "voucher_reason": {
+        "type": "string",
+        "description": "Reason for voucher",
+        "enum": [
+          "delay_over_2_hours",
+          "delay_over_4_hours",
+          "cancellation_wait_same_day",
+          "irrops_overnight"
+        ]
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "passenger_id",
+      "voucher_reason"
+    ]
+  }
+}

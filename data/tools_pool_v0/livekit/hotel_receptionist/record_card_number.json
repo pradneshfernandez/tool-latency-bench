@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/get_card.py",
+  "domain": "hotel_receptionist",
+  "name": "record_card_number",
+  "description": "Record the card number, only once the caller has given the entire number.\n",
+  "parameters": {
+    "properties": {
+      "card_number": {
+        "description": "All the digits, no spaces or dashes.",
+        "title": "Card Number",
+        "type": "string"
+      }
+    },
+    "required": [
+      "card_number"
+    ],
+    "title": "RecordCardNumberArgs",
+    "type": "object"
+  }
+}

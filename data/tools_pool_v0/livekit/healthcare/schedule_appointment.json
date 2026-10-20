@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/healthcare/agent.py",
+  "domain": "healthcare",
+  "name": "schedule_appointment",
+  "description": "Call to schedule an appointment for the user. Do not ask for any information in advance.",
+  "parameters": {
+    "properties": {},
+    "title": "ScheduleAppointmentArgs",
+    "type": "object"
+  }
+}

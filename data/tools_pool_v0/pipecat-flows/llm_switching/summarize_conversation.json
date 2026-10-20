@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/llm_switching.py",
+  "domain": "llm_switching",
+  "name": "summarize_conversation",
+  "description": "Summarize the conversation so far.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

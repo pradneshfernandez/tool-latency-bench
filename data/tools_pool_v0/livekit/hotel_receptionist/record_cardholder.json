@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/get_card.py",
+  "domain": "hotel_receptionist",
+  "name": "record_cardholder",
+  "description": "Record the name as it appears on the card.\n",
+  "parameters": {
+    "properties": {
+      "first_name": {
+        "description": "Cardholder's first name, exactly as given.",
+        "title": "First Name",
+        "type": "string"
+      },
+      "last_name": {
+        "description": "Cardholder's last name, exactly as given.",
+        "title": "Last Name",
+        "type": "string"
+      }
+    },
+    "required": [
+      "first_name",
+      "last_name"
+    ],
+    "title": "RecordCardholderArgs",
+    "type": "object"
+  }
+}

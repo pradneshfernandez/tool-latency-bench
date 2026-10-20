@@ -1,0 +1,36 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/airline_agent.yaml",
+  "domain": "airline",
+  "name": "process_refund",
+  "description": "process_refund: Process a refund for a cancelled or eligible reservation. Called after cancel_reservation when refund is due. Call once per refund type — fare and ancillary fees must be separate calls. Never combine both into a single call.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "confirmation_number": {
+        "type": "string",
+        "description": "Booking confirmation code"
+      },
+      "refund_amount": {
+        "type": "number",
+        "description": "Amount to refund from cancel_reservation response"
+      },
+      "refund_type": {
+        "type": "string",
+        "description": "Type of refund",
+        "enum": [
+          "full_fare",
+          "partial_fare",
+          "taxes_only",
+          "ancillary_fees"
+        ]
+      }
+    },
+    "required": [
+      "confirmation_number",
+      "refund_amount",
+      "refund_type"
+    ]
+  }
+}

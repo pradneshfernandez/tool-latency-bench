@@ -1,0 +1,25 @@
+{
+  "source": "aiewf-eval",
+  "commit": "ff1e9fa",
+  "file_path": "benchmarks/_shared/tools.py",
+  "domain": "_shared",
+  "name": "submit_dietary_request",
+  "description": "Submit a dietary request.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The name of the person making the request."
+      },
+      "dietary_preference": {
+        "type": "string",
+        "description": "The dietary preference (e.g., vegetarian, gluten-free)."
+      }
+    },
+    "required": [
+      "name",
+      "dietary_preference"
+    ]
+  }
+}

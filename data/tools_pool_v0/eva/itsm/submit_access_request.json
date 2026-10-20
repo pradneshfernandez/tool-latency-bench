@@ -1,0 +1,35 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_access_request",
+  "description": "submit_access_request: Submit a request for access to a software application. If the application requires manager approval, the request is created in pending approval state. Returns a request ID.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting access (e.g. EMP048271)."
+      },
+      "catalog_id": {
+        "type": "string",
+        "description": "The application's catalog identifier (e.g. APP-0042)."
+      },
+      "access_level": {
+        "type": "string",
+        "description": "The level of access being requested.",
+        "enum": [
+          "read_only",
+          "standard",
+          "admin"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "catalog_id",
+      "access_level"
+    ]
+  }
+}

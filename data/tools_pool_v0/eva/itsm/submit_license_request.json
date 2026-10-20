@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_license_request",
+  "description": "submit_license_request: Submit a software license request. For a permanent license, omit the duration. For a temporary license, the duration must be exactly 30, 60, or 90 days. Returns a request ID (and expiration date for temporary licenses).\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee requesting the license (e.g. EMP048271)."
+      },
+      "catalog_id": {
+        "type": "string",
+        "description": "The license catalog identifier (e.g. LIC-0018)."
+      },
+      "duration_days": {
+        "type": "string",
+        "description": "Duration in days for a temporary license. **Omit this field entirely** (do not include the key) for permanent licenses — do not pass null, the string 'null', or an empty string.",
+        "enum": [
+          "30",
+          "60",
+          "90"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "catalog_id"
+    ]
+  }
+}

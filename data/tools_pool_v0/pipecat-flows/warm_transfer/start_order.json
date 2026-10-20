@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/warm_transfer.py",
+  "domain": "warm_transfer",
+  "name": "start_order",
+  "description": "Start placing an order.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

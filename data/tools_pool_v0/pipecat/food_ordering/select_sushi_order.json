@@ -1,0 +1,25 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/flows/python/food_ordering.py",
+  "domain": "food_ordering",
+  "name": "select_sushi_order",
+  "description": "Record the sushi order details.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "integer",
+        "description": "Number of sushi rolls to order. Must be between 1 and 10."
+      },
+      "roll_type": {
+        "type": "string",
+        "description": "Type of sushi roll. Must be one of \"california\", \"spicy tuna\", \"rainbow\", or \"dragon\"."
+      }
+    },
+    "required": [
+      "count",
+      "roll_type"
+    ]
+  }
+}

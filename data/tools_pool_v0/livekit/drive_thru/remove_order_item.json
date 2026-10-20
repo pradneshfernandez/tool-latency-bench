@@ -1,0 +1,25 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/drive_thru/agent.py",
+  "domain": "drive_thru",
+  "name": "remove_order_item",
+  "description": "Removes one or more items from the user's order using their `order_id`s.\n\nUseful when the user asks to cancel or delete existing items (e.g., “Remove the cheeseburger”).\n\nIf the `order_id`s are unknown, call `list_order_items` first to retrieve them.",
+  "parameters": {
+    "properties": {
+      "order_id": {
+        "description": "A list of internal `order_id`s of the items to remove. Use `list_order_items` to look it up if needed.",
+        "items": {
+          "type": "string"
+        },
+        "title": "Order Id",
+        "type": "array"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "RemoveOrderItemArgs",
+    "type": "object"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_access_removal",
+  "description": "submit_access_removal: Remove all system access for a departing employee. This is permanent and cannot be undone through the service desk.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "manager_employee_id": {
+        "type": "string",
+        "description": "The requesting manager's employee ID (e.g. EMP048271)."
+      },
+      "departing_employee_id": {
+        "type": "string",
+        "description": "The departing employee's ID (e.g. EMP072948)."
+      },
+      "last_working_day": {
+        "type": "string",
+        "description": "The employee's last working day from the off-boarding record, in YYYY-MM-DD format (e.g. 2026-08-29)."
+      },
+      "removal_scope": {
+        "type": "string",
+        "description": "Scope of removal. full = all systems and groups immediately removed; staged = email and calendar preserved for 30 days for handoff, all other access removed immediately.",
+        "enum": [
+          "full",
+          "staged"
+        ]
+      }
+    },
+    "required": [
+      "manager_employee_id",
+      "departing_employee_id",
+      "last_working_day",
+      "removal_scope"
+    ]
+  }
+}

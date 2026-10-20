@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/frontdesk/agent.py",
+  "domain": "frontdesk",
+  "name": "list_available_slots",
+  "description": "Return a plain-text list of available slots, one per line.\n\n<slot_id> – <Weekday>, <Month> <Day>, <Year> at <HH:MM> <TZ> (<relative time>)\n\nYou must infer the appropriate ``range`` implicitly from the\nconversational context and **must not** prompt the user to pick a value\nexplicitly.",
+  "parameters": {
+    "properties": {
+      "range": {
+        "description": "Determines how far ahead to search for free time slots.",
+        "enum": [
+          "+2week",
+          "+1month",
+          "+3month",
+          "default"
+        ],
+        "title": "Range",
+        "type": "string"
+      }
+    },
+    "required": [
+      "range"
+    ],
+    "title": "ListAvailableSlotsArgs",
+    "type": "object"
+  }
+}

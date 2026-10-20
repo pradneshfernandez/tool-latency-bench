@@ -1,0 +1,34 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "submit_group_membership_change",
+  "description": "submit_group_membership_change: Submit a request to add or remove an employee from an access group. If the group requires approval, the request is created in pending state and the response includes both a case ID and a request ID for approval routing. Returns group_not_eligible if the employee's department or role does not meet the group's eligibility restrictions.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee whose membership is being changed (e.g. EMP048271)."
+      },
+      "group_code": {
+        "type": "string",
+        "description": "The access group code (e.g. GRP-ENGCORE)."
+      },
+      "action": {
+        "type": "string",
+        "description": "Whether to add the employee to or remove them from the group.",
+        "enum": [
+          "add",
+          "remove"
+        ]
+      }
+    },
+    "required": [
+      "employee_id",
+      "group_code",
+      "action"
+    ]
+  }
+}

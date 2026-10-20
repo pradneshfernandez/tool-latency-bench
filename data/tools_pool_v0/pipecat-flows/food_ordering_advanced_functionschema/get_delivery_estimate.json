@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/food_ordering_advanced_functionschema.py",
+  "domain": "food_ordering_advanced_functionschema",
+  "name": "get_delivery_estimate",
+  "description": "Get a delivery estimate for the current order",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

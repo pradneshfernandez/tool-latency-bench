@@ -1,0 +1,34 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/airline/tools.py",
+  "domain": "airline",
+  "name": "search_onestop_flight",
+  "description": "Search for one-stop flights between two cities on a specific date.",
+  "parameters": {
+    "properties": {
+      "origin": {
+        "description": "The origin city airport in three letters, such as 'JFK'.",
+        "title": "Origin",
+        "type": "string"
+      },
+      "destination": {
+        "description": "The destination city airport in three letters, such as 'LAX'.",
+        "title": "Destination",
+        "type": "string"
+      },
+      "date": {
+        "description": "The date of the flight in the format 'YYYY-MM-DD', such as '2024-05-01'.",
+        "title": "Date",
+        "type": "string"
+      }
+    },
+    "required": [
+      "origin",
+      "destination",
+      "date"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

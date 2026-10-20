@@ -1,0 +1,25 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/llm-with-backend/backend.py",
+  "domain": "backend",
+  "name": "apply_patch",
+  "description": "Replace a file's content in the codebase.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "The file to change."
+      },
+      "content": {
+        "type": "string",
+        "description": "The file's new content, in full."
+      }
+    },
+    "required": [
+      "path",
+      "content"
+    ]
+  }
+}

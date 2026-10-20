@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/airline/tools.py",
+  "domain": "airline",
+  "name": "cancel_reservation",
+  "description": "Cancel the whole reservation.",
+  "parameters": {
+    "properties": {
+      "reservation_id": {
+        "description": "The reservation ID, such as 'ZFA04Y'.",
+        "title": "Reservation Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reservation_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

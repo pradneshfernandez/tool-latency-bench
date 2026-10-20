@@ -1,0 +1,45 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "send_calendar_invite",
+  "description": "send_calendar_invite: Send a calendar invite for a booked conference room. Creates a calendar event and sends an invitation to the organizer. Returns a calendar event ID.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string",
+        "description": "The room booking request ID (e.g. REQ-FAC-048271)."
+      },
+      "employee_id": {
+        "type": "string",
+        "description": "The meeting organizer (e.g. EMP048271)."
+      },
+      "room_code": {
+        "type": "string",
+        "description": "The booked room code (e.g. BLD3-FL2-RM204)."
+      },
+      "date": {
+        "type": "string",
+        "description": "Meeting date in YYYY-MM-DD format (e.g. 2026-08-15)."
+      },
+      "start_time": {
+        "type": "string",
+        "description": "Start time in HH:MM format (e.g. 09:00)."
+      },
+      "end_time": {
+        "type": "string",
+        "description": "End time in HH:MM format (e.g. 10:30)."
+      }
+    },
+    "required": [
+      "request_id",
+      "employee_id",
+      "room_code",
+      "date",
+      "start_time",
+      "end_time"
+    ]
+  }
+}

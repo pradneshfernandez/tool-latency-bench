@@ -1,0 +1,42 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "schedule_competency_review",
+  "description": "schedule_competency_review: Schedule a competency review appointment for a provider returning from leave. The time slot must have been confirmed as available.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "department_code": {
+        "type": "string",
+        "description": "The provider's department",
+        "enum": [
+          "CARDIOLOGY",
+          "EMERGENCY",
+          "ONCOLOGY",
+          "SURGERY",
+          "NEUROLOGY",
+          "PEDIATRICS",
+          "RADIOLOGY",
+          "PATHOLOGY",
+          "ORTHOPEDICS",
+          "OBSTETRICS"
+        ]
+      },
+      "appointment_datetime": {
+        "type": "string",
+        "description": "The appointment date and time in YYYY-MM-DD HH:MM format. Must be a slot confirmed as available. Example: 2026-05-01 09:00"
+      }
+    },
+    "required": [
+      "npi",
+      "department_code",
+      "appointment_datetime"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/transports/transports-moq.py",
+  "domain": "transports-moq",
+  "name": "end_call",
+  "description": "Gracefully wind the conversation down and shut the pipeline.\n\nThe result callback returns first so the LLM can produce its farewell\nturn; ``EndWorkerFrame`` (pushed downstream) then flushes queued\nframes — including the final TTS utterance — before terminating the\nworker.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

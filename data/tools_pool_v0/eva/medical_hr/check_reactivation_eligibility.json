@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "check_reactivation_eligibility",
+  "description": "check_reactivation_eligibility: Validate an occupational health clearance code and determine which suspended privileges are available for reactivation. Returns eligible: true and the list of suspended privilege codes on success.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      },
+      "clearance_code": {
+        "type": "string",
+        "description": "The occupational health clearance code issued to the provider. Format: CLR-2-4 uppercase letters-6 digits. Example: CLR-OCC-048271"
+      }
+    },
+    "required": [
+      "npi",
+      "clearance_code"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "verify_otp_auth",
+  "description": "verify_otp_auth: Verify a one-time passcode that the caller reads from their SMS. Returns authenticated: true on success, or a failure if the code does not match.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's ID. Format: EMP followed by 6 digits. Example: EMP048271"
+      },
+      "otp_code": {
+        "type": "string",
+        "description": "The 6-digit one-time passcode read by the caller. Example: 483920"
+      }
+    },
+    "required": [
+      "employee_id",
+      "otp_code"
+    ]
+  }
+}

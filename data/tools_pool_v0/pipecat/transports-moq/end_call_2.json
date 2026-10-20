@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/transports/transports-moq.py",
+  "domain": "transports-moq",
+  "name": "end_call",
+  "description": "Gracefully end the call. Use this when the user says goodbye, indicates they're finished, or otherwise wants to hang up. Deliver a short farewell in the same turn — the pipeline waits for that utterance to finish playing before it shuts down.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/podcast_interview.py",
+  "domain": "podcast_interview",
+  "name": "wrap_up",
+  "description": "Use this when you've gathered substantial insights and are ready to wrap up.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

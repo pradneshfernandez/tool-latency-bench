@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "get_provider_profile",
+  "description": "get_provider_profile: Retrieve a provider's profile including NPI, employee ID, name, facility code, role, department, and hire date.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's 10-digit NPI number. Example: 1487392045"
+      }
+    },
+    "required": [
+      "npi"
+    ]
+  }
+}

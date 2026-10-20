@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/realtime/realtime-grok-locally-driven-turns.py",
+  "domain": "realtime-grok-locally-driven-turns",
+  "name": "get_current_time",
+  "description": "Get the current time.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

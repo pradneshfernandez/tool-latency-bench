@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "start_restaurant_booking",
+  "description": "Start the restaurant-reservation flow. Call it the moment the caller wants a table - the flow collects date, party size, time, name, and phone itself. Its return is the FINAL result of the reservation: relay it and move on - nothing further to confirm or call afterwards.",
+  "parameters": {
+    "properties": {},
+    "title": "StartRestaurantBookingArgs",
+    "type": "object"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/flows/python/multi_worker_handoff.py",
+  "domain": "multi_worker_handoff",
+  "name": "end_reservation",
+  "description": "Finalize the reservation. Call this once the user has confirmed the details.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

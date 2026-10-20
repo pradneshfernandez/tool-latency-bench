@@ -1,0 +1,20 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "get_employee_assets",
+  "description": "get_employee_assets: Retrieve all assets currently assigned to an employee. Returns a list of asset records with tags, device types, models, and statuses.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string",
+        "description": "The employee's unique identifier (e.g. EMP048271)."
+      }
+    },
+    "required": [
+      "employee_id"
+    ]
+  }
+}

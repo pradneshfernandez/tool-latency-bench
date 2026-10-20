@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "attach_diagnostic_log",
+  "description": "attach_diagnostic_log: Attach a network diagnostic reference to an incident ticket. The caller runs the diagnostic tool at netdiag.company.com and provides the reference code displayed upon completion. This retrieves the diagnostic output and attaches it to the ticket.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "ticket_number": {
+        "type": "string",
+        "description": "The incident ticket number (e.g. INC0048271)."
+      },
+      "diagnostic_ref_code": {
+        "type": "string",
+        "description": "The diagnostic reference code from the diagnostic tool, in the format DIAG followed by a dash and 8 alphanumeric characters (e.g. DIAG-4KM29X7B)."
+      }
+    },
+    "required": [
+      "ticket_number",
+      "diagnostic_ref_code"
+    ]
+  }
+}

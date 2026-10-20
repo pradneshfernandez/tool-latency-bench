@@ -1,0 +1,30 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "verify_provider_auth",
+  "description": "verify_provider_auth: Authenticate a credentialed provider (physician, nurse, PA) using their NPI, home facility code, and PIN. Returns the provider's first name and employee ID on success, or an authentication failure if the credentials do not match.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "npi": {
+        "type": "string",
+        "description": "The provider's NPI number. Format: 10 digits, no letters. Example: 1487392045"
+      },
+      "facility_code": {
+        "type": "string",
+        "description": "The provider's home facility code. Format: 2-4 uppercase letters, dash, 2 digits, 1 uppercase letter. Example: MGH-04B"
+      },
+      "pin": {
+        "type": "string",
+        "description": "The provider's 4-digit PIN. Example: 7291"
+      }
+    },
+    "required": [
+      "npi",
+      "facility_code",
+      "pin"
+    ]
+  }
+}

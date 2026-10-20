@@ -1,0 +1,22 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/gpt-live/client_delegation.py",
+  "domain": "client_delegation",
+  "name": "check_order_status",
+  "description": "Check the delivery status of an order.\n",
+  "parameters": {
+    "properties": {
+      "order_id": {
+        "description": "The order reference, such as A1042.",
+        "title": "Order Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id"
+    ],
+    "title": "CheckOrderStatusArgs",
+    "type": "object"
+  }
+}

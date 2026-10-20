@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/survey/agent.py",
+  "domain": "survey",
+  "name": "record_intro",
+  "description": "Call to record the candidate's name and any notes about their response\n",
+  "parameters": {
+    "properties": {
+      "name": {
+        "description": "The candidate's name",
+        "title": "Name",
+        "type": "string"
+      },
+      "intro_notes": {
+        "description": "The candidate's introduction and any additional notes",
+        "title": "Intro Notes",
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "intro_notes"
+    ],
+    "title": "RecordIntroArgs",
+    "type": "object"
+  }
+}

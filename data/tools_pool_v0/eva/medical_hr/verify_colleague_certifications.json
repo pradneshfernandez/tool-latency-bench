@@ -1,0 +1,25 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/medical_hr_agent.yaml",
+  "domain": "medical_hr",
+  "name": "verify_colleague_certifications",
+  "description": "verify_colleague_certifications: Verify that a colleague holds all certifications required to work a specific unit. Returns a list of any missing certifications, or confirms all requirements are met. The required certifications are looked up automatically from the unit's requirements.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "colleague_employee_id": {
+        "type": "string",
+        "description": "The employee ID of the colleague who will take the shift. Format: EMP followed by 6 digits. Example: EMP039124"
+      },
+      "unit_code": {
+        "type": "string",
+        "description": "The unit where the shift takes place. Format: digits+letter-letters. Example: 4B-ICU"
+      }
+    },
+    "required": [
+      "colleague_employee_id",
+      "unit_code"
+    ]
+  }
+}

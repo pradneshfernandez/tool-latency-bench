@@ -1,0 +1,13 @@
+{
+  "source": "pipecat",
+  "commit": "5558d26",
+  "file_path": "examples/multi-worker/ui-worker/shopping-list/bot.py",
+  "domain": "shopping-list",
+  "name": "check_list",
+  "description": "Look up what is on the shopping list and what is checked off.\n\nCall it for any question about the list. The user can edit the list on\nscreen at any time, so earlier results are stale; call it again every\ntime rather than answering from memory.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

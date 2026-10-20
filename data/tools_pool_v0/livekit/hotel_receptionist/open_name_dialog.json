@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/book_restaurant.py",
+  "domain": "hotel_receptionist",
+  "name": "open_name_dialog",
+  "description": "Open the name dialog. It collects the guest's first and last name (read back and confirmed) from the caller.",
+  "parameters": {
+    "properties": {},
+    "title": "OpenNameDialogArgs",
+    "type": "object"
+  }
+}

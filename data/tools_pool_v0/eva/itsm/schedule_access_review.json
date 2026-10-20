@@ -1,0 +1,30 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "schedule_access_review",
+  "description": "schedule_access_review: Schedule a 90-day access review for compliance after a permission change. Creates a review task assigned to the employee's manager.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "case_id": {
+        "type": "string",
+        "description": "The permission change case ID (e.g. CASE-ACCT-048271)."
+      },
+      "employee_id": {
+        "type": "string",
+        "description": "The employee whose access will be reviewed (e.g. EMP048271)."
+      },
+      "review_date": {
+        "type": "string",
+        "description": "The review date in YYYY-MM-DD format, 90 days after the permission change effective date (±3 days tolerance is acceptable). Example: 2026-11-30."
+      }
+    },
+    "required": [
+      "case_id",
+      "employee_id",
+      "review_date"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/hotel_receptionist/tools_services.py",
+  "domain": "hotel_receptionist",
+  "name": "take_guest_message",
+  "description": "Take a message for someone the caller says is staying at the hotel. It gets delivered only if that person is in fact a guest - the result never tells you whether they are, and you must never tell the caller either: no confirming or denying anyone's presence, no room numbers, no connecting calls (see lookup_policy topic \"guest_privacy\"). Read the caller's name, number, and message back before calling this.\n",
+  "parameters": {
+    "properties": {
+      "recipient": {
+        "description": "Full name of the person the message is for - first AND last. If the caller only gave a first name, ask for the last name before calling.",
+        "title": "Recipient",
+        "type": "string"
+      },
+      "caller_name": {
+        "description": "The caller's own name.",
+        "title": "Caller Name",
+        "type": "string"
+      },
+      "caller_phone": {
+        "description": "The caller's callback number.",
+        "title": "Caller Phone",
+        "type": "string"
+      },
+      "message": {
+        "description": "The message, in the caller's words.",
+        "title": "Message",
+        "type": "string"
+      }
+    },
+    "required": [
+      "recipient",
+      "caller_name",
+      "caller_phone",
+      "message"
+    ],
+    "title": "TakeGuestMessageArgs",
+    "type": "object"
+  }
+}

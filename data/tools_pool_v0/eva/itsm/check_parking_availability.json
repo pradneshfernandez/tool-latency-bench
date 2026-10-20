@@ -1,0 +1,18 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_parking_availability",
+  "description": "check_parking_availability: Check available parking spaces. If a zone is specified, returns spaces in that zone. If omitted, returns availability across all zones with zone information included so the caller can choose. Callers who don't know zone codes can simply ask what's available.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "zone_code": {
+        "type": "string",
+        "description": "Parking zone code or common name/alias (e.g. PZA, Executive Garage, North Lot). Optional — omit to see all zones."
+      }
+    },
+    "required": []
+  }
+}

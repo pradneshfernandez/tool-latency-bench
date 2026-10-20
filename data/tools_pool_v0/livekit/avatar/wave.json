@@ -1,0 +1,13 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/avatar/agent.py",
+  "domain": "avatar",
+  "name": "wave",
+  "description": "Wave to the user. Only call when they explicitly ask you to wave.",
+  "parameters": {
+    "properties": {},
+    "title": "WaveArgs",
+    "type": "object"
+  }
+}

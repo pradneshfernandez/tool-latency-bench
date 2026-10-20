@@ -1,0 +1,22 @@
+{
+  "source": "tau2-bench",
+  "commit": "989d328",
+  "file_path": "src/tau2/domains/retail/tools.py",
+  "domain": "retail",
+  "name": "get_item_details",
+  "description": "Get the inventory details of an item.",
+  "parameters": {
+    "properties": {
+      "item_id": {
+        "description": "The item id, such as '6086499569'. Be careful the item id is different from the product id.",
+        "title": "Item Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "item_id"
+    ],
+    "title": "parameters",
+    "type": "object"
+  }
+}

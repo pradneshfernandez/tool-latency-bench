@@ -1,0 +1,51 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "check_room_availability",
+  "description": "check_room_availability: Check available conference rooms matching the specified building, date, time window, and minimum capacity. Optionally filter by floor and required equipment. Returns a list of available rooms with their codes, floors, capacities, and equipment.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "building_code": {
+        "type": "string",
+        "description": "Building code or common name/alias (e.g. BLD3, Headquarters, Downtown). Returns name_not_found if unrecognized."
+      },
+      "date": {
+        "type": "string",
+        "description": "The booking date in YYYY-MM-DD format (e.g. 2026-08-15)."
+      },
+      "start_time": {
+        "type": "string",
+        "description": "Start time in 24-hour HH:MM format (e.g. 09:00)."
+      },
+      "end_time": {
+        "type": "string",
+        "description": "End time in 24-hour HH:MM format (e.g. 10:30)."
+      },
+      "min_capacity": {
+        "type": "integer",
+        "description": "Minimum number of seats needed (e.g. 8)."
+      },
+      "floor_code": {
+        "type": "string",
+        "description": "Floor code (e.g. FL2). **Omit this field entirely** (do not include the key) to search all floors in the building — do not pass an empty string or null."
+      },
+      "equipment_required": {
+        "type": "array",
+        "description": "Equipment that must be present in the room. Allowed values: projector, whiteboard, video_conferencing, display_screen, speakerphone. Only rooms with all listed items are returned. Optional — omit if the caller has no equipment requirements.",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "building_code",
+      "date",
+      "start_time",
+      "end_time",
+      "min_capacity"
+    ]
+  }
+}

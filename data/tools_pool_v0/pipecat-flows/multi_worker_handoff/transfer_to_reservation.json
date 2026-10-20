@@ -1,0 +1,20 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/multi_worker_handoff.py",
+  "domain": "multi_worker_handoff",
+  "name": "transfer_to_reservation",
+  "description": "Transfer the user to the reservation assistant.\n\nCall this as soon as the user wants to book, change, or ask about\nmaking a table reservation.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "reason": {
+        "type": "string",
+        "description": "Why the user is being transferred."
+      }
+    },
+    "required": [
+      "reason"
+    ]
+  }
+}

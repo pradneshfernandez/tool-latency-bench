@@ -1,0 +1,23 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/patient_intake.py",
+  "domain": "patient_intake",
+  "name": "record_prescriptions",
+  "description": "Record the user's prescriptions. Once confirmed, the next step is to collect allergy information.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "prescriptions": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "List of prescription objects, each with \"medication\" (str, the medication's name) and \"dosage\" (str, the prescription's dosage)."
+      }
+    },
+    "required": [
+      "prescriptions"
+    ]
+  }
+}

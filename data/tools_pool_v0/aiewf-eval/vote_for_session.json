@@ -1,0 +1,25 @@
+{
+  "source": "aiewf-eval",
+  "commit": "ff1e9fa",
+  "file_path": "benchmarks/_shared/tools.py",
+  "domain": "_shared",
+  "name": "vote_for_session",
+  "description": "Vote for an existing session.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The name of the person voting."
+      },
+      "session_id": {
+        "type": "string",
+        "description": "The Session ID of the session being voted for."
+      }
+    },
+    "required": [
+      "name",
+      "session_id"
+    ]
+  }
+}

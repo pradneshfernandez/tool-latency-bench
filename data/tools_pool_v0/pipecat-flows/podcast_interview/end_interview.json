@@ -1,0 +1,13 @@
+{
+  "source": "pipecat-flows",
+  "commit": "96223f4",
+  "file_path": "examples/podcast_interview.py",
+  "domain": "podcast_interview",
+  "name": "end_interview",
+  "description": "Use this after the guest has shared their final thoughts.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

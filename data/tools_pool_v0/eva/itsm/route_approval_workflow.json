@@ -1,0 +1,30 @@
+{
+  "source": "eva",
+  "commit": "2918ca6",
+  "file_path": "configs/agents/itsm_agent.yaml",
+  "domain": "itsm",
+  "name": "route_approval_workflow",
+  "description": "route_approval_workflow: Route a pending access or membership request to a manager for approval. Sends an approval notification and starts the 48-hour approval SLA clock.\n",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string",
+        "description": "The request ID to route for approval (e.g. REQ-SW-048271)."
+      },
+      "employee_id": {
+        "type": "string",
+        "description": "The employee who made the request (e.g. EMP048271)."
+      },
+      "approver_employee_id": {
+        "type": "string",
+        "description": "The manager who should approve the request (e.g. EMP031482)."
+      }
+    },
+    "required": [
+      "request_id",
+      "employee_id",
+      "approver_employee_id"
+    ]
+  }
+}

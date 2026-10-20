@@ -1,0 +1,28 @@
+{
+  "source": "livekit",
+  "commit": "5b49888",
+  "file_path": "examples/voice_agents/gpt-live/gpt_live_agent.py",
+  "domain": "gpt_live_agent",
+  "name": "schedule_delivery",
+  "description": "Book a delivery day for an order.\n",
+  "parameters": {
+    "properties": {
+      "order_id": {
+        "description": "The order reference, such as A1042.",
+        "title": "Order Id",
+        "type": "string"
+      },
+      "day": {
+        "description": "The requested day, such as Tuesday.",
+        "title": "Day",
+        "type": "string"
+      }
+    },
+    "required": [
+      "order_id",
+      "day"
+    ],
+    "title": "ScheduleDeliveryArgs",
+    "type": "object"
+  }
+}
