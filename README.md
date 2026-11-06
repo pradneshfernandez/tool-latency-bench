@@ -1,4 +1,9 @@
-# tool-latency-bench
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/tool-latency-bench/lockup-dark.svg">
+    <img alt="tool-latency-bench" src="brand/tool-latency-bench/lockup.svg" height="64">
+  </picture>
+</p>
 
 A benchmark measuring how adding tool (function) definitions to a prompt affects LLM response latency.
 
