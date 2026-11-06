@@ -5,6 +5,9 @@ API (OpenAI-compatible endpoint, paid tier). All intervals are 95%. Estimates us
 estimators (`tool_latency_bench.analysis`); "pooled" means the complete blocks of both sessions
 analyzed together, still clustered on the user message.
 
+Also as PDFs: a [2-page summary](summary.pdf) and a [full report](report.pdf) covering the tool
+corpus, design, statistics, results and checks.
+
 **Summary.** On Gemini 3.1 Flash-Lite, putting up to 60 tool definitions (~4,900 tokens) in a
 request added no latency we could detect: at most ~130 ms, most likely ~35 ms, on an ~820 ms
 response. Letting the model actually call tools added a measurable ~16% at 60 tools, mostly the
