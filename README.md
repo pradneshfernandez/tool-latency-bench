@@ -111,7 +111,8 @@ provider (with the code that does it), and the caveats.
 
 Gemini 3.1 Flash-Lite, two sessions pooled, 95% intervals
 ([full findings](results/google/findings.md), [2-page summary (PDF)](results/google/summary.pdf),
-[full report with method (PDF)](results/google/report.pdf)):
+[full report with method (PDF)](results/google/report.pdf),
+[slides (PDF)](results/google/slides.pdf)):
 
 | | Read only (`tool_choice none`) | Model may call (`auto`) |
 |---|---|---|
