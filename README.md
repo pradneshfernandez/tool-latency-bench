@@ -107,6 +107,28 @@ provider SDKs) are pinned in `scripts/as_sent/requirements-*.txt`. See
 [docs/as_sent.md](docs/as_sent.md) for how the capture works, what each framework sends to each
 provider (with the code that does it), and the caveats.
 
+## Results so far
+
+Gemini 3.1 Flash-Lite, two sessions pooled, 95% intervals
+([full findings](results/google/findings.md)):
+
+| | Read only (`tool_choice none`) | Model may call (`auto`) |
+|---|---|---|
+| Added latency per 1,000 tool tokens | +7 ms [−12, +27] | +27 ms [+10, +44] |
+| 60 tools (~4,900 tokens) vs 0 tools | +3.9% [−6, +15] | +16.5% [+7, +27] |
+| Medium vs simple tools, same token budget | +4% [−8, +18] | +8% [−1, +18] |
+
+- **Reading tool definitions is cheap.** On an ~820 ms baseline, 60 tools add at most ~130 ms
+  and most likely ~35 ms.
+- **Calling tools costs more,** mostly the time to emit the call.
+- **Tool structure made no detectable difference** at a fixed budget.
+- **The model matters far more:** Gemini 3.8 Flash sits at ~2.2 s whatever the tool count, and
+  its `reasoning_effort: none` does not reliably turn thinking off when tools are present.
+- **No caching effect** (identical requests were not faster), and Flash-Lite sometimes invents a
+  function call even when no tools are declared.
+
+![Added latency vs tool tokens](results/google/charts/chart_exp1_dose.png)
+
 ## Latency experiments
 
 Requests are sent directly to OpenAI-compatible endpoints (no framework in the loop).
@@ -143,7 +165,9 @@ uv run tool-latency-bench compare exp1_tool_count    # runs side by side -> runs
   text. `ttfat_ms`: first answer text or first tool-call output. Answer text skips whitespace and
   a leading `<think>...</think>` block, which some open-weight models put in `content`.
 - `--reasoning-effort` is sent as `reasoning_effort`; use the lowest value the model accepts
-  (e.g. `minimal` for `gemini-3.5-flash-lite`, `none` for `gemini-3.8-flash`).
+  (e.g. `none` for `gemini-3.1-flash-lite`). Check that it really turns thinking off: on
+  `gemini-3.8-flash`, `minimal` is rejected and `none` is accepted but the model still thinks at
+  times when tools are present.
 - Each run writes `runs/<benchmark>/<timestamp>_<model>_<session>/` with `results.csv`,
   `runtime.json` (model, settings, seed, versions, counts), `run.log`, the `request_parts/` it
   used, and `analysis.md` + `analysis.png` after `analyze`.
@@ -175,7 +199,9 @@ Following [A statistical approach to model evaluations](https://www.anthropic.co
 - **Errors per condition.** Blocks with an errored request are skipped; errors are counted per
   condition and a warning is shown if they are uneven, since skipping them can bias the result.
 - **Sessions are reported side by side, not pooled.** Each time-of-day session is its own
-  cluster; with three of them they are a replication check, not extra precision.
+  cluster; with three of them they are a replication check, not extra precision. (The findings
+  also report a pooled estimate, with the complete blocks of all sessions clustered on the user
+  message.)
 
 ### Known limitations
 
@@ -186,19 +212,20 @@ Following [A statistical approach to model evaluations](https://www.anthropic.co
   long descriptions), so the contrast is closer to "description-heavy vs schema-heavy" tools of
   about 150 tokens each.
 - **Prompt caching** is prevented by a nonce at the start of the system prompt and by random tool
-  order. It can only be verified on providers that report `cached_tokens` (Gemini's endpoint
-  does not).
+  order. It can only be verified directly on providers that report `cached_tokens`. Gemini's
+  endpoint does not, so a separate probe (identical vs fresh 120-tool requests) was used and found
+  no speedup.
 - **TTFAT on tool calls** depends on how the provider streams them: some send the whole call in
   one chunk, so TTFAT equals the completed call. Compare `ttfat_ms` across providers with care;
   `tool_choice none` avoids this.
 
 ### Status
 
-Both benchmarks have been run end to end against the `fake` service, and a 1-block smoke run
-against Gemini's free tier completed without errors. No full real-provider sessions have been
-run yet: free-tier Gemini latency (8-34 s per request in testing) is dominated by queueing, so
-it cannot measure tool overhead. Results from contributors with paid or fast-provider access
-are very welcome.
+First real-provider results are in: Gemini 3.1 Flash-Lite (two sessions of both benchmarks in
+both modes) and Gemini 3.8 Flash (exp1, one session), run on Gemini's paid API in November 2026.
+See [results/google/findings.md](results/google/findings.md). The raw run folders are not
+published. Still missing: other days, other providers (OpenAI, Groq, Cerebras) and more models.
+Results from contributors with access to them are very welcome.
 
 ### Contributing results
 
