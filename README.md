@@ -7,6 +7,39 @@
 
 A benchmark measuring how adding tool (function) definitions to a prompt affects LLM response latency.
 
+## Findings
+
+**Gemini 3.1 Flash-Lite** (reasoning off, OpenAI-compatible endpoint), 2 sessions × 30 paired
+blocks per experiment and mode, ~1,250 requests, 95% intervals:
+
+| | Read only (`tool_choice none`) | Model may call (`auto`) |
+|---|---|---|
+| Added latency per 1,000 tool tokens | +7 ms [−12, +27] | +27 ms [+10, +44] |
+| 60 tools (~4,900 tokens) vs 0 | +3.9% [−6, +15] | +16.5% [+7, +27] |
+| Median latency, 0 → 60 tools | 820 → 837 ms | 895 → 1,080 ms |
+| Medium vs simple tools, same ~3,060-token budget | +4% [−8, +18] | +8% [−1, +18] |
+
+1. **Reading tools is cheap.** 60 tools add ~35 ms, at most ~130 ms, on an ~820 ms response. Both sessions agree.
+2. **Calling tools is the real cost.** With `auto` the model calls a tool in 58 / 87 / 93% of requests at
+   10 / 30 / 60 tools; most of the extra time is emitting the full call.
+3. **Tool structure doesn't matter** at a fixed budget (per-token difference +10 ms [−49, +68]). Note: Gemini
+   counts the medium sets as 14% more tokens than tiktoken does.
+4. **The model matters ~40× more.** Gemini 3.8 Flash sits at ~2.2 s at every tool count, and its
+   `reasoning_effort: none` doesn't reliably stop thinking when tools are present (`minimal` returns 400).
+5. **Checks:** no prompt-caching effect (identical vs fresh 120-tool request: 1.11 [0.96, 1.29]); Flash-Lite
+   sometimes invents a function call with no tools declared (excluding it changes nothing); no drift or order bias.
+
+![Added latency vs tool tokens](results/google/charts/chart_exp1_dose.png)
+
+**Takeaway:** on a fast model, don't trim your tool list to save latency. Pick the model, keep reasoning off,
+and design around tool calls.
+
+*Limits:* one provider, same-day sessions, ≤60 tools, not the native Gemini API. OpenAI, Groq and Cerebras
+results are welcome (see [Contributing results](#contributing-results)).
+
+**More:** [Findings](results/google/findings.md) · [2-page summary](results/google/summary.pdf) ·
+[Full report](results/google/report.pdf) · [Slides](results/google/slides.pdf)
+
 ## Motivation
 
 The [Voice AI & Voice Agents primer](https://voiceaiandvoiceagents.com/) notes that adding
@@ -112,30 +145,6 @@ provider SDKs) are pinned in `scripts/as_sent/requirements-*.txt`. See
 [docs/as_sent.md](docs/as_sent.md) for how the capture works, what each framework sends to each
 provider (with the code that does it), and the caveats.
 
-## Results so far
-
-Gemini 3.1 Flash-Lite, two sessions pooled, 95% intervals
-([full findings](results/google/findings.md), [2-page summary (PDF)](results/google/summary.pdf),
-[full report with method (PDF)](results/google/report.pdf),
-[slides (PDF)](results/google/slides.pdf)):
-
-| | Read only (`tool_choice none`) | Model may call (`auto`) |
-|---|---|---|
-| Added latency per 1,000 tool tokens | +7 ms [−12, +27] | +27 ms [+10, +44] |
-| 60 tools (~4,900 tokens) vs 0 tools | +3.9% [−6, +15] | +16.5% [+7, +27] |
-| Medium vs simple tools, same token budget | +4% [−8, +18] | +8% [−1, +18] |
-
-- **Reading tool definitions is cheap.** On an ~820 ms baseline, 60 tools add at most ~130 ms
-  and most likely ~35 ms.
-- **Calling tools costs more,** mostly the time to emit the call.
-- **Tool structure made no detectable difference** at a fixed budget.
-- **The model matters far more:** Gemini 3.8 Flash sits at ~2.2 s whatever the tool count, and
-  its `reasoning_effort: none` does not reliably turn thinking off when tools are present.
-- **No caching effect** (identical requests were not faster), and Flash-Lite sometimes invents a
-  function call even when no tools are declared.
-
-![Added latency vs tool tokens](results/google/charts/chart_exp1_dose.png)
-
 ## Latency experiments
 
 Requests are sent directly to OpenAI-compatible endpoints (no framework in the loop).
@@ -228,11 +237,8 @@ Following [A statistical approach to model evaluations](https://www.anthropic.co
 
 ### Status
 
-First real-provider results are in: Gemini 3.1 Flash-Lite (two sessions of both benchmarks in
-both modes) and Gemini 3.8 Flash (exp1, one session), run on Gemini's paid API in November 2026.
-See [results/google/findings.md](results/google/findings.md). The raw run folders are not
-published. Still missing: other days, other providers (OpenAI, Groq, Cerebras) and more models.
-Results from contributors with access to them are very welcome.
+Results so far: Gemini 3.1 Flash-Lite and 3.8 Flash, November 2026 (see [Findings](#findings)).
+Raw run folders are not published. Still missing: other days, other providers and more models.
 
 ### Contributing results
 
