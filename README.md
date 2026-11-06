@@ -22,9 +22,10 @@ blocks per experiment and mode, ~1,250 requests, 95% intervals:
 1. **Reading tools is cheap.** 60 tools add ~35 ms, at most ~130 ms, on an ~820 ms response. Both sessions agree.
 2. **Calling tools is the real cost.** With `auto` the model calls a tool in 58 / 87 / 93% of requests at
    10 / 30 / 60 tools; most of the extra time is emitting the full call.
-3. **Tool structure doesn't matter** at a fixed budget (per-token difference +10 ms [−49, +68]). Note: Gemini
+3. **Tool structure made no detectable difference** at a fixed budget (per-token difference +10 ms [−49, +68]). Note: Gemini
    counts the medium sets as 14% more tokens than tiktoken does.
-4. **The model matters ~40× more.** Gemini 3.8 Flash sits at ~2.2 s at every tool count, and its
+4. **The model matters far more.** Gemini 3.8 Flash sits above 2 s at every tool count (a gap over 10× the cost
+   of 60 tools, ~40× at the best estimate), and its
    `reasoning_effort: none` doesn't reliably stop thinking when tools are present (`minimal` returns 400).
 5. **Checks:** no prompt-caching effect (identical vs fresh 120-tool request: 1.11 [0.96, 1.29]); Flash-Lite
    sometimes invents a function call with no tools declared (excluding it changes nothing); no drift or order bias.

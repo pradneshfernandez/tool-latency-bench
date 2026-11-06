@@ -12,7 +12,7 @@ corpus, design, statistics, results and checks, and [10 slides](slides.pdf).
 request added no latency we could detect: at most ~130 ms, most likely ~35 ms, on an ~820 ms
 response. Letting the model actually call tools added a measurable ~16% at 60 tools, mostly the
 time to emit the call. How the tools were written made no detectable difference, and switching
-model moved latency about 40× more than the tools did.
+model moved latency far more than the tools did (over 10× even at the upper bound of the tool cost).
 
 ## Setup
 
@@ -73,7 +73,7 @@ model moved latency about 40× more than the tools did.
 ![Median latency by tool count, two models](charts/chart_models.png)
 
 - `gemini-3.8-flash` has a median of **~2.2 s** at every tool count vs 0.82 s for Flash-Lite. The
-  gap between models (~1.4 s) is about 40× the estimated cost of 60 tools.
+  gap between models (~1.4 s) is about 40× the estimated cost of 60 tools, and over 10× its upper bound.
 - 3.8 Flash cannot be measured cleanly on this endpoint: `minimal` returns HTTP 400, and `none`
   does not reliably turn thinking off when tools are present. It sometimes spends ~95 hidden
   tokens thinking, hits `max_tokens: 100` and returns `finish_reason: length` with no output
@@ -84,7 +84,7 @@ model moved latency about 40× more than the tools did.
 
 ![Identical vs fresh requests](charts/chart_caching.png)
 
-- **No caching effect.** 120 tools (~9,700 input tokens), 25 rounds, a byte-identical request vs a
+- **No caching effect.** 120 tools (~9,800 input tokens), 25 rounds, a byte-identical request vs a
   fresh nonce in random order each round: ratio **1.11 [0.96, 1.29]**, so repeating the exact
   request was not faster. Gemini reports no `cached_tokens`, so this probe is the evidence that
   prompt caching did not lower latency. The fresh 120-tool median (875 ms) was also close to the
